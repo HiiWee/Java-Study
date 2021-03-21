@@ -1,0 +1,65 @@
+package pr01_maker;
+
+import java.util.Scanner;
+public class CoffeeMaker {
+	/*
+	 * public static int start_coffeeSelect() {
+	 * 
+	 * }
+	 */
+	public static void main(String[] args) {
+		
+		final int coffee=0; final int milk=1;
+		final int ice=2; final int chocolate=3;
+		Scanner scan = new Scanner(System.in);
+		//Ä¿ÇÇ Àç·á º¯¼ö ÀÎµ¦½º ¼ø¼­´ë·Î coffee, milk, ice, chocolate
+		int[] container = new int[4];
+		//¸ñ·Ï ¼±ÅÃÀ» À§ÇÑ º¯¼ö
+		int selector;
+		//º¥µù¸Ó½Å ·çÇÁ¸¦ µ¿ÀÛÇÏ´Â ÇÃ·¡±× Ç¥½Ã
+		boolean play_f = true;
+		//°ü¸®¸ðµå ÇÃ·¡±×
+		boolean management_f = false;
+		//ÇÁ·Î±×·¥ÀÇ ½ÃÀÛ ºÎºÐ
+		while(play_f) {
+			if(management_f) {
+<<<<<<< HEAD
+				System.out.print("Ä¿ÇÇ º¥µù¸Ó½ÅÀ» ½ÇÇàÇÕ´Ï´Ù.\n");
+				System.out.print("¿øÇÏ´Â ¸ðµå¸¦ °ñ¶óÁÖ¼¼¿ä\n");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+				System.out.print("[1]Ä¿ÇÇ¼±ÅÃ     [2]°ü¸®ÀÚ¸ðµå");
+=======
+				System.out.print("ì»¤í”¼ ë²¤ë”©ë¨¸ì‹ ì„ ì‹¤í–‰í•©ë‹ˆë‹¤.\n");
+				System.out.print("ì›í•˜ëŠ” ëª¨ë“œë¥¼ ê³¨ë¼ì£¼ì„¸ìš”\n");
+				System.out.print("[1]ì»¤í”¼ì„ íƒ     [2]ê´€ë¦¬ìžëª¨ë“œ");
+>>>>>>> 5571cac (dfdf)
+				selector = scan.nextInt();
+				//if(selector == 1)
+			}
+			else {
+<<<<<<< HEAD
+				System.out.print("È¸¿øÁ¤º¸°¡ ¾ø½À´Ï´Ù È¸¿ø°¡ÀÔÀ» ÇÏ½Ã°Ú½À´Ï±î?");			
+=======
+				System.out.print("íšŒì›ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤ íšŒì›ê°€ìž…ì„ í•˜ê² ìŠµë‹ˆê¹Œ?");			
+>>>>>>> 5571cac (dfdf)
+				System.out.print("Yes[1]   No[2]");
+				
+			}
+			
+		}
+	}
+}

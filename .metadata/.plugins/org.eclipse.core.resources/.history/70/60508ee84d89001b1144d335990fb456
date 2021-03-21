@@ -1,0 +1,40 @@
+package pr01_maker;
+
+import java.util.Scanner;
+public class CoffeeMaker {
+	/*
+	 * public static int start_coffeeSelect() {
+	 * 
+	 * }
+	 */
+	public static void main(String[] args) {
+		
+		final int coffee=0; final int milk=1;
+		final int ice=2; final int chocolate=3;
+		Scanner scan = new Scanner(System.in);
+		//커피 재료 변수 인덱스 순서대로 coffee, milk, ice, chocolate
+		int[] container = new int[4];
+		//목록 선택을 위한 변수
+		int selector;
+		//벤딩머신 루프를 동작하는 플래그 표시
+		boolean play_f = true;
+		//占쏙옙占쏙옙占쏙옙占� 占시뤄옙占쏙d안녕하세ㅇ여 ㅇ=ㅇ  옙sㄴㅇㄹㄴㅇㄴㅇ런ㅇ
+		boolean management_f = false;
+		//占쏙옙占싸그뤄옙占쏙옙 占쏙옙占쏙옙 占싸븝옙
+		while(play_f) {
+			if(management_f) {
+				System.out.print("커占쏙옙 占쏙옙占쏙옙占쌈쏙옙占쏙옙 占쏙옙占쏙옙占쌌니댐옙.\n");
+				System.out.print("占쏙옙占싹댐옙 占쏙옙躍� 占쏙옙占쏙옙玲占쏙옙占�\n");
+				System.out.print("[1]커占실쇽옙占쏙옙     [2]占쏙옙占쏙옙占쌘몌옙占�");
+				selector = scan.nextInt();
+				//if(selector == 1)
+			}
+			else {
+				System.out.print("회占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹댐옙 회占쏙옙占쏙옙占쏙옙占쏙옙 占싹시겠쏙옙占싹깍옙?");			
+				System.out.print("Yes[1]   No[2]");
+				
+			}
+			
+		}
+	}
+}

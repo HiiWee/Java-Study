@@ -1,0 +1,10 @@
+package pr02_maker2;
+
+public class Coffee2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
