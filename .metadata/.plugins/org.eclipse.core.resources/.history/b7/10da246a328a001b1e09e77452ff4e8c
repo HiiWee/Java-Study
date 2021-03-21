@@ -1,9 +1,0 @@
-package ex20.array;
-
-public class Program4 {
-	public static void main(String[] args){
-		int[] lotto = new int[6];
-		
-		
-	}
-}
