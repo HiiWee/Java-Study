@@ -1,4 +1,4 @@
-package part2.ex01.SplitGradeInput;
+package part2_ex01_SplitGradeInput;
 
 import java.util.Scanner;
 
