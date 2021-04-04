@@ -18,10 +18,10 @@ public class StructuredGradeInput {
 	        
 	        switch(menu) {	        
 	        case 1:
-	        	inputGrade(korList);
+	        	inputKors(korList);
 		        break;
 	        case 2:
-	        	outputGrade(korList);
+	        	printKors(korList);
 		        break;
 	        case 3:
 	        	System.out.println("Bye~~");
@@ -54,7 +54,7 @@ public class StructuredGradeInput {
         return menu;
     }
     
-    static void outputGrade(int[] kors) {
+    static void printKors(int[] kors) {
     	
     	int total = 0;
         float avg;
@@ -77,7 +77,7 @@ public class StructuredGradeInput {
         System.out.println("式式式式式式式式式式式式式式式式式式式式式式式式式式式式式");
     }
     
-    static void inputGrade(int[] kors) {
+    static void inputKors(int[] kors) {
     	
     	int kor;
     	Scanner scan = new Scanner(System.in);
