@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class GradeInput{
 	
 	//전역변수를 선언할때는 함수 앞에 static기호를 붙여줘야한다.
-	static int[] kors = new int[3];
 	
     public static void main(String[] args) {
     	
+    	int[] kors = new int[3];
     	
         int total = 0;
         float avg;
         int menu;
         boolean keepLoop = true;			
-		//스캐너는 굳이 전역변수로 공유할필요없다.
+		
 		Scanner scan = new Scanner(System.in);
 		
 		while(keepLoop)
@@ -30,7 +30,24 @@ public class GradeInput{
 	        
 	        switch(menu) {	        
 	        case 1:
-	        	putGrade();
+	        	
+				System.out.println("┌───────────────────────────┐");
+		        System.out.println("│           성적  입력                   │");
+		        System.out.println("└───────────────────────────┘");
+		        System.out.println();
+		       		        
+		        for(int i=0; i<3; i++)
+			        do {
+				        System.out.printf("국어%d : ", i+1);
+				        kors[i] = scan.nextInt();
+			        
+				        if(kors[i] < 0 || 100 < kors[i])
+				        	System.out.println("국어성적은 0~100까지의 범위만 입력이 가능합니다.");
+				        
+			        }while(kors[i] < 0 || 100 < kors[i]);
+		        
+		        System.out.println("─────────────────────────────");
+	        	       
 		        break;
 	        case 2:
 		        
@@ -64,29 +81,10 @@ public class GradeInput{
 	        }
 	        
 		}
-    }
-    
-    static void putGrade() {
-    	
-    	Scanner scan = new Scanner(System.in);
-    	
-		System.out.println("┌───────────────────────────┐");
-        System.out.println("│           성적  입력                   │");
-        System.out.println("└───────────────────────────┘");
-        System.out.println();
-       		        
-        for(int i=0; i<3; i++)
-	        do {
-		        System.out.printf("국어%d : ", i+1);
-		        kors[i] = scan.nextInt();
-	        
-		        if(kors[i] < 0 || 100 < kors[i])
-		        	System.out.println("국어성적은 0~100까지의 범위만 입력이 가능합니다.");
-		        
-	        }while(kors[i] < 0 || 100 < kors[i]);
-        
-        System.out.println("─────────────────────────────");
 
     }
 }
+
+
+
 
