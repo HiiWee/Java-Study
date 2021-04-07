@@ -22,7 +22,7 @@ public class ListExamProgram {
 			case 1:
 				inputList(list);
 				break;
-			case 2:
+			case 2: 
 				printList(list);
 				break;
 			case 3:
@@ -40,11 +40,15 @@ public class ListExamProgram {
 	}
 
 	private static void printList(ExamList list) {
+		printList(list, list.current);
+	}
+
+	private static void printList(ExamList list, int size) {
 		System.out.println("┌───────────────────────────┐");
 		System.out.println("│           성적  출력      │");
 		System.out.println("└───────────────────────────┘");
 		System.out.println();
-		int size = list.current;
+		//int size = list.current;
 		Exam[] exams = list.exams;
 		for (int i = 0; i < size; i++) {
 			Exam exam = exams[i];
@@ -60,7 +64,7 @@ public class ListExamProgram {
 			float avg = total / 3.0f;
 
 			System.out.printf("국어 %d\n", kor);
-			System.out.printf("영어 %d\n", eng);
+			System.out.printf("영어 %d\n", eng); 
 			System.out.printf("수학 %d\n", math);
 
 			System.out.printf("총점 : %3d\n", total);
@@ -68,7 +72,7 @@ public class ListExamProgram {
 			System.out.println("─────────────────────────────");
 		}
 	}
-
+	
 	private static void inputList(ExamList list) {
 		Scanner scan = new Scanner(System.in);
 
