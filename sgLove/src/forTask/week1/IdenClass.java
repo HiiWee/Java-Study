@@ -1,4 +1,4 @@
-package ch1_2;
+package forTask.week1;
 
 import java.util.Scanner;
 
@@ -30,7 +30,7 @@ public class IdenClass {
 		System.out.println("이름: " + univ);
 		System.out.println("학과: " + major);
 		System.out.println("학번: " + studentID);
-		System.out.println("이름: " + name);
+		System.out.println("이름: "  + name);
 		System.out.println("나이: " + age);
 	}
 }
