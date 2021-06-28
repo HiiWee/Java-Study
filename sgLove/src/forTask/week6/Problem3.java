@@ -5,22 +5,20 @@ import java.util.Scanner;
 public class Problem3 {
 
 	public static void main(String[] args) {
-		int[] arr = new int[10];
+		int[] arr = new int[1000];
 		Scanner scan = new Scanner(System.in);
-		int flag = 0;
-		
-		for (int i = 0; i < 10; i++) {
+
+		int num = scan.nextInt();
+		for (int i = 0; i < num; i++) {
 			arr[i] = scan.nextInt();
 		}
 		
-		for(int i = 0; i < 10; i++) {
-			if (arr[i] % 5 == 0) {
-				System.out.println(arr[i]);
-				flag = 1;
-				break;
+		for (int i = 0; i < num; i++) {
+			for (int j = 0; j < num; j++) {
+				System.out.print(arr[(i + j) % num] + " ");
 			}
+			System.out.println("");
 		}
-		if (flag == 0)
-			System.out.println(0);
+
 	}
 }
