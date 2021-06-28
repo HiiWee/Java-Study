@@ -4,18 +4,23 @@ import java.util.Scanner;
 
 public class Problem1 {
 	public static void main(String[] args) {
-		
+		int[] arr = new int[10];
 		Scanner scan = new Scanner(System.in);
-		int num;
-		
+		int flag = 0;
 		for (int i = 0; i < 10; i++) {
-			num = scan.nextInt();
-			
-			if (num % 5 == 0) {
-				System.out.println(num);
+			arr[i] = scan.nextInt();
+		}
+
+		for (int i = 0; i < 10; i++) {
+			if (arr[i] % 5 == 0) {
+				System.out.println(arr[i]);
+				flag = 1;
 				break;
 			}
 		}
-	}
+		if (flag == 0) {
+			System.out.println(0);
+		}
 
+	}
 }
