@@ -3,10 +3,10 @@ package part3_ex05_abstraction;
 import java.util.Scanner;
 
 public abstract class ExamConsole {
-	//UI를 나타내는 부분
-	//Composition Has A 일체형 has a 상속관계
+	// UI를 나타내는 부분
+	// Composition Has A 일체형 has a 상속관계
 	private ExamList list;
-	
+
 	public ExamConsole() {
 		list = new ExamList();
 	}
@@ -14,7 +14,7 @@ public abstract class ExamConsole {
 	public void print() {
 		this.print(list.getSize());
 	}
-	
+
 	public void print(int size) {
 		System.out.println("┌───────────────────────────┐");
 		System.out.println("│           성적  출력      │");
@@ -45,7 +45,6 @@ public abstract class ExamConsole {
 			System.out.println("─────────────────────────────");
 		}
 	}
-
 
 	public void input() {
 
@@ -87,9 +86,9 @@ public abstract class ExamConsole {
 		 * Exam exam = new Exam(); exam.setKor(kor);//exam.kor = kor;
 		 * exam.setEng(eng);//exam.eng = eng; exam.setMath(math);//exam.math = math;
 		 */
-		
-		//임시변수
-		//Exam exam = new Exam(kor, eng, math);
+
+		// 임시변수
+		// Exam exam = new Exam(kor, eng, math);
 		Exam exam = makeExam();
 		exam.setKor(kor);
 		exam.setEng(eng);
@@ -99,12 +98,17 @@ public abstract class ExamConsole {
 		list.add(exam);
 
 	}
-	
+
+	// 이벤트 메소드 : 자식객체에서 추가되는 과목 성적을 자식에게 맡김
+	// 입력을 받기위한 로직이 진행되는 과정에서
+	// 확장되는 부분은 자식이 입력하라는 의미로 on사용
+	// 이벤트 메소드 = 어떤 사건에 기반되어 실행되는 함수
 	protected abstract void onPrint(Exam exam);
 
 	protected abstract void onInput(Exam exam);
 
-	//팩토리 메소드
+	// 팩토리 메소드
+	// 자식이 사용할 수 있고 외부 서비스로는 노출안됨
 	protected abstract Exam makeExam();
-	 
+
 }
