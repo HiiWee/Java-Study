@@ -104,6 +104,7 @@ public abstract class ExamConsole {
 
 	protected abstract void onInput(Exam exam);
 
+	//팩토리 메소드
 	protected abstract Exam makeExam();
 	 
 }
