@@ -39,29 +39,50 @@
   </class>  
   <class id="5" language="java" name="part3_ex05_abstraction.NewlecExamConsole" project="OOPJavaPrj" 
     file="/OOPJavaPrj/src/part3_ex05_abstraction/NewlecExamConsole.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="371" y="360"/>    
+    <position height="-1" width="-1" x="417" y="379"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="6">    
+  <class id="6" language="java" name="part3_ex05_abstraction.NewlecExam" project="OOPJavaPrj" 
+    file="/OOPJavaPrj/src/part3_ex05_abstraction/NewlecExam.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="154" y="528"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="7">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="8">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="9">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="7" name="exams"/>      
-      <multiplicity id="8" minimum="0" maximum="2147483647"/>    
+      <attribute id="10" name="exams">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="9">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <association id="10">    
+  <association id="12">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="11" name="list"/>      
-      <multiplicity id="12" minimum="0" maximum="1"/>    
+      <attribute id="13" name="list">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
