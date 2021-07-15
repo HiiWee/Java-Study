@@ -1,3 +1,6 @@
+[[[[[[[[[[[[[[[[[[[ 자바 객체지향 ]]]]]]]]]]]]]]]]]]]]]]]]
+
+
 *자바 = 톱니형 배열
 *구조적인 프로그래밍에서 가장 중요한것은 함수로 프로그램을 나누는것
 *구조적인 프로그램을 만드는 두가지 방법
@@ -431,16 +434,167 @@ public class Program {
 
 
 
+[[[[[[[[[[[[[[[[[[[ 자바 예외처리 ]]]]]]]]]]]]]]]]]]]]]]]]
+
+<<<<<<<<<<<<<<<<<<<<<<<<<2강 예외처리는 무엇이고 어디에서 예외를 처리하는가? >>>>>>>>>>>>>>>>>>>>>>>>>
+
+		"예외처리 스크린샷 1, 2 참조"
+
+* 성적관리 프로그램에서 파일 입출력시 프로그램에서 하드디스크를 직접 이용하지 않음 대신 인터페이스를 사용 
+	>> 디스크를 액세스 할 수 있도록 하는 인터페이스 = API (데이터 입출력시 문제 없는지, 권한, 용량, 존재여부등 확인)
+	>> 만약 데이터 입출력하기 위한 조건을 충족하지 못하면(권한 없거나 등등) 어떻게 처리?   >>>>   이것이 예외처리
+
+* 그렇다면 예외를 API가 처리하나??
+	>> 옳지 못함 왜? > 책임자는 성적관리프로그램인데 api에게 예외처리를 맡기는건 옳지 못함 따라서 예외 발생시 어떻게 처리할지 api가 성적관리프로그램에게 물어봐야함
+	>> 물어볼때 return 사용하면 만약 api와 성적관리프로그램 중간에 다른 라이브러리 사용시 모든 라이브러리에서 return을 계속 타고가야하므로 >> 복잡도 높아지고 코드 어수선해짐
+	>> 따라서 보고 체계만 일괄적으로 처리해야함 >> 문제가 발생하는 예외에대한 종류를 식별자를 만들어 구분하고 보고하기 위해 던짐 (throw)
+
+* java는 throw로 던질때 좀 더 자세한 의미를 전달하기 위해 특수한 의미의 객체를 만들어 던짐
+	>> ex) throw new 권한없음예외(); > 캡슐화의미, 기능내포의미 x 단지 예외를 식별하기위한 특수한 의미인 클래스를 만들어 클래스를 객체화해 던짐 >> 코드상에서 좀 더 직관적으로 이해가능 >> 유지보수성 증가
+
+* 예외를 던지면 책임자인 성적관리프로그램은 던진 예외를 받아야함
+	>> 
+	try {
+	  write(..);
+	}
+	catch(권한없음예외 ex) {
+	  System.out.println("이용할 수 없습니다.")		>> 예외의 종류에따라 메시지를 출력할지 프로그램을 끝낼지 결정함
+	} 
 
 
 
+<<<<<<<<<<<<<<<<<<<<<<<<<4강 예외 클래스 생성과 던지기 >>>>>>>>>>>>>>>>>>>>>>>>>
+
+간단한 사칙연산 클래스를 만들어서 연산을 진행했을때 일정 값의 범위를 벗어나면 예외처리를 하는 방식의 프로그램
+
+-------------------Calculator Class-------------------------
 
 
+public class Calculator {
+	public Calculator() {
+	}
+
+					// throw를 내가 처리하지 않고
+					// 나를사용하는 책임자가 처리하게 던짐
+	public static int add(int x, int y) throws ExceptionOver1000, ExceptionBecomeNegative {
+					// 복수형인이유 : 예외가 한 개가 아니라 여러개 일 수 도 있으므로
+					//	       한번에 던지기 위해서 복수형
+		int result = x + y;
+		// 우리가 만드는 업무적인 예외
+		if (result > 1000) {
+			throw new ExceptionOver1000();
+		}
+		
+		if (result < 0) {
+			throw new ExceptionBecomeNegative();
+		}
+		return result;
+	}
+
+	public static int sub(int x, int y) throws ExceptionBecomeNegative {
+		int result = x - y;
+		// 우리가 만드는 업무적인 예외
+		if (result < 0) {
+			throw new ExceptionBecomeNegative();
+		}
+		return result;
+	}
+
+	public static int mul(int x, int y) {
+		return x * y;
+	}
+
+	public static int div(int x, int y) {
+		return x / y;
+	}
+
+}
 
 
+-----------------------예외처리 클래스---------------------
+//Calculator 에서 예외처리를 하면 예외처리를 상속받은 예외처리 클래스가 생성된다.
+
+public class ExceptionBecomeNegative extends Exception {
+
+}
+
+public class ExceptionOver1000 extends Exception {
+
+}
+
+--------------------Program.java-----------------------
 
 
+public class Program {
 
+	public static void main(String[] args) {
+		Calculator calc = new Calculator();
+		// static method
+		int result = 0;
+
+		// 합이 1000을 넘는 예외 처리
+		try {
+			// 다중예외 발생시 같이 묶어놓음
+			result = Calculator.add(3, 4);
+			System.out.println("add : " + result);
+			result = Calculator.sub(3, 4);
+		}
+		// try 구문에서 던져진 예외를 잡겠다.
+		// 단순히 catch블럭만 있어도 오류조치됨
+		catch (ExceptionOver1000 e) {
+			// 메시지를 직접 쓸수도 있지만 예외 클래스의 메소드를 오버라이드해
+			// 예외를 만드는 입장에서 동일하게 예외에 대한 메시지 전달가능
+			// 앞으로 이어갈지 말지 다시 입력하게할지말지를 처리 하는과정이 예외처
+			System.out.println(e.getMessage());
+		} 
+		// 나머지를 받는 범위가 넓은 exception else나 default 범위가 가장 넓으므로 다른 catch절보다 위로 올라가면 다른 절들은 무용지물
+		catch (Exception e) {
+
+		}
+		// 어떤 catch절을 들르든 마지막에 finally절을 꼭 들르므로 동일한 메시지가 중복되면 finally절에 작성해 예외 처리를 집중화 할 수 있음
+		finally {
+			System.out.println("입력 값에 오류가 있습니다.");
+			
+		}
+		
+		System.out.println("sub : " + result);
+		result = Calculator.mul(3, 4);
+		System.out.println("mul : " + result);
+		result = Calculator.div(3, 4);
+		System.out.println("div : " + result);
+	}
+
+}
+
+
+* 예외가 발생하는걸 어떻게 알까?
+  - 이클립스가 아닌 다른도구나 메모장으로 코딩시 예외가 발생하는지 어떻게 알까?
+  - 만약 api가 예외를 던지고 있으면 레퍼런스 즉 문서를 통해 우리에게 어떤 예외를 던지는지 말해줌 [ex)자바 공식문서 등등] 따라서 메모장으로 작성해도 예외가 발생할 경우 문서를보고 판단할 수 있음
+  - 결국 어떤 예외를 던지는지 잘 파악하고(레퍼런스,공식문서 어떻게 처리할지 결정해야함)
+
+* Checked Exception, Un-Checked Exception
+
+  - Checked Exception : 우리가 강제적으로 예외처리를 해주어서 잘못된 값을 입력하면 처리를해줌 위의 예시들이 모두 checked Exception이 된다.
+  
+  - Un-Checked Exception : 사용자가 알아서 잘 사용할거라 판단되어 강제적으로 예외를 처리하지 않는 RuntimeException 이다.
+			  실행시 판단한다. 주로 나눗셈연산에서 0으로 나누는경우 발생된다. 위의 예시코드에서
+			  위의 예시 코드에서 예외클래스는 Exception -> RuntimeException을 상속받게하고
+			  Calculator 클래스는 예외를 던지지 않는다.
+			  그리고 main function의 try catch문은 모두 지운다
+
+
+[[[[[[[[[[[[[[[[[[[ 자바 컬렉션과 제네릭 ]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+* 컬렉션 : 배열을 가지고 직접 사용하는 것들을 서비스 개념으로 사용할 수 있게 해주는 도구, 데이터관리를 대신해주는 객체, 데이터 크기를 가변적으로 바꿔주는 역할, 데이터를 수집하고 관리해주는 객체
+  - 가장 기본적인 능력은 데이터수접, 삭제, 크기를 알려주는 기능을 기반으로 만들어짐
+  - 컬렉션을 사용하는 경우 배열을 직접 사용할 필요없고 안에 내용물이 어떻게 보관되고 어떤 구조를 가지고있는지 관심가질 필요가 없다.
+  - 안에 저장소에대한 내용을 숨기고 사용자에게 간단한 서비스를 제공함 따라서 데이터 관리가 더 쉬워짐
+
+* 컬렉션을 왜 사용하는가?
+  1. 데이터 관리를 직접 할 필요가 없다.
+  2. 배열을 직접 사용할 경우 공간의 크기를 미리 지정해서 그 크기를 늘릴수 없었지만 컬렉션은 공간을 늘리는 작업을 자동으로 해준다.
+>>>> 즉 컬렉션은 가변길이의 배열을 사용하고 싶을때 쓰는 객체라고 말할 수 도 있따.
 
 
 
