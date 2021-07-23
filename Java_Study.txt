@@ -598,5 +598,276 @@ public class Program {
 
 
 
+<<<3강 Object 클래스의 필요성>>>
 
+* 명시적으로 어떤 상속을 받지 않은 클래스도 즉 모든 클래스는 Object를 상속받는다
+  ex) 만약 Exam <--- NewlecExam 일 경우 NewlecExam클래스는 실질적으로 Object클래스까지 총 2개의 객체가 숨어있다. 따라서 NewlecExam을 참조할 수 있는 자료형이 2개가 있다. (Exam, Object) 
+	>> NewlecExam r1 = new NewlecExam();
+	>> Exam r2 = new NewlecExam();
+	>> Object o1 = new NewlecExma();
+	위 처럼 참조 가능하다.
+  - 모든 클래스가 Object 클래스를 갖으므로 모든 객체는 Object라는 단일화된 형식으로 참조할 수 있음
+  - 문자열, 객체, 배열 등등 모두 Object로 참조가능
+  - Object가 자바에 있어야할 이유 = 모든 객체를 섭렵할 수 있는 "범용 자료형"이 필요했다. >> 즉 Object는 공통자료형이 필요했기 때문에 존재할 가치가 있다.
+
+
+
+
+<<<4강 Wrapper 클래스와 Auto Boxing/UnBoxing>>>
+
+* Object는 모든 객체형태를 참조 가능 그러나 값을 참조할수없음 >> 이런 문제를 해결하기 위해 Wrapper 클래스가 등장 >> 직접사용 불편하므로 JDK1.5부터 오토박싱, 오토언박싱이 등장
+* 값은 참조할 수 없으므로 공간이 될 수 있도록 감싸야한다 >> Wrap
+  Object obj = 3 XXX불가 >>  Object obj = new Integer(3);		(JDK 1.5이상부터 3을 그냥 대입해도 오토 박싱으로 자동으로 참조가 일어나므로 편하게 사용가능)
+
+* Boxing : Object obj = new Integer(3); >>> UnBoxing : int x = obj.intValue();
+* 기본자료형을 박싱하기 위해 기본자료형의 수만큼 박스를 위한 Wrapper Class가 존재한다.
+   >> Object(클래스)  <------------ Number(클래스) <-------- (Byte, Integer, Short, Long, Double, Float),  String은 독자적(자료형이아니고 참조형이므로 그대로 사용가능)
+
+* int x = 3; >> 값을 담음
+* Integer x = 3; (new Integer(3)) Auto-Boxing : 값을 공간으로 감싸서 저장(Wrapper)
+
+* Integer x = 3; 으로 선언하고 add(x, 4)와 같이 전달을 하게 되면 참조형식을 전달하는게 아니라 Auto-UnBoxing이 동작하여 값이 전달하게 된다. (x.intValue()) 
+
+<<<5강 Object 컬렉션으로 변경하기>>>
+
+--------------------Class파일 (ObjectList)-----------------------
+
+public class ObjectList {
+	private Object[] nums;
+	private int current;
+
+	public ObjectList() {
+		nums = new Object[3];
+		current = 0;
+	}
+	// Auto Boxing
+	public void add(Object num) {
+		//Auto Boxing
+		nums[current++] = num;
+	}
+
+	public void clear() {
+		current = 0;
+	}
+
+	public int size() {
+		// TODO Auto-generated method stub
+		return current;
+	}
+	// 참조형 반환
+	public Object get(int index) {
+		if (current <= index)
+			throw new IndexOutOfBoundsException();
+		return nums[index];
+	}
+
+}
+
+--------------------Program.java-----------------------
+
+public class Program {
+
+	public static void main(String[] args) {
+		ObjectList list = new ObjectList();
+		list.add(3);
+		list.add(5);
+		
+		int size = list.size();
+		System.out.println("size : " + size);
+
+		list.clear();
+		size = list.size();
+		System.out.println("size : " + size);
+		
+		list.add(7); 
+		// 참조를 반환받음(정수형의 Wrapper클래스)
+		// Object형식으로 반환받았으므로 Integer 참조형식으로 형변환
+		// 하지만!!! 범용자료형이므로 두 가지 문제 발생
+		// 1. 변환시 어떤 값을 가지고 있는지 확신이 안섬.
+		// 2. 확신을 가지고 사용해도 형변환을 사용해야 한다는점.
+		// 해결책!! >>> Generic!!
+		int num = (Integer)list.get(0); // 참조형 Integer 로반한됨
+		System.out.println("num : " + num);
+	
+		num = (Integer)list.get(1);
+	}
+
+}
+
+
+<<<6강 Generic이란??>>>
+
+* 모든것을 Object형으로 만들고 값을 넣고 빼는 부분에서 형식을 변환한다, 생성된 데이터형식을 오브젝트로 만들고 Object를 담고 빼줄때 사용자가 원하는 자료형으로 형변환을함
+* 따라서 Object가 들어가고 나갈때 사용자가 원하는 형식으로 바꿔준다 --> 즉 무엇이든 될수있는 녀석 == Generic(무엇이든 될 수 있다)
+* 객체는 무조건 Object형식으로 하되 들어오는 값을 T형으로 형변환해줌
+
+
+--------------------Class파일 (Generic)-----------------------
+
+//Generic 클래스
+// T(type) 약자를 주로 사용 아무거나 써도됨
+// 인자를 2개 넘길 수 있음
+public class GList<T /*, 두번째타입*/> {
+	private Object[] nums;
+	private int current;
+
+	public GList() {
+		
+		// nums = new T[3]; 불가 
+		nums = new Object[3];
+		current = 0;
+	}
+	// Auto Boxing
+	//객체는 무조건 Object형식으로 하되 들어오는 값을 T형으로 형변환해줌
+	public void add(T num) {
+		//Auto Boxing
+		nums[current++] = num;
+	}
+
+	public void clear() {
+		current = 0;
+	}
+
+	public int size() {
+		return current;
+	}
+	public T get(int index) {
+		if (current <= index)
+			throw new IndexOutOfBoundsException();
+		// 벗어날때 T를 반환해야 하므로 T형식으로 형변환해줌(Wrapper 형태의 클래스 기본자료형은 안됨)
+		return (T)nums[index];
+	}
+
+}
+
+
+
+--------------------Program.java-----------------------
+
+
+package com.hiiwee.app.util;
+
+public class Program {
+
+	public static void main(String[] args) {
+			// 자료형에 형식을 넘길 수 있음
+			// 오브젝트로써의 형식 변환이 가능한 Wrapper형식만 가능 ex(Integer, Char ...)
+		GList<Integer> list = new GList</* String */>();
+			// 묵시적으로 앞에서 형식명칭을 드러냄으로 뒤에 String 생략가능
+			// <Interger>로 묵시적으로 설정했으므로 정수만 가능(문자열, 실수 등등 정수아니면 안됨)
+		list.add(3);
+		list.add(5);
+
+		int size = list.size();
+		System.out.println("size : " + size);
+
+		list.clear();
+		size = list.size();
+		System.out.println("size : " + size);
+
+		list.add(7);
+			// Integer로 형변환하지 않아도됨 이미 T로 변환시키고 넘기므로
+		int num = /*(Integer)*/list.get(0);
+		System.out.println("num : " + num);
+
+		//num = (Integer)list.get(1);
+	}
+
+}
+
+
+
+
+
+
+<<<9강 자바언어에 포함된 Collection 프레임워크>>>
+
+Collection <-------------(Set, List, Queue)  :  Set, List가 Collection중 많이 사용됨
+Map : 콜렉선이지만 기존 정의하는 내용과 함수의 형태가 달라서 별도로 빠져있음(데이터 구조가 조금 다름)
+
+  >> 많이 사용되는 3대 Collection : Set, List, Map이 많이 사용된다.
+  >> 하지만 인터페이스 이므로 실제 인터페이스를 구현하는 구현체가 없으면 사용가능한 객체가 없다.
+  >> ex) List는 ArrayList, LinkedList, Stack 클래스들이 List 인터페이스를 구현하고 있다.
+         Map인터페이스를 구현하는 대표적인 클래스 >> HashedMap
+
+* 자료구조
+  - 비선형 데이터구조: tree(검색속도를 좋게 만들고 읽기전용의 데이터구조, 검색 빠름 데이터 insert(삽입)은 시간 좀 걸림)
+  - 선형 데이터구조: 링크(참조, 포인터)로 연결된 데이터 (데이터 삽입, 삭제 업무가 주가 됨 배열사용시 문제 생김)
+			따라서 참조와 값을 하나의 공간으로 만들어 연결하는 방식으로 데이터 저장 >> 삽입 삭제 자유로움
+			단 검색시 참조를 계속 물며 검색하므로 속도는 느림
+
+* 선행적으로 알아두기 
+  Set <------- HashSet
+  List <------ ArrayList
+  Map <------- HashMap
+
+
+<<<10강 Set, List, Map 콜렉션 프레임워크 사용>>>
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class CollectionProgram {
+
+	public static void main(String[] args) {
+		// GList<Integer> list = new GList</* String */>();
+		List<Integer> list = new ArrayList<>();
+		// list의 값들은 별도의 식별자 index가 할당됨
+		list.add(3);
+		list.add(5);
+		list.add(6);
+		list.add(7);
+		System.out.println(list.get(2));
+		System.out.println(list.size());
+		Iterator<Integer> it = list.iterator();
+
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+		Set<Integer> set = new HashSet<>();
+		//Set은 식별자가 없음 값이 곧 식별자임
+		//값 자체가 키가 되므로 식별자가 중복될 수 없음
+		//즉 이미 있는 값이 중복되지 않는다.
+		// Set으로 특정한 값을 꺼낼일을 없다. 전체를 나열해 뽑는건 가능
+		// 사용하는 이유? >> "중복 제거용"
+		set.add(3);
+		set.add(5);
+		set.add(6);
+		set.add(7);
+		set.add(7);
+		set.add(7);
+		set.add(7);
+
+		System.out.println(set.add(7)); // 기존값 false 반환
+		System.out.println(set.add(8)); // 새로운 값 true 반환
+		System.out.println(set.size());
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", 3);
+		map.put("title", "hello");
+		map.put("hit", 12);
+		
+		System.out.println(map.get("title"));
+		
+		
+		/*
+		 List >> 일반적으로 데이터를 배열처럼 관리하고 싶을때(가변길이) 사용
+		 
+		 Set >> 데이터 수집시 중복을 제거하는 형태의 데이터 수집이 필요할때
+		 
+		 Map >> 속성을 가지고 있는 개체를 a클래스로 정의하고 사용해야하는데 클래스를 정의하지 않고
+		 속성과 값으로 구분된 데이터집합의 객체를 필요로할때 Map계열의 컬렉션을 만들어 사용하게
+		*/
+		
+		/*
+		 * 컬렉션을 사용할때 데이터를넣고 다른 한쪽은 데이터를 꺼낼수 있어야함 꺼내보는 작업을 반복자라고하는 iterator를 통해 꺼낸다
+		 * iterator라는 패턴과 함께 공부
+		 */
+	}
+}
 
