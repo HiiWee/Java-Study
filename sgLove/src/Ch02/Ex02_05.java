@@ -1,4 +1,4 @@
-package ch02;
+package Ch02;
 import java.util.Scanner;
 /**
 *이 클래스는 값을 3개 입력받아 순서대로 문자열, 정수, 실수로 출력함
