@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-public class Program {
+public class OracleJdbc {
 // 순서
 	// 1. 드라이버 로드하기 (메모리상에 드라이버가 올려짐)
 	// 2. 연결이 확립이 됨 (연결이라는것이 이루어짐)
@@ -19,7 +19,7 @@ public class Program {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		// 서버 접속
-		String url = "jdbc:oracle:thin:@localhost:51521/xepdb1";
+		String url = "jdbc:oracle:thin:@192.168.31.127:51521/xepdb1";
 		// 사용자 쿼리문
 		String sql = "select * from NOTICE where HIT >= 10 order by ID";
 		
