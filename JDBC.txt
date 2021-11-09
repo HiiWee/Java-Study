@@ -20,14 +20,15 @@
   1. Class.forName("oracle.jdbc.driver.OracleDriver");
 	>> new 연산자 대신 특별한 유틸리티로 객체화 (OraclDriver라는 클래스, 객체화 시키는 것이 load임)
   2. Connection con = DriverManager.getConnection(...);
-	>> 드라이버 매니저를 이용해 연결 객체(각 화살표)
+	>> 드라이버 매니저를 이용해 연결 객체를 얻음(각 화살표)
   3. Statement st = con.createStatement();
 	>> 실행도구를 생성
   4. ResultSet rs = st.executeQuery(sql);
-	>> 서버측에서 쿼리를 실행한 결과집합이 생성되고 그릇역할(ResultSet)과 커서를 움직일 수 있는 도구를 준비
+	>> 서버측에서 쿼리를 실행한 결과집합이 생성되고 그릇역할(ResultSet)과 커서를 움직일 수 있는 도구(rs)를 준비
+	>> 쿼리를 st.으로 실행하고 결과를 다시 rs에 fetch해오는 도구 생성
 
 >> 객체 4개가 순차적으로 만들어짐 (어떤것하나 new 연산자를 사용하지 않음)
-	> 이유 : 드라이버 매니저를 로드가 안되면 커낵션 실행불가 > 또 연결이 되어야 실행도구 생성가능 > 그래야 실행을해 결과를 얻을수있음 
+	> 이유 : 드라이버 매니저(DriverManaget.getConnection())를 로드가 안되면 커낵션 실행불가 > 또 연결(connection)이 되어야 실행도구(Statement) 생성가능 > 그래야 실행(st.execute)을해 결과를 얻을수있음(ResultSet)
 		   즉 순차적으로 흐름을 가져감
 
 
@@ -38,7 +39,7 @@
 
  3. > 연결된 서버로 실행도구 생성함
 
- 4. > 사용자로 부터 요구받은 쿼리를 실행함
+ 4. > statement객체를 만들어 이후에 사용자로 부터 요구받은 쿼리를 실행함(st.executeQuery(sql))
 
  5. > 서버쪽에서 쿼리를 실행하고 결과집합(레코드집합)이 생성되나 사용자에게 결과집합을 다 돌려주지 않음
 	그럼 어떻게 받느냐? 레코드 단위(Column단위)로 하나씩 받는다. 따라서 하나씩 돌려받는 위치를 가리키는 커서(레코드를 가리키는 포인터)가 필요함
@@ -68,6 +69,34 @@
 
 ** 자바 : UI 레이아웃 만
 ** SQL : 데이터 가공 처리(필터링, 정렬, 그룹화 등 모든 데이터 연산)
+
+
+
+< 데이터 입력(insert, update)와 PreparedStatement >
+
+* 결과집합이 있는 select를 생성할때는 executeQuery();
+* insert, update, delete는 executeUpdate();
+
+[데이터 업데이트를 위한 실행도구 준비]
+* PreparedStatement st = con.prepareStatement(sql);
+	> 미리 sql문을 준비해서 실행할때 넘기지 않고(st.execute(sql)) 미리 값을 채워넣고 나중에 실행만 할 수 있게끔 함.
+	> Statement의 기능을 다 가지고 있고 
+	> 더불어서 sql 데이터 삽입 문에서 물음표(?, ?, ?, ?) 처리 된 값을 채울 능력이 준비됨
+	> prePareStatement(sql)자체가 인자로 쿼리문을 가지고 있다. 그리고 쿼리문을 세팅할 수 있는 능력이 있음
+[세팅]
+* st.set[타입](parameterIndex, title);
+	> 인덱스는 1부터 시작됨
+[실행단계]
+* PreparedStatement를 사용하면 실행시 sql을 또 전달하지 않는다.
+
+
+<CRUD를 담당하는 서비스 클래스 만들기>
+* Crud Retriev Update Delete
+
+* 동명의 클래스가 있을 수 있으므로 패키지명과(도메인) 같이 이용해서 만든다.
+	>com.hoseok.app.service/NoticeService.java
+
+* 서비스 클래스와 개체 클래스를 나눠서 작성 해야함
 
 
 
