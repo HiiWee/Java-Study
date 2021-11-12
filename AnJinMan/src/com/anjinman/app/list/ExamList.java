@@ -1,7 +1,11 @@
 package com.anjinman.app.list;
 
 import com.anjinman.app.entity.ExamEntity;
-
+// 리스트 단위로 ExamEntity객체를 관리한다.
+// 리스트들을 관리하기 위한 메소드들이 있음
+// 일반적으로 리스트는 데이터를 저장하는 객체를 사용하고 있지는 않다.
+// 단순하게 저장을하고 필요하면 저장한 객체를 꺼내서 반환하는 역할만 함
+// ExamEntity()객체를 aggregation has a 관계로 포함하고 있다.
 public class ExamList {
 	private ExamEntity[] exams;
 	private int current;

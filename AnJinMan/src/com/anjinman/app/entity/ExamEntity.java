@@ -1,7 +1,10 @@
 package com.anjinman.app.entity;
 
-
-public class ExamEntity {
+// 실질적인 학생들의 데이터를 저장하고 관리하는 부분
+/* 다른 서비스에서 재사용하기 위해 객체로 생성되서 동작하는 부분은
+ * 추상화를 통해(getTotal(), getAvg()) 자식 객체에게 맡김
+ *  */
+public abstract class ExamEntity {
 	private int korean;
 	private int english;
 	private int math;
@@ -34,11 +37,14 @@ public class ExamEntity {
 		this.math = math;
 	}
 
-	public int getTotal() {
+	abstract public int getTotal();
+	
+	abstract public float getAvg();
+	
+	
+	// 자식에게만 공개되는 기존 국, 영, 수의 점수의 합을 반환
+	protected int onTotal() {
 		return korean + english + math;
-	}
-	public float getAvg() {
-		return getTotal()/3.0f;
 	}
 	
 	
