@@ -1,7 +1,7 @@
 package com.anjinman.app.list;
 
 import com.anjinman.app.entity.ExamEntity;
-
+// 각 학생 데이터 객체를 리스트로 보관하기 위한 클래스
 public class ExamList {
 	private ExamEntity[] exams;
 	private int current;
