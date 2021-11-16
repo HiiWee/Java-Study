@@ -22,14 +22,20 @@ public class NoticeService {
 	private String driver = "com.mysql.cj.jdbc.Driver";	//SET MYSQL DRIVER
 	
 	// 기본적으로 예외는 UI에서 처리하기 때문에 서비스에선 던진다.
-	public List<Notice> getList() throws ClassNotFoundException, SQLException {
+	public List<Notice> getList(int page) throws ClassNotFoundException, SQLException {
 
-		String sql = "select * from notice";
+		int start = 1 + (page - 1) * 10;	// 1, 11, 21, 31, ..
+		int end = 10 * page;				// 10, 20, 30, 40...
+		String sql = "select r2.* from (select @rownum:=@rownum+1 rownum, n.* " 
+				+ "from (select * from notice order by regdate desc) n, (select @rownum:=0) r) r2 "
+				+ "where r2.rownum between ? and ?";
 
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url, uid, pwd);
-		Statement st = con.createStatement();
-		ResultSet rs = st.executeQuery(sql);
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setInt(1, start);
+		st.setInt(2, end);
+		ResultSet rs = st.executeQuery();
 
 		// 반환하기 위한 준비
 		List<Notice> list = new ArrayList<Notice>();
