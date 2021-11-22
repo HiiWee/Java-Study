@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,9 +25,7 @@ public class NoticeService {
 
 		int start = 1 + (page - 1) * 10;	// 1, 11, 21, 31, ..
 		int end = 10 * page;				// 10, 20, 30, 40...
-		String sql = "select r2.* from (select @rownum:=@rownum+1 rownum, n.* " 
-				+ "from (select * from notice order by regdate desc) n, (select @rownum:=0) r) r2 "
-				+ "where r2.rownum between ? and ?";
+		String sql = "select * from NOTICE_VIEW where rownum between ? and ?";
 
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url, uid, pwd);
