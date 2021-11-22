@@ -10,15 +10,19 @@ import com.hoseok.app.service.NoticeService;
 public class NoticeConsole {
 	
 	private NoticeService service;
+	// 페이지를 기억하기 위한 상태변수
+	// Console이 page에 대한 상태값을 갖는것이 바람직함
+	private int page;		
 	
 	public NoticeConsole() {
 		service = new NoticeService();
+		page = 1;
 	}
 	
 	public void printNoticeList() throws ClassNotFoundException, SQLException {
-		List<Notice> list = service.getList(1);
+		List<Notice> list = service.getList(page);
 		System.out.printf("───────────────────────────────────\n");
-		System.out.printf("<공지사항> 총 %d 게시글\n", 12);
+		System.out.printf("<공지사항> 총 %d 게시글\n", 10);
 		System.out.printf("───────────────────────────────────\n");
 		// 반복문 사용예정
 		for(Notice n : list) {
@@ -47,6 +51,25 @@ public class NoticeConsole {
 		int menu = Integer.parseInt(menu_);
 		
 		return menu;
+	}
+
+	public void movePrevList() {
+		if (page == 1) {
+			System.out.println("이전 페이지가 없습니다.");
+			return;
+		}
+		page--;
+		
+	}
+
+	public void moveNextList() {
+		// 마지막 페이지를 구현하는 기능을 만들기 전에는 일단 보류
+		
+		//	if (page == 1) {
+		//		System.out.println("이전 페이지가 없습니다.");
+		//		return;
+		//	}
+		page++;
 	}
 
 }
