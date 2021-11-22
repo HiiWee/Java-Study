@@ -30,10 +30,10 @@ public class MysqlJdbc {
 				// 각 레코드들의 조건이 있을경우 자바에서 처리하기 보단 sql에서 처리
 				System.out.printf("id : %d\t title : %s\t content : %s\t regdate : %s\t hit : %d\t memberId : %s\n", id, title, content, regdate, hit, memberId);
 		
-				rs.close();
-				st.close();
-				con.close();
 			}
+			rs.close();
+			st.close();
+			con.close();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
