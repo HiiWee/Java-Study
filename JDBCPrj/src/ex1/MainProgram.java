@@ -8,7 +8,7 @@ public class MainProgram {
 	// NoticeConsole에서 던진 예외들은 NoticeConsole객체를 생성하는 메인에서 받아옴 일단 throws
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		NoticeConsole console = new NoticeConsole();
-
+		
 		// EXIT 라벨을 이용한 반복문 한번에 벗어나기
 		EXIT: while (true) {
 			console.printNoticeList();
@@ -18,8 +18,10 @@ public class MainProgram {
 			case 1: // 상세조회
 				break;
 			case 2: // 이전
+				console.movePrevList();
 				break;
 			case 3: // 다음
+				console.moveNextList();
 				break;
 			case 4: // 글쓰기
 				break;
