@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,17 +22,19 @@ public class NoticeService {
 	private String driver = "com.mysql.cj.jdbc.Driver";	//SET MYSQL DRIVER
 	
 	// 기본적으로 예외는 UI에서 처리하기 때문에 서비스에선 던진다.
-	public List<Notice> getList(int page) throws ClassNotFoundException, SQLException {
+	public List<Notice> getList(int page, String field, String query) throws ClassNotFoundException, SQLException {
 
 		int start = 1 + (page - 1) * 10;	// 1, 11, 21, 31, ..
 		int end = 10 * page;				// 10, 20, 30, 40...
-		String sql = "select * from NOTICE_VIEW where rownum between ? and ?";
-
+		String sql = "select * from NOTICE_VIEW where "+ field +" like ? and rownum between ? and ?";
+		// field를 값을 세팅하듯 ?와 st.setString()을 이용해 값을 넣으면 양쪽에 홑따옴표 입력됨 'TITLE'
+		// 하지만 TITLE은 값이 아니므로 문자열 더하기를 이용한다.
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url, uid, pwd);
 		PreparedStatement st = con.prepareStatement(sql);
-		st.setInt(1, start);
-		st.setInt(2, end);
+		st.setString(1, "%" + query + "%");
+		st.setInt(2, start);
+		st.setInt(3, end);
 		ResultSet rs = st.executeQuery();
 
 		// 반환하기 위한 준비
@@ -48,7 +51,6 @@ public class NoticeService {
 			Notice notice = new Notice(id, title, memberId, content, regdate, hit, files);
 			// 리스트 추가
 			list.add(notice);
-			
 
 		}
 		rs.close();
@@ -56,6 +58,30 @@ public class NoticeService {
 		con.close();
 
 		return list;
+	}
+	
+	// 단일 값을 얻는 함수 = "스칼라 값(Scalar)
+	public int getCount() throws ClassNotFoundException, SQLException {
+		int count = 0;
+		
+		String sql = "select COUNT(ID) count from notice";
+
+		Class.forName(driver);
+		Connection con = DriverManager.getConnection(url, uid, pwd);
+		Statement st = con.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+
+		// 반환하기 위한 준비 
+		List<Notice> list = new ArrayList<Notice>();
+		if (rs.next()) {
+			count = rs.getInt("count");
+		}
+			
+		rs.close();
+		st.close();
+		con.close();
+
+		return count;
 	}
 
 	public int insert(Notice notice) throws ClassNotFoundException, SQLException {
@@ -84,7 +110,7 @@ public class NoticeService {
 
 		// 실행단계 PreparedStatement를 사용하면 실행시 sql을 또 전달하지 않는다.
 		int result = st.executeUpdate();
-
+		
 		st.close();
 		con.close();
 		return result;
@@ -133,4 +159,5 @@ public class NoticeService {
 
 		return result;
 	}
+
 }
