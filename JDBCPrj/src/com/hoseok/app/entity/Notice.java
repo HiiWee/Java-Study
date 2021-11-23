@@ -1,3 +1,9 @@
+/*
+ * VO value Object : 데이터베이스 테이블 NOTICE의 각 컬럽값 저장용 객체 : 한 행씩 저장
+ * DTO : Data Transfer Object
+ * DO : Domain Object
+ * */
+
 package com.hoseok.app.entity;
 
 import java.util.Date;
