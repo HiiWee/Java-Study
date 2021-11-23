@@ -1,3 +1,5 @@
+// model (dao, vo는 따로 없음)
+
 package com.hoseok.app.service;
 
 import java.sql.Connection;
@@ -60,19 +62,19 @@ public class NoticeService {
 		return list;
 	}
 	
-	// 단일 값을 얻는 함수 = "스칼라 값(Scalar)
-	public int getCount() throws ClassNotFoundException, SQLException {
+	// 단일 값을 얻는 함수 = "스칼라 값(Scalar)"
+	public int getCount(String field, String query) throws ClassNotFoundException, SQLException {
 		int count = 0;
 		
-		String sql = "select COUNT(ID) count from notice";
+		String sql = "select COUNT(ID) count from notice where "+ field +" like ?";
 
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url, uid, pwd);
-		Statement st = con.createStatement();
-		ResultSet rs = st.executeQuery(sql);
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, "%" + query + "%");
+		ResultSet rs = st.executeQuery();
 
 		// 반환하기 위한 준비 
-		List<Notice> list = new ArrayList<Notice>();
 		if (rs.next()) {
 			count = rs.getInt("count");
 		}
