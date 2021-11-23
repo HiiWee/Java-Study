@@ -79,12 +79,12 @@
 
 [데이터 업데이트를 위한 실행도구 준비]
 * PreparedStatement st = con.prepareStatement(sql);
-	> 미리 sql문을 준비해서 실행할때 넘기지 않고(st.execute(sql)) 미리 값을 채워넣고 나중에 실행만 할 수 있게끔 함.
+	> 미리 sql문을 준비해서 실행할때 넘기지 않고(con.prepareStatement(sql)) 미리 값을 채워넣고 나중에 실행만 할 수 있게끔 함.
 	> Statement의 기능을 다 가지고 있고 
 	> 더불어서 sql 데이터 삽입 문에서 물음표(?, ?, ?, ?) 처리 된 값을 채울 능력이 준비됨
-	> prePareStatement(sql)자체가 인자로 쿼리문을 가지고 있다. 그리고 쿼리문을 세팅할 수 있는 능력이 있음
+	> prepareStatement(sql)자체가 인자로 쿼리문을 가지고 있다. 그리고 쿼리문을 세팅할 수 있는 능력이 있음
 [세팅]
-* st.set[타입](parameterIndex, title);
+* st.set[자료형](parameterIndex, title);
 	> 인덱스는 1부터 시작됨
 [실행단계]
 * PreparedStatement를 사용하면 실행시 sql을 또 전달하지 않는다.
@@ -98,6 +98,8 @@
 
 * 서비스 클래스와 개체 클래스를 나눠서 작성 해야함
 
+* 함수안에서 다른것과 공유하는것이 많으면 많을수록 좋은게 아니다, 지역적으로 혼자 마련해도 문제가 없으면 개별적으로 마련하는것이 제일 좋은 방법이다.
+  ex) Scanner 같은것 (멤버변수는 서로 공유하기위해 존재하는 것, 꼭 공유될것만 멤버변수로 설정)
 
 
 < 실행 오류 모음 >
