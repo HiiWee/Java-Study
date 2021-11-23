@@ -1,3 +1,4 @@
+// view(controller 역할도 같이하고 있음)
 package com.hoseok.app.console;
 
 import java.sql.SQLException;
@@ -31,22 +32,23 @@ public class NoticeConsole {
 	public void printNoticeList() throws ClassNotFoundException, SQLException {
 		List<Notice> list = service.getList(page, searchField, searchWord);
 		// 게시물의 개수를 카운트하는 변수
-		int count = service.getCount();
+		int count = service.getCount(searchField, searchWord);
 		// 마지막 페이지를 담는 변수
 		int lastPage = count/10;
 		lastPage = count%10>0 ? lastPage + 1 : lastPage;
 		
-		System.out.printf("───────────────────────────────────\n");
+		System.out.printf("───────────────────────────────────────────────\n");
 		System.out.printf("<공지사항> 총 %d 게시글\n", count);
-		System.out.printf("───────────────────────────────────\n");
+		System.out.printf("───────────────────────────────────────────────\n");
 		// 반복문 사용예정
 		for(Notice n : list) {
-			System.out.printf("%d. %s / %s / %s\n", n.getId(), 
+			System.out.printf("%d / %s / %s / %s / %s\n", n.getId(), 
 													n.getTitle(), 
-													n.getMemberId(), 
+													n.getMemberId(),
+													n.getContent(),
 													n.getRegdate());
 		}
-		System.out.printf("───────────────────────────────────\n");
+		System.out.printf("───────────────────────────────────────────────\n");
 		System.out.printf("           %d/%d pages         \n", page, lastPage);
 		
 	}
@@ -54,7 +56,7 @@ public class NoticeConsole {
 	public int inputNoticeMenu() {
 		Scanner scan = new Scanner(System.in);
 		// 사용자 입력을 받기위한 메뉴 출력
-		System.out.print("1.상세조회/ 2.이전/ 3.다음/ 4.글쓰기/ 5.검색/ 6.종료>");
+		System.out.print("1.상세조회/ 2.이전/ 3.다음/ 4.글쓰기/ 5.검색/ 6.뒤로가기/ 7.종료>");
 		
 		// nextInt()는 두가지 문제를 야기, 
 		//(1. 정수값이 아닌 값을 입력,))
@@ -70,11 +72,12 @@ public class NoticeConsole {
 
 	public void movePrevList() {
 		if (page == 1) {
-			System.out.println("==========================");
+			System.out.println("\n\n==========================");
 			System.out.println("[ 이전 페이지가 없습니다. ]");
 			System.out.println("==========================");
 			return;
 		}
+		System.out.print("\n\n");
 		page--;
 		
 	}
@@ -83,27 +86,41 @@ public class NoticeConsole {
 		// main에서 함수가 호출되기전 사이에 다른 값이 들어올 수 있으므로
 		// 새로 지역변수로 선언해서 다시 count와 lastPage값을 구한다.
 		// 게시물의 개수를 카운트하는 변수
-		int count = service.getCount();
+		int count = service.getCount(searchField, searchWord);
 		// 마지막 페이지를 담는 변수
 		int lastPage = count / 10;
 		lastPage = count % 10 > 0 ? lastPage + 1 : lastPage;
 		if (page == lastPage) {
-			System.out.println("==========================");
+			System.out.println("\n\n==========================");
 			System.out.println("[ 다음 페이지가 없습니다. ]");
 			System.out.println("==========================");
 			return;
 		}
+		System.out.print("\n\n");
 		page++;
 	}
 
-	public void inputSearchWord() {
+	public void inputSearchWord() throws ClassNotFoundException, SQLException {
+		page = 1;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("검색 범주(title/ content/ writerId)중에 하나를 입력하세요.");
+		System.out.println("\n\n검색 범주(title/ content/ memberId)중에 하나를 입력하세요.");
 		System.out.print(">");
 		searchField = scan.nextLine();
 
 		System.out.print("검색어 >");
 		searchWord = scan.nextLine();
+		System.out.print("\n\n");
+		
+	}
+
+	public void movePrevSearch() {
+		if (searchWord != "" && searchField != "title") {
+			System.out.println("\n\n처음 목록으로 돌아갑니다.");
+			searchField = "title";
+			searchWord = "";
+			return;
+		}
+		System.out.println("\n\n이미 처음 목록입니다.");
 	}
 
 }
