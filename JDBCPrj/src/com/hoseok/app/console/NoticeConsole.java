@@ -12,17 +12,32 @@ public class NoticeConsole {
 	private NoticeService service;
 	// 페이지를 기억하기 위한 상태변수
 	// Console이 page에 대한 상태값을 갖는것이 바람직함
-	private int page;		
+	private int page;
 	
+	// 키워드를 검색하기 위한 변수(serarchWord,Field) inputSearchWord()에서 사용되는 것 뿐만아니라
+	// printNoticeList()에서 목록을 조회할때도 사용되므로 멤버변수로 공유
+	private String searchField;
+	private String searchWord;
+
 	public NoticeConsole() {
 		service = new NoticeService();
 		page = 1;
+		// 아무값도 없으면 NoticeService.getList()의 쿼리문이 오류남
+		// [필드값누락] like '%word%'
+		searchField="title";
+		searchWord="";
 	}
 	
 	public void printNoticeList() throws ClassNotFoundException, SQLException {
-		List<Notice> list = service.getList(page);
+		List<Notice> list = service.getList(page, searchField, searchWord);
+		// 게시물의 개수를 카운트하는 변수
+		int count = service.getCount();
+		// 마지막 페이지를 담는 변수
+		int lastPage = count/10;
+		lastPage = count%10>0 ? lastPage + 1 : lastPage;
+		
 		System.out.printf("───────────────────────────────────\n");
-		System.out.printf("<공지사항> 총 %d 게시글\n", 10);
+		System.out.printf("<공지사항> 총 %d 게시글\n", count);
 		System.out.printf("───────────────────────────────────\n");
 		// 반복문 사용예정
 		for(Notice n : list) {
@@ -32,14 +47,14 @@ public class NoticeConsole {
 													n.getRegdate());
 		}
 		System.out.printf("───────────────────────────────────\n");
-		System.out.printf("           %d/%d pages         \n", 1, 2);
+		System.out.printf("           %d/%d pages         \n", page, lastPage);
 		
 	}
 
 	public int inputNoticeMenu() {
 		Scanner scan = new Scanner(System.in);
 		// 사용자 입력을 받기위한 메뉴 출력
-		System.out.print("1.상세조회/ 2.이전/ 3.다음/ 4.글쓰기/ 5.종료>");
+		System.out.print("1.상세조회/ 2.이전/ 3.다음/ 4.글쓰기/ 5.검색/ 6.종료>");
 		
 		// nextInt()는 두가지 문제를 야기, 
 		//(1. 정수값이 아닌 값을 입력,))
@@ -55,21 +70,40 @@ public class NoticeConsole {
 
 	public void movePrevList() {
 		if (page == 1) {
-			System.out.println("이전 페이지가 없습니다.");
+			System.out.println("==========================");
+			System.out.println("[ 이전 페이지가 없습니다. ]");
+			System.out.println("==========================");
 			return;
 		}
 		page--;
 		
 	}
 
-	public void moveNextList() {
-		// 마지막 페이지를 구현하는 기능을 만들기 전에는 일단 보류
-		
-		//	if (page == 1) {
-		//		System.out.println("이전 페이지가 없습니다.");
-		//		return;
-		//	}
+	public void moveNextList() throws ClassNotFoundException, SQLException {
+		// main에서 함수가 호출되기전 사이에 다른 값이 들어올 수 있으므로
+		// 새로 지역변수로 선언해서 다시 count와 lastPage값을 구한다.
+		// 게시물의 개수를 카운트하는 변수
+		int count = service.getCount();
+		// 마지막 페이지를 담는 변수
+		int lastPage = count / 10;
+		lastPage = count % 10 > 0 ? lastPage + 1 : lastPage;
+		if (page == lastPage) {
+			System.out.println("==========================");
+			System.out.println("[ 다음 페이지가 없습니다. ]");
+			System.out.println("==========================");
+			return;
+		}
 		page++;
+	}
+
+	public void inputSearchWord() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("검색 범주(title/ content/ writerId)중에 하나를 입력하세요.");
+		System.out.print(">");
+		searchField = scan.nextLine();
+
+		System.out.print("검색어 >");
+		searchWord = scan.nextLine();
 	}
 
 }
