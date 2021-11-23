@@ -13,7 +13,7 @@ public class MainProgram {
 		EXIT: while (true) {
 			console.printNoticeList();
 			int menu = console.inputNoticeMenu();
-
+			
 			switch (menu) {
 			case 1: // 상세조회
 				break;
@@ -25,7 +25,10 @@ public class MainProgram {
 				break;
 			case 4: // 글쓰기
 				break;
-			case 5: // 종료
+			case 5: // 검색
+				console.inputSearchWord();
+				break;
+			case 6: // 종료
 				System.out.println("End the program");
 				break EXIT;
 			default:
