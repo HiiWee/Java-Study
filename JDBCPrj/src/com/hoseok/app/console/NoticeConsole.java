@@ -72,9 +72,9 @@ public class NoticeConsole {
 
 	public void movePrevList() {
 		if (page == 1) {
-			System.out.println("\n\n==========================");
+			System.out.println("\n\n=========================================");
 			System.out.println("[ 이전 페이지가 없습니다. ]");
-			System.out.println("==========================");
+			System.out.println("=========================================");
 			return;
 		}
 		System.out.print("\n\n");
@@ -91,9 +91,9 @@ public class NoticeConsole {
 		int lastPage = count / 10;
 		lastPage = count % 10 > 0 ? lastPage + 1 : lastPage;
 		if (page == lastPage) {
-			System.out.println("\n\n==========================");
+			System.out.println("\n\n=========================================");
 			System.out.println("[ 다음 페이지가 없습니다. ]");
-			System.out.println("==========================");
+			System.out.println("=========================================");
 			return;
 		}
 		System.out.print("\n\n");
@@ -121,6 +121,56 @@ public class NoticeConsole {
 			return;
 		}
 		System.out.println("\n\n이미 처음 목록입니다.");
+	}
+
+	public void writeBoard() throws ClassNotFoundException, SQLException {
+		// 객체 전달을 위한 임시객체 생성
+		Notice notice = new Notice();
+
+		String title = "";
+		String memberId = "";
+		String content = "";
+		String files = null;
+		
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("\n\n글을 작성 합니다. (글제목, 작성자, 글내용, 파일을 순서대로 입력하세요)");
+		
+		// title not null
+		System.out.print("글 제목 >");
+		title = scan.nextLine();
+		
+		// memberId not null
+		System.out.print("작성자 >");
+		memberId = scan.nextLine();
+		
+		// content null
+		System.out.print("글내용 >");
+		content = scan.nextLine();
+		
+		// files null
+		System.out.print("파일 >");
+		files = scan.nextLine();
+		
+		// 제목 또는 작성자 미입력시 프로그램 종료
+		if (title == "" && memberId == "") {
+			System.out.println("제목 또는 작성자를 입력하지 않았습니다.");
+			return;
+		}
+		
+		notice.setTitle(title);
+		notice.setMemberId(memberId);
+		notice.setContent(content);
+		notice.setFiles(files);
+		
+		// 예외 처리 해야하는데.. ㅠ
+		int result = service.insert(notice);
+		if (result > 0) {
+			System.out.printf("게시물 %d개가 작성되었습니다.\n\n", result);
+			return;
+		}
+		System.out.println("게시물 작성을 실패했습니다.\n\n");
+		
 	}
 
 }
