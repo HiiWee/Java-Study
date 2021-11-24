@@ -56,7 +56,7 @@ public class NoticeConsole {
 	public int inputNoticeMenu() {
 		Scanner scan = new Scanner(System.in);
 		// 사용자 입력을 받기위한 메뉴 출력
-		System.out.print("1.상세조회/ 2.이전/ 3.다음/ 4.글쓰기/ 5.검색/ 6.뒤로가기/ 7.종료>");
+		System.out.print("1.상세조회/ 2.이전/ 3.다음/ 4.글쓰기/ 5.검색/ 6.뒤로가기/ 7.글 삭제/ 8.종료>");
 		
 		// nextInt()는 두가지 문제를 야기, 
 		//(1. 정수값이 아닌 값을 입력,))
@@ -123,7 +123,7 @@ public class NoticeConsole {
 		System.out.println("\n\n이미 처음 목록입니다.");
 	}
 
-	public void writeBoard() throws ClassNotFoundException, SQLException {
+	public void writeNotice() throws ClassNotFoundException, SQLException {
 		// 객체 전달을 위한 임시객체 생성
 		Notice notice = new Notice();
 
@@ -166,11 +166,28 @@ public class NoticeConsole {
 		// 예외 처리 해야하는데.. ㅠ
 		int result = service.insert(notice);
 		if (result > 0) {
-			System.out.printf("게시물 %d개가 작성되었습니다.\n\n", result);
+			System.out.printf("게시물 %d개가 작성됐습니다.\n\n", result);
 			return;
 		}
 		System.out.println("게시물 작성을 실패했습니다.\n\n");
 		
+	}
+	public void deleteNotice() throws ClassNotFoundException, SQLException {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("\n\n 삭제를 원하는 게시물의 ID를 입력하세요");
+		String id_ = scan.nextLine();
+		
+		// TODO : 정수로 변환할때 안되는 경우 예외처리 해주기
+		int id = Integer.parseInt(id_);
+		
+		// TODO : 예외처리하기
+		int result = service.delete(id);
+		
+		if (result > 0) {
+			System.out.printf("게시물 %d개가 삭제됐습니다.\n\n", result);
+			return;
+		}
+		System.out.println("게시물 삭제를 실패했습니다.\n\n");
 	}
 
 }
