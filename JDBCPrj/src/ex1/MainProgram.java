@@ -25,6 +25,7 @@ public class MainProgram {
 				console.moveNextList();
 				break;
 			case 4: // 글쓰기
+				console.writeBoard();
 				break;
 			case 5: // 검색
 				console.inputSearchWord();
