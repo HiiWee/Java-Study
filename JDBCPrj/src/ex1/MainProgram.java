@@ -25,7 +25,7 @@ public class MainProgram {
 				console.moveNextList();
 				break;
 			case 4: // 글쓰기
-				console.writeBoard();
+				console.writeNotice();
 				break;
 			case 5: // 검색
 				console.inputSearchWord();
@@ -33,7 +33,10 @@ public class MainProgram {
 			case 6: // 뒤로가기
 				console.movePrevSearch();
 				break;
-			case 7:
+			case 7: // 글 삭제
+				console.deleteNotice();
+				break;
+			case 8: // 종료
 				System.out.println("End the program");
 				break EXIT;
 			default:
