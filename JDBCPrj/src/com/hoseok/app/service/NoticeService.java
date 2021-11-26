@@ -1,4 +1,4 @@
-// model (dao, vo는 따로 없음)
+// model (DAO)
 
 package com.hoseok.app.service;
 
