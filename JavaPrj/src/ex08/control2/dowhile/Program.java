@@ -1,4 +1,4 @@
-package ex08.control2.dowhile;
+ï»¿package ex08.control2.dowhile;
 
 //import Class "Scanner"
 import java.util.Scanner;
@@ -16,64 +16,64 @@ public class Program {
 		kor3 = 0;
 		
 		while(true) {
-			//----------------------¼ºÀû ÀÔ·Â ºÎºĞ----------------------
-			System.out.println("¦£¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¤");
-			System.out.println("¦¢         ¼ºÀûÀÔ·Â       ¦¢");
-			System.out.println("¦¦¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¥");
+			//----------------------ì„±ì  ì…ë ¥ ë¶€ë¶„----------------------
+			System.out.println("â”Œã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”");
+			System.out.println("â”‚         ì„±ì ì…ë ¥       â”‚");
+			System.out.println("â””ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”˜");
 			
-			//±¹¾î1 ¼ºÀû ÀÔ·ÂºÎºĞ
+			//êµ­ì–´1 ì„±ì  ì…ë ¥ë¶€ë¶„
 			do {
-				System.out.print("±¹¾î1:");
+				System.out.print("êµ­ì–´1:");
 				kor1 = scan.nextInt();
 				if(kor1<0 || kor1>100) {
-					System.out.println("¼ºÀû¹üÀ§(0~100)¸¦ ¹ş¾î³µ½À´Ï´Ù.");
+					System.out.println("ì„±ì ë²”ìœ„(0~100)ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤.");
 				}
 			} while(kor1<0 || kor1>100);
 			
-			//±¹¾î2 ¼ºÀû ÀÔ·ÂºÎºĞ
+			//êµ­ì–´2 ì„±ì  ì…ë ¥ë¶€ë¶„
 			do {
-				System.out.print("±¹¾î2:");
+				System.out.print("êµ­ì–´2:");
 				kor2 = scan.nextInt();
 				if(kor2<0 || kor2>100) {
-					System.out.println("¼ºÀû¹üÀ§(0~100)¸¦ ¹ş¾î³µ½À´Ï´Ù.");
+					System.out.println("ì„±ì ë²”ìœ„(0~100)ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤.");
 				}
 			} while(kor2<0 || kor2>100);
 			
-			//±¹¾î3 ¼ºÀû ÀÔ·ÂºÎºĞ
+			//êµ­ì–´3 ì„±ì  ì…ë ¥ë¶€ë¶„
 			do {
-				System.out.print("±¹¾î3:");
+				System.out.print("êµ­ì–´3:");
 				kor3 = scan.nextInt();
 				
 				if(kor3<0 || kor3>100) {
-					System.out.println("¼ºÀû¹üÀ§(0~10)À» ¹ş¾î³µ½À´Ï´Ù.");
+					System.out.println("ì„±ì ë²”ìœ„(0~10)ì„ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤.");
 				}
 			} while(kor3<0 || kor3>100);
 			
-			// À¯È¿°Ë»ç (0~100 »çÀÌ°ª¸¸)
+			// ìœ íš¨ê²€ì‚¬ (0~100 ì‚¬ì´ê°’ë§Œ)
 			//int validate = (0<=kor1 && 100>=kor1)?1:0;
 			//System.out.println(validate);
 			
 			
 			
-			//----------------------¼ºÀû Ãâ·Â ºÎºĞ----------------------
+			//----------------------ì„±ì  ì¶œë ¥ ë¶€ë¶„----------------------
 			
 			total = kor1 + kor2 + kor3;
-			//¼Ò¼öÁ¡ »ì¸®±â(¹¬½ÃÀû Çüº¯È¯)
+			//ì†Œìˆ˜ì  ì‚´ë¦¬ê¸°(ë¬µì‹œì  í˜•ë³€í™˜)
 			avg = (float)(total / 3.0);  //or use "avg = total / 3.0f"
 			
-			System.out.println("¦£¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¤");
-			System.out.println("¦¢         ¼ºÀûÃâ·Â       ¦¢");
-			System.out.println("¦¦¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¥");
+			System.out.println("â”Œã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”");
+			System.out.println("â”‚         ì„±ì ì¶œë ¥       â”‚");
+			System.out.println("â””ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”˜");
 	
 			//argument index
 			//System.out.printf("%2$d %1$d %3$d\n", 1, 2, 3);
 			//formating
-			System.out.printf("±¹¾î1 : %3d\n", kor1);
-			System.out.printf("±¹¾î2 : %3d\n", kor2);
-			System.out.printf("±¹¾î3 : %3d\n", kor3);
-			System.out.printf("ÃÑÁ¡ : %3d\n", total);
-			System.out.printf("Æò±Õ : %6.2f\n", avg);
-			System.out.println("¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ");
+			System.out.printf("êµ­ì–´1 : %3d\n", kor1);
+			System.out.printf("êµ­ì–´2 : %3d\n", kor2);
+			System.out.printf("êµ­ì–´3 : %3d\n", kor3);
+			System.out.printf("ì´ì  : %3d\n", total);
+			System.out.printf("í‰ê·  : %6.2f\n", avg);
+			System.out.println("ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡");
 		}
 	}
 }

@@ -1,15 +1,15 @@
-package ch10;
+ï»¿package ch10;
 
 class AA {
 	public void show(String s) {
-		System.out.println("»óÀ§ Å¬·¡½ºÀÇ ¸Ş¼Òµå ¼öÇà" + s);
+		System.out.println("ìƒìœ„ í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œ ìˆ˜í–‰" + s);
 	}
 }
 
 class BB extends AA {
 	@Override
 	public void show(String s) {
-		System.out.println("ÇÏÀ§ Å¬·¡½ºÀÇ ¸Ş¼Òµå ¼öÇà" + s);
+		System.out.println("í•˜ìœ„ í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œ ìˆ˜í–‰" + s);
 	}
 }
 
@@ -17,7 +17,7 @@ public class Ex10_08 {
 
 	public static void main(String[] args) {
 		BB ob = new BB();
-		ob.show("¿À¹ö¶óÀÌµùÀÌ µÇ³ª??!");
+		ob.show("ì˜¤ë²„ë¼ì´ë”©ì´ ë˜ë‚˜??!");
 	}
 
 }

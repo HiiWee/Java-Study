@@ -1,7 +1,7 @@
-package forTask.week4;
+ï»¿package forTask.week4;
 
 import java.util.Scanner;
-//½½±âÀÇ Ã¼À°½Ã°£ °ø´øÁö±â
+//ìŠ¬ê¸°ì˜ ì²´ìœ¡ì‹œê°„ ê³µë˜ì§€ê¸°
 public class Problem4 {
 
 	public static void main(String[] args) {

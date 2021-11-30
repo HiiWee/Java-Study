@@ -1,11 +1,11 @@
-package part3_ex04_seperateUIcode;
+ï»¿package part3_ex04_seperateUIcode;
 
 public class Exam {
 	private int kor;
 	private int eng;
 	private int math;
 	
-	//ÄÚµåÀÇ ÁıÁßÈ­
+	//ì½”ë“œì˜ ì§‘ì¤‘í™”
 	public Exam() {
 		this(0, 0, 0);
 	}

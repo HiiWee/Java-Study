@@ -1,15 +1,15 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_09 {
 	public static void main(String[] args) {
 		
 		float a = 12345678901234567890.0f;
 		double b = 12345678901234567890.0;
-		System.out.println("float º¯¼ö aÀÇ °ªÀº : " + a);
-		System.out.println("float º¯¼ö bÀÇ °ªÀº : " + b);
+		System.out.println("float ë³€ìˆ˜ aì˜ ê°’ì€ : " + a);
+		System.out.println("float ë³€ìˆ˜ bì˜ ê°’ì€ : " + b);
 		float c = 1.0f / 3.0f;
 		double d = 1.0 / 3.0;
-		System.out.println("float º¯¼ö cÀÇ °ªÀº : " + c);
-		System.out.println("double º¯¼ö dÀÇ °ªÀº : " + d);
+		System.out.println("float ë³€ìˆ˜ cì˜ ê°’ì€ : " + c);
+		System.out.println("double ë³€ìˆ˜ dì˜ ê°’ì€ : " + d);
 	}
 }

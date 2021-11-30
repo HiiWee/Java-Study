@@ -1,4 +1,4 @@
-package ex20.array;
+ï»¿package ex20.array;
 
 public class Program1 {
 	public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Program1 {
 		for(int i=0; i<7; i++)
 			temp[i] = nums[i];
 		
-		//¹è¿­ÀÇ ÀÌÀü C¾ð¾îÀÇ Æ÷ÀÎÅÍ ´À³¦ ¹è¿­ÀÇ ÀÌ¸§Àº ÁÖ¼Ò°ªÀ» °¡Áö°í ÀÖÀ¸¹Ç
+		//ë°°ì—´ì˜ ì´ì „ Cì–¸ì–´ì˜ í¬ì¸í„° ëŠë‚Œ ë°°ì—´ì˜ ì´ë¦„ì€ ì£¼ì†Œê°’ì„ ê°€ì§€ê³  ìžˆìœ¼ë¯€
 		nums=temp;
 		
 		nums[7] = 8;

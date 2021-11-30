@@ -1,26 +1,26 @@
-package part3_ex05_abstraction;
+ï»¿package part3_ex05_abstraction;
 
 import java.util.Scanner;
 
 public class NewlecExamConsole extends ExamConsole {
 
-	// ÆÑÅä¸® ¸Ş¼ÒµåÀÇ ±¸Çö
+	// íŒ©í† ë¦¬ ë©”ì†Œë“œì˜ êµ¬í˜„
 	@Override
 	protected Exam makeExam() {
 		return new NewlecExam();
 	}
 
-	// ÀÌº¥Æ® ¸Ş¼Òµå ±¸Çö
+	// ì´ë²¤íŠ¸ ë©”ì†Œë“œ êµ¬í˜„
 	@Override
 	protected void onPrint(Exam exam) {
 		int com;
 		NewlecExam newlecExam = (NewlecExam) exam;
 		com = newlecExam.getCom();
-		System.out.printf("ÄÄÇ»ÅÍ %d\n", com);
+		System.out.printf("ì»´í“¨í„° %d\n", com);
 
 	}
 
-	// ÀÌº¥Æ® ¸Ş¼Òµå ±¸Çö
+	// ì´ë²¤íŠ¸ ë©”ì†Œë“œ êµ¬í˜„
 	@Override
 	protected void onInput(Exam exam) {
 		NewlecExam newlecExam = (NewlecExam) exam;
@@ -29,11 +29,11 @@ public class NewlecExamConsole extends ExamConsole {
 		int com;
 
 		do {
-			System.out.printf("ÄÄÇ»ÅÍ : ");
+			System.out.printf("ì»´í“¨í„° : ");
 			com = scan.nextInt();
 
 			if (com < 0 || 100 < com)
-				System.out.println("ÄÄÇ»ÅÍ¼ºÀûÀº 0~100±îÁöÀÇ ¹üÀ§¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+				System.out.println("ì»´í“¨í„°ì„±ì ì€ 0~100ê¹Œì§€ì˜ ë²”ìœ„ë§Œ ì…ë ¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 
 		} while (com < 0 || 100 < com);
 		newlecExam.setCom(com);

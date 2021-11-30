@@ -1,8 +1,8 @@
-package forTask.week14;
+ï»¿package forTask.week14;
 
 class Shape {
 	public void area(int num) {
-		System.out.println("ÀÔ·ÂµÈ ¼ıÀÚ : " + num);
+		System.out.println("ì…ë ¥ëœ ìˆ«ì : " + num);
 	}
 }
 
@@ -11,7 +11,7 @@ class Rect extends Shape {
 	@Override
 	public void area(int num) {
 		int area = num * num;
-		System.out.println("Á¤»ç°¢ÇüÀÇ ³ĞÀÌ : " + area);
+		System.out.println("ì •ì‚¬ê°í˜•ì˜ ë„“ì´ : " + area);
 	}
 }
 
@@ -20,7 +20,7 @@ class Circle extends Shape {
 	@Override
 	public void area(int radius) {
 		double area = radius * radius * 3.14;
-		System.out.println("¿øÀÇ ³ĞÀÌ : " + area);
+		System.out.println("ì›ì˜ ë„“ì´ : " + area);
 	}
 }
 

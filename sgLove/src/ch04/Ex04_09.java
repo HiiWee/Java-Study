@@ -1,4 +1,4 @@
-package ch04;
+ï»¿package ch04;
 
 import java.util.Scanner;
 
@@ -9,26 +9,26 @@ public class Ex04_09 {
 		int score;
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("¼ºÀû ÀÔ·Â : ");
+		System.out.print("ì„±ì  ì…ë ¥ : ");
 		score = scan.nextInt();
 
 		if (score >= 80) {
-			System.out.println("¿ì¼ö ¼ºÀû ÀÔ´Ï´Ù..");
+			System.out.println("ìš°ìˆ˜ ì„±ì  ì…ë‹ˆë‹¤..");
 			if(score >= 90)
-				System.out.println("A ÇĞÁ¡ÀÔ´Ï´Ù.");
+				System.out.println("A í•™ì ì…ë‹ˆë‹¤.");
 			else
-				System.out.println("B ÇĞÁ¡ÀÔ´Ï´Ù.");
+				System.out.println("B í•™ì ì…ë‹ˆë‹¤.");
 		}
 		else {
 			if (score >= 60) {
-				System.out.println("º¸Åë ¼ºÀû ÀÔ´Ï´Ù.");
+				System.out.println("ë³´í†µ ì„±ì  ì…ë‹ˆë‹¤.");
 				if(score >= 70)
-					System.out.println("C ÇĞÁ¡ÀÔ´Ï´Ù.");
+					System.out.println("C í•™ì ì…ë‹ˆë‹¤.");
 				else
-					System.out.println("D ÇĞÁ¡ÀÔ´Ï´Ù.");
+					System.out.println("D í•™ì ì…ë‹ˆë‹¤.");
 			}
 			else
-				System.out.println("ÇĞÁ¡ Ãëµæ ½ÇÆĞ");
+				System.out.println("í•™ì  ì·¨ë“ ì‹¤íŒ¨");
 			
 			
 		}

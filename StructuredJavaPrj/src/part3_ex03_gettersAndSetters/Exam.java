@@ -1,11 +1,11 @@
-package part3_ex03_gettersAndSetters;
+ï»¿package part3_ex03_gettersAndSetters;
 
 public class Exam {
 	int kor;
 	int eng;
 	int math;
 	
-	//ÄÚµåÀÇ ÁıÁß
+	//ì½”ë“œì˜ ì§‘ì¤‘
 	public Exam() {
 		this(0, 0, 0);
 	}

@@ -1,18 +1,18 @@
-package Ch02;
+ï»¿package Ch02;
 import java.util.Scanner;
 
 public class Ex02_06 {
 	public static void main(String[] args) {
 //		i = 30;
-//		System.out.print(i)   ±¸¹®¿À·ù
+//		System.out.print(i)   êµ¬ë¬¸ì˜¤ë¥˜
 		
 //		int i= 3/0;
 //		int j = 5/0;
-//		System.out.println(i + j);  ½ÇÇà ½Ã°£ ¿À·ù
+//		System.out.println(i + j);  ì‹¤í–‰ ì‹œê°„ ì˜¤ë¥˜
 		
 //		int i = 300;
 //		int j = 500;
 //		j += i+j;
-//		System.out.println("ÇÕ°è´Â = " + j);  ³í¸®¿À·ù
+//		System.out.println("í•©ê³„ëŠ” = " + j);  ë…¼ë¦¬ì˜¤ë¥˜
 	}
 }

@@ -1,42 +1,42 @@
-package ex1;//(view, run ¼¯¿©ÀÖÀ½)
+ï»¿package ex1;//(view, run ì„ì—¬ìˆìŒ)
 
 import java.sql.SQLException;
 
 import com.hoseok.app.console.NoticeConsole;
 
 public class MainProgram {
-	// NoticeConsole¿¡¼­ ´øÁø ¿¹¿ÜµéÀº NoticeConsole°´Ã¼¸¦ »ı¼ºÇÏ´Â ¸ŞÀÎ¿¡¼­ ¹Ş¾Æ¿È ÀÏ´Ü throws
+	// NoticeConsoleì—ì„œ ë˜ì§„ ì˜ˆì™¸ë“¤ì€ NoticeConsoleê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ë©”ì¸ì—ì„œ ë°›ì•„ì˜´ ì¼ë‹¨ throws
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		NoticeConsole console = new NoticeConsole();
 		
-		// EXIT ¶óº§À» ÀÌ¿ëÇÑ ¹İº¹¹® ÇÑ¹ø¿¡ ¹ş¾î³ª±â
-		// controller°¡ µû·Î Á¸ÀçÇÏÁö ¾Ê°í Á÷Á¢ÀûÀ¸·Î view¿¡¼­ È£ÃâÇÔ
+		// EXIT ë¼ë²¨ì„ ì´ìš©í•œ ë°˜ë³µë¬¸ í•œë²ˆì— ë²—ì–´ë‚˜ê¸°
+		// controllerê°€ ë”°ë¡œ ì¡´ì¬í•˜ì§€ ì•Šê³  ì§ì ‘ì ìœ¼ë¡œ viewì—ì„œ í˜¸ì¶œí•¨
 		EXIT: while (true) {
 			console.printNoticeList();
 			int menu = console.inputNoticeMenu();
 			
 			switch (menu) {
-			case 1: // »ó¼¼Á¶È¸
+			case 1: // ìƒì„¸ì¡°íšŒ
 				break;
-			case 2: // ÀÌÀü
+			case 2: // ì´ì „
 				console.movePrevList();
 				break;
-			case 3: // ´ÙÀ½
+			case 3: // ë‹¤ìŒ
 				console.moveNextList();
 				break;
-			case 4: // ±Û¾²±â
+			case 4: // ê¸€ì“°ê¸°
 				console.writeNotice();
 				break;
-			case 5: // °Ë»ö
+			case 5: // ê²€ìƒ‰
 				console.inputSearchWord();
 				break;
-			case 6: // µÚ·Î°¡±â
+			case 6: // ë’¤ë¡œê°€ê¸°
 				console.movePrevSearch();
 				break;
-			case 7: // ±Û »èÁ¦
+			case 7: // ê¸€ ì‚­ì œ
 				console.deleteNotice();
 				break;
-			case 8: // Á¾·á
+			case 8: // ì¢…ë£Œ
 				System.out.println("End the program");
 				break EXIT;
 			default:

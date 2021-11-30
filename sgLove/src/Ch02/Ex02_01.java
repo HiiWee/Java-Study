@@ -1,10 +1,10 @@
-package Ch02;
+ï»¿package Ch02;
 
 public class Ex02_01 {
 
 	public static void main(String[] args) {
 
-		System.out.print("Ã³À½ ½ÃÀÛÇÏ´Â ÀÚ¹Ù ÇÁ·Î±×·¥ÀÔ´Ï´Ù.");
+		System.out.print("ì²˜ìŒ ì‹œì‘í•˜ëŠ” ìë°” í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤.");
 	}
 
 }

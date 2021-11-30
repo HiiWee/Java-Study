@@ -1,4 +1,4 @@
-package part3_ex06_interface;
+ï»¿package part3_ex06_interface;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Program {
-//¿¹¿ÜÃ³¸®µéÀº ´øÁü(throw)
+//ì˜ˆì™¸ì²˜ë¦¬ë“¤ì€ ë˜ì§(throw)
 	public static void main(String[] args)
 			throws IOException, InstantiationException, IllegalAccessException, ClassNotFoundException {
 		FileInputStream fis = new FileInputStream("src/part3_ex06_interface/setting.txt");
@@ -14,11 +14,11 @@ public class Program {
 		String className = scan.nextLine();
 		scan.close();
 		fis.close();
-		// StringÀ» ÀĞ¾î¼­ clazz¿¡ Å¬·¡½º¿¡ ´ëÇÑ Á¤º¸¸¦ ¾òÀ½
+		// Stringì„ ì½ì–´ì„œ clazzì— í´ë˜ìŠ¤ì— ëŒ€í•œ ì •ë³´ë¥¼ ì–»ìŒ
 		Class clazz = Class.forName(className);
 		A a = new A();
 		X x = (X) clazz.newInstance();
-		// X x = clazz.getDeclaredConstructor().newInstance(); << 1.8¹öÁ¯ ¾Æ´Ò°æ¿ì
+		// X x = clazz.getDeclaredConstructor().newInstance(); << 1.8ë²„ì ¼ ì•„ë‹ê²½ìš°
 
 		a.setX(x);
 

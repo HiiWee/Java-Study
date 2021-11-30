@@ -1,7 +1,7 @@
-package ex02_observerPattern.Interface;
+ï»¿package ex02_observerPattern.Interface;
 
 public interface Subject {
-	//abstract Å°¿öµå »ı·«°¡´É.
+	//abstract í‚¤ì›Œë“œ ìƒëµê°€ëŠ¥.
 	public abstract void registerObserver(Observer o);
 
 	public abstract void removeObserver(Observer o);

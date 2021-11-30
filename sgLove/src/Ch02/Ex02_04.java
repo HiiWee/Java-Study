@@ -1,4 +1,4 @@
-package Ch02;
+ï»¿package Ch02;
 import java.util.Scanner;
 
 public class Ex02_04 {
@@ -6,14 +6,14 @@ public class Ex02_04 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.print("ÀÌ¸§, ³ªÀÌ, ¸ö¹«°Ô¸¦ °ø°£(Space)·Î ±¸ºĞÇÏ¿© ÀÔ·Â : ");
+		System.out.print("ì´ë¦„, ë‚˜ì´, ëª¸ë¬´ê²Œë¥¼ ê³µê°„(Space)ë¡œ êµ¬ë¶„í•˜ì—¬ ì…ë ¥ : ");
 		
 		String name = scan.next();
 		int age = scan.nextInt();
 		double weight = scan.nextDouble();
 		
-		System.out.println(name + " ¾¾ÀÇ ³ªÀÌ´Â " + age + "¼¼ÀÌ°í");
-		System.out.println("¸ö¹«°Ô´Â " + weight + "Kg ÀÔ´Ï´Ù.");
+		System.out.println(name + " ì”¨ì˜ ë‚˜ì´ëŠ” " + age + "ì„¸ì´ê³ ");
+		System.out.println("ëª¸ë¬´ê²ŒëŠ” " + weight + "Kg ì…ë‹ˆë‹¤.");
 	}
 	
 }

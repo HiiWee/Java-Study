@@ -1,21 +1,21 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_15 {
 	public static void main(String[] args) {
 		byte b = 120;
 		int i = b;
 		
-		System.out.println("È®´ë Çü º¯È¯ : " + i);
+		System.out.println("í™•ëŒ€ í˜• ë³€í™˜ : " + i);
 		int j = 259;
 		double d = 259.428;
 		
-		System.out.println("Ãà¼Ò Çü º¯È¯ °á°ú");
+		System.out.println("ì¶•ì†Œ í˜• ë³€í™˜ ê²°ê³¼");
 		b = (byte)j;
-		System.out.println("int 259¸¦ byte·Î : " + b);
+		System.out.println("int 259ë¥¼ byteë¡œ : " + b);
 		i = (int)d;
-		System.out.println("double 259.428¸¦ int·Î : " + i);
+		System.out.println("double 259.428ë¥¼ intë¡œ : " + i);
 		b = (byte) d;
-		System.out.println("double 259.428À» byte·Î : " +b);
+		System.out.println("double 259.428ì„ byteë¡œ : " +b);
 		
 	}
 }

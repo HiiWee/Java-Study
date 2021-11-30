@@ -1,4 +1,4 @@
-package Ch03;
+ï»¿package Ch03;
 
 import java.util.Scanner;
 
@@ -8,11 +8,11 @@ public class Ex03_25 {
 		boolean b = false;
 		System.out.println("a = " + a);
 		
-		System.out.println("a += 4ÀÇ °á°ú " + (a += 4));
-		System.out.println("a %= 4ÀÇ °á°ú " + (a %= 4));
-		System.out.println("a <<= 4ÀÇ °á°ú " + (a <<= 4));
-		System.out.println("b &= a>2ÀÇ °á°ú " + (b &= a>2));
-		System.out.println("b |= a>2ÀÇ °á°ú " + (b |= a>2));
+		System.out.println("a += 4ì˜ ê²°ê³¼ " + (a += 4));
+		System.out.println("a %= 4ì˜ ê²°ê³¼ " + (a %= 4));
+		System.out.println("a <<= 4ì˜ ê²°ê³¼ " + (a <<= 4));
+		System.out.println("b &= a>2ì˜ ê²°ê³¼ " + (b &= a>2));
+		System.out.println("b |= a>2ì˜ ê²°ê³¼ " + (b |= a>2));
 		
 	}
 }

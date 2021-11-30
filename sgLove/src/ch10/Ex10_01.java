@@ -1,35 +1,35 @@
-package ch10;
+ï»¿package ch10;
 
 import java.util.Scanner;
 
 class Ramen {
-	private String ramyon = "¶ó¸é";
-	private String water = "¹°";
-	private String onion = "ÆÄ";
+	private String ramyon = "ë¼ë©´";
+	private String water = "ë¬¼";
+	private String onion = "íŒŒ";
 
 	void boilWater() {
-		System.out.println(water + "À» ²úÀÎ´Ù");
+		System.out.println(water + "ì„ ë“ì¸ë‹¤");
 	}
 
 	void cooking() {
-		System.out.println(ramyon + "°ú " + onion + "¸¦ ³Ö°í ²ú¿© ¿ä¸® ¿Ï¼º");
+		System.out.println(ramyon + "ê³¼ " + onion + "ë¥¼ ë„£ê³  ë“ì—¬ ìš”ë¦¬ ì™„ì„±");
 
 	}
 }
 
 class RiceRamen extends Ramen {
-	private String topp = "¶±";
+	private String topp = "ë–¡";
 
 	void topping() {
-		System.out.println(topp + "À» ³Ö´Â´Ù.");
+		System.out.println(topp + "ì„ ë„£ëŠ”ë‹¤.");
 	}
 }
 
 class CheeseRamen extends Ramen {
-	private String topp = "Ä¡Áî";
+	private String topp = "ì¹˜ì¦ˆ";
 
 	void topping() {
-		System.out.println(topp + "¸¦ ³Ö´Â´Ù.");
+		System.out.println(topp + "ë¥¼ ë„£ëŠ”ë‹¤.");
 	}
 }
 
@@ -39,7 +39,7 @@ public class Ex10_01 {
 		int s;
 		Scanner scan = new Scanner(System.in);
 		do {
-			System.out.print("¸¸µé°í ½ÍÀº ¿ä¸®¸¦ ÀÔ·ÂÇÏ¼¼¿ä!!(1:ÀÏ¹İ¶ó¸é, 2:¶±¶ó¸é, 3:Ä¡Áî¶ó¸é, 99:Á¾·á");
+			System.out.print("ë§Œë“¤ê³  ì‹¶ì€ ìš”ë¦¬ë¥¼ ì…ë ¥í•˜ì„¸ìš”!!(1:ì¼ë°˜ë¼ë©´, 2:ë–¡ë¼ë©´, 3:ì¹˜ì¦ˆë¼ë©´, 99:ì¢…ë£Œ");
 			s = scan.nextInt();
 			if (s == 1) {
 				Ramen r = new Ramen();

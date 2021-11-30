@@ -1,4 +1,4 @@
-package com.anjinman.app.console;
+ï»¿package com.anjinman.app.console;
 
 import java.util.Scanner;
 
@@ -6,9 +6,9 @@ import com.anjinman.app.entity.ExamEntity;
 import com.anjinman.app.list.ExamList;
 
 
-// ÄÜ¼Ö´Ü »ç¿ëÀÚÀÇ ÇàÀ§ ¹× È­¸é¿¡ Ç¥½ÃµÇ´Â ºÎºĞÀ» ´ã´çÇÑ´Ù.
-// ExamList()°´Ã¼¸¦ °¡Áö¸ç »õ·Î¿î °´Ã¼°¡ input ¶Ç´Â ±âÁ¸ °´Ã¼°¡ outputµÉ¶§ ExamList()°´Ã¼¸¦ ÀÌ¿äÇÑ´Ù.
-// ExamList() °´Ã¼¸¦ composition has a °ü°è·Î Æ÷ÇÔÇÏ°í ÀÖ´Ù.
+// ì½˜ì†”ë‹¨ ì‚¬ìš©ìì˜ í–‰ìœ„ ë° í™”ë©´ì— í‘œì‹œë˜ëŠ” ë¶€ë¶„ì„ ë‹´ë‹¹í•œë‹¤.
+// ExamList()ê°ì²´ë¥¼ ê°€ì§€ë©° ìƒˆë¡œìš´ ê°ì²´ê°€ input ë˜ëŠ” ê¸°ì¡´ ê°ì²´ê°€ outputë ë•Œ ExamList()ê°ì²´ë¥¼ ì´ìš”í•œë‹¤.
+// ExamList() ê°ì²´ë¥¼ composition has a ê´€ê³„ë¡œ í¬í•¨í•˜ê³  ìˆë‹¤.
 public abstract class ExamConsole {
 	private ExamList list;
 
@@ -17,12 +17,12 @@ public abstract class ExamConsole {
 	}
 
 	public void inputList() {
-		// ½ÃÇè Á¡¼ö º¯¼ö
+		// ì‹œí—˜ ì ìˆ˜ ë³€ìˆ˜
 		int korean;
 		int english;
 		int math;
 
-		// 1. »ç¿ëÀÚ ¾È³»¹® Ãâ·Â
+		// 1. ì‚¬ìš©ì ì•ˆë‚´ë¬¸ ì¶œë ¥
 		// print console
 		inputMenu();
 		Scanner scan = new Scanner(System.in);
@@ -31,11 +31,11 @@ public abstract class ExamConsole {
 		english = scan.nextInt();
 		math = scan.nextInt();
 
-		// ExamEntityÀº Ãß»ó Å¬·¡½º ÀÌ¹Ç·Î °´Ã¼ »ı¼ºÀÌ ¾î·Æ´Ù.
+		// ExamEntityì€ ì¶”ìƒ í´ë˜ìŠ¤ ì´ë¯€ë¡œ ê°ì²´ ìƒì„±ì´ ì–´ë µë‹¤.
 		//ExamEntity exam = new ExamEntity();
 		ExamEntity exam = makeExam();
 
-		// 2. »ç¿ëÀÚ ¼ºÀû ÀÔ·Â
+		// 2. ì‚¬ìš©ì ì„±ì  ì…ë ¥
 		// input
 		exam.setKorean(korean);
 		exam.setEnglish(english);
@@ -52,7 +52,7 @@ public abstract class ExamConsole {
 	
 	public void printList(int size) {
 		
-		System.out.println("¼ºÀûÀ» Ãâ·ÂÇÕ´Ï´Ù.\n");
+		System.out.println("ì„±ì ì„ ì¶œë ¥í•©ë‹ˆë‹¤.\n");
 		for (int i = 0; i < size; i++) {
 			ExamEntity exam = list.getEntity(i);
 			
@@ -62,40 +62,40 @@ public abstract class ExamConsole {
 			
 			int total = exam.getTotal();
 			float avg = exam.getAvg();
-			System.out.printf("ÇĞ»ı %d\n", i + 1);
-			System.out.printf("±¹¾î:  %d\n", korean);
-			System.out.printf("¿µ¾î:  %d\n", english);
-			System.out.printf("¼öÇĞ:  %d\n", math);
+			System.out.printf("í•™ìƒ %d\n", i + 1);
+			System.out.printf("êµ­ì–´:  %d\n", korean);
+			System.out.printf("ì˜ì–´:  %d\n", english);
+			System.out.printf("ìˆ˜í•™:  %d\n", math);
 			onPrintList(exam);
 			
-			System.out.printf("ÃÑ Á¡ : %d\n", total);
-			System.out.printf("Æò ±Õ : %f\n", avg);
+			System.out.printf("ì´ ì  : %d\n", total);
+			System.out.printf("í‰ ê·  : %f\n", avg);
 			
 		}
 	}
 
 
-	// ÀÚ½Ä¿¡°Ô ¸ŞÀÎ¸Ş´º ¸¸µé±â¸¦ À§ÀÓÇÔ
+	// ìì‹ì—ê²Œ ë©”ì¸ë©”ë‰´ ë§Œë“¤ê¸°ë¥¼ ìœ„ì„í•¨
 	abstract public void inputMenu();
 //	{
-//		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-//		System.out.println("¦¢           ¸ŞÀÎ ¸Ş´º     	¦¢");
-//		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
-//		System.out.println("\t ¼ºÀûÀ» ¼ø¼­´ë·Î ÀÔ·ÂÇÏ¼¼¿ä. ");
-//		System.out.println("\t±¹¾î ");
-//		System.out.println("\t¿µ¾î ");
-//		System.out.println("\t¼öÇĞ ");
+//		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+//		System.out.println("â”‚           ë©”ì¸ ë©”ë‰´     	â”‚");
+//		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
+//		System.out.println("\t ì„±ì ì„ ìˆœì„œëŒ€ë¡œ ì…ë ¥í•˜ì„¸ìš”. ");
+//		System.out.println("\têµ­ì–´ ");
+//		System.out.println("\tì˜ì–´ ");
+//		System.out.println("\tìˆ˜í•™ ");
 //
 //	}
 	
-	// ÆÑÅä¸® ¸Ş¼Òµå : ¸®½ºÆ®¸¦ Ãß°¡ÇÏ±â À§ÇÑ °´Ã¼¸¦ »ı¼ºÇÏ´Â ºÎºĞÀ» HoseokExamConsole(ÀÚ½ÄÅ¬·¡½º)¿¡ ¸Â±è
+	// íŒ©í† ë¦¬ ë©”ì†Œë“œ : ë¦¬ìŠ¤íŠ¸ë¥¼ ì¶”ê°€í•˜ê¸° ìœ„í•œ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ë¶€ë¶„ì„ HoseokExamConsole(ìì‹í´ë˜ìŠ¤)ì— ë§ê¹€
 	protected abstract ExamEntity makeExam();
 	
-	// ÀÌº¥Æ® ¸Ş¼Òµå
-	// ±âÁ¸ÀÇ flow¿¡¼­ »õ·Î¿î °ú¸ñÀ» Ãß°¡ÇÏ±âÀ§ÇÑ ÀÌº¥Æ® flow¸¦ ±¸ÇöÇÔ
+	// ì´ë²¤íŠ¸ ë©”ì†Œë“œ
+	// ê¸°ì¡´ì˜ flowì—ì„œ ìƒˆë¡œìš´ ê³¼ëª©ì„ ì¶”ê°€í•˜ê¸°ìœ„í•œ ì´ë²¤íŠ¸ flowë¥¼ êµ¬í˜„í•¨
 	protected abstract void onInputList(ExamEntity exam);
 	
-	// ÀÌº¥Æ® ¸Ş¼Òµå
-	// ±âÁ¸ÀÇ flow¿¡¼­ »õ·Î¿î °ú¸ñÀ» Ãß°¡ÇÏ±âÀ§ÇÑ ÀÌº¥Æ® flow¸¦ ±¸ÇöÇÔ
+	// ì´ë²¤íŠ¸ ë©”ì†Œë“œ
+	// ê¸°ì¡´ì˜ flowì—ì„œ ìƒˆë¡œìš´ ê³¼ëª©ì„ ì¶”ê°€í•˜ê¸°ìœ„í•œ ì´ë²¤íŠ¸ flowë¥¼ êµ¬í˜„í•¨
 	protected abstract void onPrintList(ExamEntity exam);
 }

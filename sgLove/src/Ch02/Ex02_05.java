@@ -1,8 +1,8 @@
-package Ch02;
+ï»¿package Ch02;
 import java.util.Scanner;
 /**
-*ÀÌ Å¬·¡½º´Â °ªÀ» 3°³ ÀÔ·Â¹Ş¾Æ ¼ø¼­´ë·Î ¹®ÀÚ¿­, Á¤¼ö, ½Ç¼ö·Î Ãâ·ÂÇÔ
-* @author ÀÌÈ£¼®
+*ì´ í´ë˜ìŠ¤ëŠ” ê°’ì„ 3ê°œ ì…ë ¥ë°›ì•„ ìˆœì„œëŒ€ë¡œ ë¬¸ìì—´, ì •ìˆ˜, ì‹¤ìˆ˜ë¡œ ì¶œë ¥í•¨
+* @author ì´í˜¸ì„
 * @see Ex02_04.java
 */
 public class Ex02_05 {
@@ -10,14 +10,14 @@ public class Ex02_05 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.print("ÀÌ¸§, ³ªÀÌ, ¸ö¹«°Ô¸¦ °ø°£(Space)·Î ±¸ºĞÇÏ¿© ÀÔ·Â : ");
+		System.out.print("ì´ë¦„, ë‚˜ì´, ëª¸ë¬´ê²Œë¥¼ ê³µê°„(Space)ë¡œ êµ¬ë¶„í•˜ì—¬ ì…ë ¥ : ");
 		
 		String name = scan.next();
 		int age = scan.nextInt();
 		double weight = scan.nextDouble();
 		
-		System.out.println(name + " ¾¾ÀÇ ³ªÀÌ´Â " + age + "¼¼ÀÌ°í");
-		System.out.println("¸ö¹«°Ô´Â " + weight + "Kg ÀÔ´Ï´Ù.");
+		System.out.println(name + " ì”¨ì˜ ë‚˜ì´ëŠ” " + age + "ì„¸ì´ê³ ");
+		System.out.println("ëª¸ë¬´ê²ŒëŠ” " + weight + "Kg ì…ë‹ˆë‹¤.");
 	}
 	
 }

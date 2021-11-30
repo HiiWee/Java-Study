@@ -1,4 +1,4 @@
-package forTask.week9;
+ï»¿package forTask.week9;
 
 class Box2 {
 	int width = 10;
@@ -11,11 +11,11 @@ public class Problem3 {
 		int myInt1 = 100;
 		int myInt2 = myInt1;
 
-		System.out.println("Ã¹ ¹øÂ° °ª :" + myInt1 + "µÎ ¹øÂ° °ª : " + myInt2);
+		System.out.println("ì²« ë²ˆì§¸ ê°’ :" + myInt1 + "ë‘ ë²ˆì§¸ ê°’ : " + myInt2);
 
 		myInt1 = 200;
 
-		System.out.println("Ã¹ ¹øÂ° °ª :" + myInt1 + "µÎ ¹øÂ° °ª : " + myInt2);
+		System.out.println("ì²« ë²ˆì§¸ ê°’ :" + myInt1 + "ë‘ ë²ˆì§¸ ê°’ : " + myInt2);
 
 		Box2 myBox1 = new Box2();
 		Box2 myBox2 = new Box2();
@@ -31,14 +31,14 @@ public class Problem3 {
 		System.out.println("myBox2.height : " + myBox2.height);
 		System.out.println("myBox2.depth : " + myBox2.depth);
 
-		// myBox3°¡ myBox2¸¦ ÂüÁ¶ÇÔ
+		// myBox3ê°€ myBox2ë¥¼ ì°¸ì¡°í•¨
 		Box2 myBox3 = myBox2;
 
 		myBox2.width = 1000;
 		myBox2.height = 2000;
 
-		// myBox2°¡ ÂüÁ¶ÇÏ´Â °´Ã¼ÀÇ ¼Ó¼º°ªÀ» º¯°æÇÏ¸é myBox3°¡ ÂüÁ¶ÇÏ´Â °´Ã¼µµ ¿µÇâÀ» ¹ŞÀ½
-		// ¼Ó¼º°ªÀÌ º¯°æ >> Áï myBox2, myBox3¸ğµÎ °°Àº °´Ã¼¸¦ ÂüÁ¶ÇÏ°í ÀÖ±â ¶§¹®ÀÌ´Ù.
+		// myBox2ê°€ ì°¸ì¡°í•˜ëŠ” ê°ì²´ì˜ ì†ì„±ê°’ì„ ë³€ê²½í•˜ë©´ myBox3ê°€ ì°¸ì¡°í•˜ëŠ” ê°ì²´ë„ ì˜í–¥ì„ ë°›ìŒ
+		// ì†ì„±ê°’ì´ ë³€ê²½ >> ì¦‰ myBox2, myBox3ëª¨ë‘ ê°™ì€ ê°ì²´ë¥¼ ì°¸ì¡°í•˜ê³  ìˆê¸° ë•Œë¬¸ì´ë‹¤.
 		System.out.println("myBox3.width : " + myBox3.width);
 		System.out.println("myBox3.height : " + myBox3.height);
 		System.out.println("myBox3.depth : " + myBox3.depth);

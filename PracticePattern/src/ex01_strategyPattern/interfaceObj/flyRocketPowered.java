@@ -1,4 +1,4 @@
-package ex01_strategyPattern.interfaceObj;
+﻿package ex01_strategyPattern.interfaceObj;
 
 import ex01_strategyPattern.Interface.FlyBehavior;
 

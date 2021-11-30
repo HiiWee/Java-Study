@@ -1,7 +1,7 @@
-package forTask.week4;
+ï»¿package forTask.week4;
 
 import java.util.Scanner;
-//³¯Â¥ÀÔ·Â ÆÇ´Ü
+//ë‚ ì§œì…ë ¥ íŒë‹¨
 public class Problem2 {
 
 	public static void main(String[] args) {
@@ -17,9 +17,9 @@ public class Problem2 {
 
 		if (total % 10 == 0)
 
-			System.out.println("´ë¹Ú");
+			System.out.println("ëŒ€ë°•");
 		else
-			System.out.println("±×·°Àú·°");
+			System.out.println("ê·¸ëŸ­ì €ëŸ­");
 
 	}
 

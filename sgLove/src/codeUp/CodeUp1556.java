@@ -1,4 +1,4 @@
-package codeUp;
+ï»¿package codeUp;
 
 import java.util.Scanner;
 
@@ -13,11 +13,11 @@ class Factorial {
 	}
 
 	private void calcFact(int n) {
-		// Àç±ÍÇÔ¼ö ¾Æ´Ô
+		// ìž¬ê·€í•¨ìˆ˜ ì•„ë‹˜
 		for (int i = 1; i <= n; i++) {
 			factorial *= i;
 		}
-		// Àç±ÍÇÔ¼ö·Î Ç®ÀÌ ¸Þ¼Òµå longÅ¸ÀÔÀ¸·Î º¯È¯
+		// ìž¬ê·€í•¨ìˆ˜ë¡œ í’€ì´ ë©”ì†Œë“œ longíƒ€ìž…ìœ¼ë¡œ ë³€í™˜
 //		if (n == 1)
 //			return 1;
 //		return calcFact(n - 1) * n;

@@ -1,4 +1,4 @@
-package ex18.test;
+﻿package ex18.test;
 
 public class Program {
 	public static void main(String[] args) {

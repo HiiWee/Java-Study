@@ -1,4 +1,4 @@
-package ch06;
+ï»¿package ch06;
 
 public class Ex06_02 {
 
@@ -11,7 +11,7 @@ public class Ex06_02 {
 			if (i > max)
 				max = i;
 		}
-		System.out.println("¹è¿­ ¿ä¼ÒÀÇ ÃÖ´ë°ªÀº : " + max);
+		System.out.println("ë°°ì—´ ìš”ì†Œì˜ ìµœëŒ€ê°’ì€ : " + max);
 	}
 
 }

@@ -1,23 +1,23 @@
-package Ch03;
+ï»¿package Ch03;
 
 import java.util.Scanner;
 
 public class Ex03_27 {
 	public static void main(String[] args) {
-		String str1 = "¾Æ! ´ëÇÑ¹Î±¹ ";
+		String str1 = "ì•„! ëŒ€í•œë¯¼êµ­ ";
 		String str2 = "Korea";
 		
 		System.out.println(str1 + str2);
-		System.out.println("¾Æ! ´ëÇÑ¹Î±¹ \n Korea");
+		System.out.println("ì•„! ëŒ€í•œë¯¼êµ­ \n Korea");
 		
 		int a = 1000;
 		int b = 2000;
 		
-		System.out.println(str1 + a + b + "¸® ±Ý¼ö°­»ê");
-		System.out.println(str1 + (a + b) + "¸® ±Ý¼ö°­»ê");
-		System.out.println(a + b + str1 + "¸® ±Ý¼ö°­»ê");
-		System.out.println( '3' + "Ãµ¸® ±Ý¼ö°­»ê");
-		System.out.println( '3' + 2997 + "¸® ±Ý¼ö°­»ê");
+		System.out.println(str1 + a + b + "ë¦¬ ê¸ˆìˆ˜ê°•ì‚°");
+		System.out.println(str1 + (a + b) + "ë¦¬ ê¸ˆìˆ˜ê°•ì‚°");
+		System.out.println(a + b + str1 + "ë¦¬ ê¸ˆìˆ˜ê°•ì‚°");
+		System.out.println( '3' + "ì²œë¦¬ ê¸ˆìˆ˜ê°•ì‚°");
+		System.out.println( '3' + 2997 + "ë¦¬ ê¸ˆìˆ˜ê°•ì‚°");
 		
 	}
 }

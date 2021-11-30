@@ -1,11 +1,11 @@
-package ex20.array;
+ï»¿package ex20.array;
 import java.util.Random;
 public class Program4 {
 	public static void main(String[] args){
 		
 		int[] lotto = new int[6];
 		Random rand = new Random();
-		//0ºÎÅÍ ÁöÁ¤ÇÑ °ª º¸´Ù ÀÛÀº¹üÀ§¿¡¼­ ÀÓÀÇÀÇ ¼ö°¡ ¸®ÅÏ
+		//0ë¶€í„° ì§€ì •í•œ ê°’ ë³´ë‹¤ ì‘ì€ë²”ìœ„ì—ì„œ ì„ì˜ì˜ ìˆ˜ê°€ ë¦¬í„´
 		for(int i=0; i<6; i++) {
 			lotto[i] = rand.nextInt(45)+i;
 			System.out.printf("%d ", lotto[i]);

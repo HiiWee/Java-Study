@@ -1,4 +1,4 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_16 {
 	public static void main(String[] args) {
@@ -9,6 +9,6 @@ public class Ex03_16 {
 		System.out.println("'A' = " + j);
 		System.out.println("'1' + 'A' = " + k);
 		int l = 66;
-		System.out.println("10Áø¼ö 66¿¡ ÇØ´çµÇ´Â À¯´ÏÄÚµå ¹®ÀÚ´Â" + (char)l + "ÀÔ´Ï´Ù.");
+		System.out.println("10ì§„ìˆ˜ 66ì— í•´ë‹¹ë˜ëŠ” ìœ ë‹ˆì½”ë“œ ë¬¸ìëŠ”" + (char)l + "ì…ë‹ˆë‹¤.");
 	}
 }

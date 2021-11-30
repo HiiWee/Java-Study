@@ -1,4 +1,4 @@
-package part3_ex05_abstraction;
+ï»¿package part3_ex05_abstraction;
 
 public class NewlecExam extends Exam {
 	
@@ -23,9 +23,9 @@ public class NewlecExam extends Exam {
 
 	@Override
 	public int getTotal() {
-		//super Å°¿öµå¸¦ ÀÌ¿ëÇÒ ¼ö ¾ø°í Á÷Á¢ÀûÀ¸·Î total°ªÀ» ±¸ÇöÇØ¾ß ÇÏ´Â
-		//ºÒÆíÇÔÀÌ ÀÖ¾úÀ½ µû¶ó¼­ protectedÅ°¿öµå¸¦ ÀÌ¿ëÇØ ÀÚ½Ä¿¡°Ô¸¸ »ç¿ëÇÒ ¼ö ÀÖ´Â
-		//onTotal ¸Ş¼Òµå¸¦ ±¸ÇöÇÒ ¼ö ÀÖÀ½
+		//super í‚¤ì›Œë“œë¥¼ ì´ìš©í•  ìˆ˜ ì—†ê³  ì§ì ‘ì ìœ¼ë¡œ totalê°’ì„ êµ¬í˜„í•´ì•¼ í•˜ëŠ”
+		//ë¶ˆí¸í•¨ì´ ìˆì—ˆìŒ ë”°ë¼ì„œ protectedí‚¤ì›Œë“œë¥¼ ì´ìš©í•´ ìì‹ì—ê²Œë§Œ ì‚¬ìš©í•  ìˆ˜ ìˆëŠ”
+		//onTotal ë©”ì†Œë“œë¥¼ êµ¬í˜„í•  ìˆ˜ ìˆìŒ
 		//int total = getKor() + getEng() + getMath() + getCom();
 		int total = onTotal() + getCom();
 		return total;

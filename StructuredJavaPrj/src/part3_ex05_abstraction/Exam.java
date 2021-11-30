@@ -1,11 +1,11 @@
-package part3_ex05_abstraction;
+ï»¿package part3_ex05_abstraction;
 
 public abstract class Exam {
 	private int kor;
 	private int eng;
 	private int math;
 	
-	//ÄÚµåÀÇ ÁıÁßÈ­
+	//ì½”ë“œì˜ ì§‘ì¤‘í™”
 	public Exam() {
 		this(0, 0, 0);
 	}
@@ -43,9 +43,9 @@ public abstract class Exam {
 
 	public abstract int getTotal();
 	
-	//ÀÚ½Ä¿¡°Ô¸¸ °ø°³µÇ´Â ¸Ş¼Òµå
-	//ÀÚ½Ä Å¬·¡½º¿¡¼­ getTotal()À» Ã³À½ºÎÅÍ ±¸ÇöÇÏ´Â°Í¿¡ ´ëÇÑ
-	//ºÎ´ãÀ» ÁÙÀÏ ¼ö ÀÖ´Ù.
+	//ìì‹ì—ê²Œë§Œ ê³µê°œë˜ëŠ” ë©”ì†Œë“œ
+	//ìì‹ í´ë˜ìŠ¤ì—ì„œ getTotal()ì„ ì²˜ìŒë¶€í„° êµ¬í˜„í•˜ëŠ”ê²ƒì— ëŒ€í•œ
+	//ë¶€ë‹´ì„ ì¤„ì¼ ìˆ˜ ìˆë‹¤.
 	protected int onTotal() {
 		return kor + eng + math;
 	}

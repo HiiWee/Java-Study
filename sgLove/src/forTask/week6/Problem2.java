@@ -1,4 +1,4 @@
-package forTask.week6;
+ï»¿package forTask.week6;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Problem2 {
 		int num = scan.nextInt();
 
 		if (num > 12 && num < 2)
-			System.out.println("¿ÇÁö ¾ÊÀº ¼ö¸¦ ÀÔ·ÂÇß½À´Ï´Ù.");
+			System.out.println("ì˜³ì§€ ì•Šì€ ìˆ˜ë¥¼ ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 		
 		for (int i = 1; i <= 6; i++) {
 			for(int j = 1; j <= 6; j++) {

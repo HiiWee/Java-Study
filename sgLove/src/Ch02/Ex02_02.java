@@ -1,9 +1,9 @@
-package Ch02;
+ï»¿package Ch02;
 
 public class Ex02_02 {
 	public static void main(String[] args) {
-		System.out.print("µÎ ¹øÂ°·Î ÀÛ¼ºÇØ º¸´Â");
-		System.out.println(" ÀÚ¹Ù ÇÁ·Î±×·¥ÀÔ´Ï´Ù.");
-		System.out.println("Ã³À½ ½ÃÀÛÇÏ´Â" + "ÀÚ¹Ù ÇÁ·Î±×·¥ÀÔ´Ï´Ù.");
+		System.out.print("ë‘ ë²ˆì§¸ë¡œ ì‘ì„±í•´ ë³´ëŠ”");
+		System.out.println(" ìë°” í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤.");
+		System.out.println("ì²˜ìŒ ì‹œì‘í•˜ëŠ”" + "ìë°” í”„ë¡œê·¸ë¨ì…ë‹ˆë‹¤.");
 	}
 }

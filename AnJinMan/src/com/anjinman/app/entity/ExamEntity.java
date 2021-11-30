@@ -1,8 +1,8 @@
-package com.anjinman.app.entity;
+ï»¿package com.anjinman.app.entity;
 
-// ½ÇÁúÀûÀÎ ÇĞ»ıµéÀÇ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ°í °ü¸®ÇÏ´Â ºÎºĞ
-/* ´Ù¸¥ ¼­ºñ½º¿¡¼­ Àç»ç¿ëÇÏ±â À§ÇØ °´Ã¼·Î »ı¼ºµÇ¼­ µ¿ÀÛÇÏ´Â ºÎºĞÀº
- * Ãß»óÈ­¸¦ ÅëÇØ(getTotal(), getAvg()) ÀÚ½Ä °´Ã¼¿¡°Ô ¸Ã±è
+// ì‹¤ì§ˆì ì¸ í•™ìƒë“¤ì˜ ë°ì´í„°ë¥¼ ì €ì¥í•˜ê³  ê´€ë¦¬í•˜ëŠ” ë¶€ë¶„
+/* ë‹¤ë¥¸ ì„œë¹„ìŠ¤ì—ì„œ ì¬ì‚¬ìš©í•˜ê¸° ìœ„í•´ ê°ì²´ë¡œ ìƒì„±ë˜ì„œ ë™ì‘í•˜ëŠ” ë¶€ë¶„ì€
+ * ì¶”ìƒí™”ë¥¼ í†µí•´(getTotal(), getAvg()) ìì‹ ê°ì²´ì—ê²Œ ë§¡ê¹€
  *  */
 public abstract class ExamEntity {
 	private int korean;
@@ -42,7 +42,7 @@ public abstract class ExamEntity {
 	abstract public float getAvg();
 	
 	
-	// ÀÚ½Ä¿¡°Ô¸¸ °ø°³µÇ´Â ±âÁ¸ ±¹, ¿µ, ¼öÀÇ Á¡¼öÀÇ ÇÕÀ» ¹İÈ¯
+	// ìì‹ì—ê²Œë§Œ ê³µê°œë˜ëŠ” ê¸°ì¡´ êµ­, ì˜, ìˆ˜ì˜ ì ìˆ˜ì˜ í•©ì„ ë°˜í™˜
 	protected int onTotal() {
 		return korean + english + math;
 	}

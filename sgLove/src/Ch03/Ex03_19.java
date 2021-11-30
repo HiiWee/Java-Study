@@ -1,26 +1,26 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_19 {
 	public static void main(String[] args) {
 		
 		byte a = 127, b = 2;
 		byte c = (byte)(a * b);
-		System.out.println("a*bÀÇ °á°ú¸¦ byte·Î º¯È¯Ãâ·Â: " + c);
+		System.out.println("a*bì˜ ê²°ê³¼ë¥¼ byteë¡œ ë³€í™˜ì¶œë ¥: " + c);
 		
 		int d = a * b;
-		System.out.println("a*bÀÇ °á°ú¸¦ int·Î Ãâ·Â : " + d);
+		System.out.println("a*bì˜ ê²°ê³¼ë¥¼ intë¡œ ì¶œë ¥ : " + d);
 		
 		int i = 1000000, j = 10000000;
 		int k = i * j;
-		System.out.println("¹é¸¸*¹é¸¸ÀÇ °á°ú¸¦ int·Î Ãâ·Â: " + k);
+		System.out.println("ë°±ë§Œ*ë°±ë§Œì˜ ê²°ê³¼ë¥¼ intë¡œ ì¶œë ¥: " + k);
 		
 		long m = (long)(i*j);
-		System.out.println("°ö¼À(int ¿¬»ê)ÀÇ °á°ú¸¦ longÀ¸·Î º¯È¯ÇÑ ÈÄ Ãâ·Â:" + m);
+		System.out.println("ê³±ì…ˆ(int ì—°ì‚°)ì˜ ê²°ê³¼ë¥¼ longìœ¼ë¡œ ë³€í™˜í•œ í›„ ì¶œë ¥:" + m);
 		
 		m = (long)i * j;
-		System.out.println("i¸¦ long °ªÀ¸·Î º¯È¯ ÈÄ °ö¼À(long¿¬»ê)ÇÏ¿© Ãâ·Â :" + m);
+		System.out.println("ië¥¼ long ê°’ìœ¼ë¡œ ë³€í™˜ í›„ ê³±ì…ˆ(longì—°ì‚°)í•˜ì—¬ ì¶œë ¥ :" + m);
 		m = (long)i * (long)j;
-		System.out.println("¹é¸¸À» longÀ¸·Î º¯È¯ ÈÄ °ö¼À(long¿¬»ê) °á°ú¸¦ Ãâ·Â :" + m);
+		System.out.println("ë°±ë§Œì„ longìœ¼ë¡œ ë³€í™˜ í›„ ê³±ì…ˆ(longì—°ì‚°) ê²°ê³¼ë¥¼ ì¶œë ¥ :" + m);
 		
 	}
 }

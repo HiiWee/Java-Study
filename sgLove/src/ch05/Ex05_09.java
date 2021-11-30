@@ -1,4 +1,4 @@
-package ch05;
+ï»¿package ch05;
 
 import java.util.Scanner;
 
@@ -10,14 +10,14 @@ public class Ex05_09 {
 		int n = scan.nextInt();
 		int m = scan.nextInt();
 		int lcm=0, gcf=0;
-		// ÃÖ¼Ò°ø¹è¼ö ±¸ÇÏ±â
+		// ìµœì†Œê³µë°°ìˆ˜ êµ¬í•˜ê¸°
 		for (int i = 1; i <= n * m; i++) {
 			if (i % n == 0 && i % m == 0) {
 				lcm = i;
 				break;
 			}
 		}
-		// ÃÖ´ë°ø¾à¼ö ±¸ÇÏ±â
+		// ìµœëŒ€ê³µì•½ìˆ˜ êµ¬í•˜ê¸°
 		for (int i = n; i >= 1; i--) {
 			if(n % i == 0 && m % i == 0) {
 				gcf = i;
@@ -25,9 +25,9 @@ public class Ex05_09 {
 			}
 		}
 		if(gcf == 1)
-			System.out.println("ÃÖ´ë°ø¾à¼ö´Â ¾ø½À´Ï´Ù ÃÖ¼Ò°ø¹è¼ö" + lcm);
+			System.out.println("ìµœëŒ€ê³µì•½ìˆ˜ëŠ” ì—†ìŠµë‹ˆë‹¤ ìµœì†Œê³µë°°ìˆ˜" + lcm);
 		else
-			System.out.println("ÃÖ´ë°ø¾à¼ö" + gcf + "ÃÖ¼Ò°ø¹è¼ö" + lcm);
+			System.out.println("ìµœëŒ€ê³µì•½ìˆ˜" + gcf + "ìµœì†Œê³µë°°ìˆ˜" + lcm);
 	}
 
 }

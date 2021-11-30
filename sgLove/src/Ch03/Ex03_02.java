@@ -1,15 +1,15 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_02 {
 	public static void main(String[] args) {
 		byte a = 127;
-		System.out.println("127À» ÀúÀåÇÑ byte °ªÀº :" + a);
+		System.out.println("127ì„ ì €ì¥í•œ byte ê°’ì€ :" + a);
 		short b = 32767;
-		System.out.println("32767À» ÀúÀåÇÑ short °ªÀº :" + b);
+		System.out.println("32767ì„ ì €ì¥í•œ short ê°’ì€ :" + b);
 		int c = 2147483647;
-		System.out.println("2147483647À» ÀúÀåÇÑ int °ªÀº :" + c);
+		System.out.println("2147483647ì„ ì €ì¥í•œ int ê°’ì€ :" + c);
 		long d = 9223372036854775807L;
-		System.out.println("9223372036854775807À» ÀúÀåÇÑ long °ªÀº :" + d);
+		System.out.println("9223372036854775807ì„ ì €ì¥í•œ long ê°’ì€ :" + d);
 
 	}
 }

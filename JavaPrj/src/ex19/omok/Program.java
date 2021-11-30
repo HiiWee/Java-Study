@@ -1,4 +1,4 @@
-package ex19.omok;
+ï»¿package ex19.omok;
 
 public class Program {
 	public static void main(String[] args) {
@@ -6,25 +6,25 @@ public class Program {
 		for(int y=0; y<10; y++) {
 			for(int x=0; x<10; x++) {
 				if(x==3 && y==2)
-					System.out.printf("%c", '¡Ü');
+					System.out.printf("%c", 'â—');
 				else if(x==0 && y==0)
-					System.out.printf("%c", '¦£');
+					System.out.printf("%c", 'â”Œ');
 				else if(x==9 && y==0)
-					System.out.printf("%c", '¦¤');
+					System.out.printf("%c", 'â”');
 				else if(x==9 && y==9)
-					System.out.printf("%c", '¦¥');
+					System.out.printf("%c", 'â”˜');
 				else if(x==0 && y==9)
-					System.out.printf("%c", '¦¦');
+					System.out.printf("%c", 'â””');
 				else if (y == 0 /* && x>0 && x<9 */)
-					System.out.printf("%c", '¦¨');
+					System.out.printf("%c", 'â”¬');
 				else if (x == 0 /* && y>0 && y<9 */)
-					System.out.printf("%c", '¦§');
+					System.out.printf("%c", 'â”œ');
 				else if (x == 9 /* && y>0 && y<9 */)
-					System.out.printf("%c", '¦©');
+					System.out.printf("%c", 'â”¤');
 				else if (y == 9 /* && x>0 && x<9 */)
-					System.out.printf("%c", '¦ª');
+					System.out.printf("%c", 'â”´');
 				else
-					System.out.printf("%c", '¦«');
+					System.out.printf("%c", 'â”¼');
 			}
 			System.out.println();
 		}

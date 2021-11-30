@@ -1,8 +1,8 @@
-package forTask.week5;
+ï»¿package forTask.week5;
 
 import java.util.Scanner;
 
-//Á¤¼öÀÇ ¾ç,À½¼ö ¹× È¦¼ö, Â¦¼ö ÆÇº°
+//ì •ìˆ˜ì˜ ì–‘,ìŒìˆ˜ ë° í™€ìˆ˜, ì§ìˆ˜ íŒë³„
 public class ProblemForClass1 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);

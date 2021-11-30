@@ -1,26 +1,26 @@
-package com.hiiwee.app.util;
+ï»¿package com.hiiwee.app.util;
 
-//Generic Å¬·¡½º
-// T(type) ¾àÀÚ¸¦ ÁÖ·Î »ç¿ë ¾Æ¹«°Å³ª ½áµµµÊ
-// ÀÎÀÚ¸¦ 2°³ÀÌ»ó ³Ñ±æ ¼ö ÀÖÀ½
-public class GList<T /* , µÎ¹øÂ°Å¸ÀÔ */> {
+//Generic í´ë˜ìŠ¤
+// T(type) ì•½ìë¥¼ ì£¼ë¡œ ì‚¬ìš© ì•„ë¬´ê±°ë‚˜ ì¨ë„ë¨
+// ì¸ìë¥¼ 2ê°œì´ìƒ ë„˜ê¸¸ ìˆ˜ ìˆìŒ
+public class GList<T /* , ë‘ë²ˆì§¸íƒ€ì… */> {
 	private Object[] nums;
 	private int current;
-	private int capacity; // ÃÊ±â ¹è¿­Å©±â(°¡º¯)
-	private int amount; // ¹è¿­ Áõ°¡·®(°íÁ¤)
+	private int capacity; // ì´ˆê¸° ë°°ì—´í¬ê¸°(ê°€ë³€)
+	private int amount; // ë°°ì—´ ì¦ê°€ëŸ‰(ê³ ì •)
 
 	public GList() {
 		capacity = 3;
 		amount = 5;
-		// nums = new T[3]; ºÒ°¡ °´Ã¼´Â ¹«Á¶°Ç ObjectÇü½ÄÀ¸·Î
+		// nums = new T[3]; ë¶ˆê°€ ê°ì²´ëŠ” ë¬´ì¡°ê±´ Objectí˜•ì‹ìœ¼ë¡œ
 		nums = new Object[capacity];
 		current = 0;
 	}
 
 	// Auto Boxing
-	// °´Ã¼´Â ¹«Á¶°Ç ObjectÇü½ÄÀ¸·Î ÇÏµÇ µé¾î¿À´Â °ªÀ» TÇüÀ¸·Î Çüº¯È¯ÇØÁÜ
+	// ê°ì²´ëŠ” ë¬´ì¡°ê±´ Objectí˜•ì‹ìœ¼ë¡œ í•˜ë˜ ë“¤ì–´ì˜¤ëŠ” ê°’ì„ Tí˜•ìœ¼ë¡œ í˜•ë³€í™˜í•´ì¤Œ
 	public void add(T num) {
-		// °¡º¯ Å©±âÀÇ ¹è¿­ »ı¼º (ÃÊ±âÅ©±â 3, Ãß°¡Å©±â 5)
+		// ê°€ë³€ í¬ê¸°ì˜ ë°°ì—´ ìƒì„± (ì´ˆê¸°í¬ê¸° 3, ì¶”ê°€í¬ê¸° 5)
 		if (current >= capacity) {
 			Object[] temp = new Object[capacity + amount];
 			for (int i = 0; i < current; i++) {
@@ -44,7 +44,7 @@ public class GList<T /* , µÎ¹øÂ°Å¸ÀÔ */> {
 	public T get(int index) {
 		if (current <= index)
 			throw new IndexOutOfBoundsException();
-		// ¹ş¾î³¯¶§ T¸¦ ¹İÈ¯ÇØ¾ß ÇÏ¹Ç·Î TÇü½ÄÀ¸·Î Çüº¯È¯ÇØÁÜ(Wrapper ÇüÅÂÀÇ Å¬·¡½º ±âº»ÀÚ·áÇüÀº ¾ÈµÊ)
+		// ë²—ì–´ë‚ ë•Œ Të¥¼ ë°˜í™˜í•´ì•¼ í•˜ë¯€ë¡œ Tí˜•ì‹ìœ¼ë¡œ í˜•ë³€í™˜í•´ì¤Œ(Wrapper í˜•íƒœì˜ í´ë˜ìŠ¤ ê¸°ë³¸ìë£Œí˜•ì€ ì•ˆë¨)
 		return (T) nums[index];
 	}
 

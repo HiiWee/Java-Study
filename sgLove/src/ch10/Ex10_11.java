@@ -1,34 +1,34 @@
-package ch10;
+ï»¿package ch10;
 
 class SD1 {
 	public int i1;
 	public double d1;
 	public SD1(int i1) {
-		System.out.println("SD1(int i1) »ı¼ºÀÚ ¼öÇà");
+		System.out.println("SD1(int i1) ìƒì„±ì ìˆ˜í–‰");
 		this.i1 = i1 * i1;
-		System.out.println(i1 + "ÀÇ 2Á¦°öÀº : " + this.i1);
+		System.out.println(i1 + "ì˜ 2ì œê³±ì€ : " + this.i1);
 	}
 
 	public SD1(double d1) {
-		System.out.println("SD1(double d1) »ı¼ºÀÚ ¼öÇà");
+		System.out.println("SD1(double d1) ìƒì„±ì ìˆ˜í–‰");
 		this.d1 = d1 * d1;
-		System.out.println(i1 + "ÀÇ 2Á¦°öÀº : " + this.d1);
+		System.out.println(i1 + "ì˜ 2ì œê³±ì€ : " + this.d1);
 	}
 }
 
 class Sub1 extends SD1{
 	public Sub1(int i1) {
 		super(i1);
-		System.out.println("Sub1(int i1) »ı¼ºÀÚ ¼öÇà");
+		System.out.println("Sub1(int i1) ìƒì„±ì ìˆ˜í–‰");
 		this.i1 = i1 * i1 * i1;
-		System.out.println(i1 + "ÀÇ 3Á¦°öÀº : " + this.i1);
+		System.out.println(i1 + "ì˜ 3ì œê³±ì€ : " + this.i1);
 	}
 	
 	public Sub1(double d1) {
 		super(d1);
-		System.out.println("Sub1(double d1) »ı¼ºÀÚ ¼öÇà");
+		System.out.println("Sub1(double d1) ìƒì„±ì ìˆ˜í–‰");
 		this.d1 = d1 * d1 * d1;
-		System.out.println(i1 + "ÀÇ 3Á¦°öÀº : " + this.d1);
+		System.out.println(i1 + "ì˜ 3ì œê³±ì€ : " + this.d1);
 	}
 }
 

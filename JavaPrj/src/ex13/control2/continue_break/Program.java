@@ -1,4 +1,4 @@
-
+ï»¿
 package ex13.control2.continue_break;
 import java.util.Scanner;
 
@@ -7,10 +7,10 @@ public class Program {
 		
 		int n = 0;
 		Scanner scan = new Scanner(System.in);
-		System.out.print("°ªÀ» spaceBar·Î ±¸ºĞÇØ¼­ 5°³ ÀÌ»ó ÀÔ·ÂÇÏ¼¼¿ä"); // 3 Enter, 34 5 6 234 345 54 45 Enter 
+		System.out.print("ê°’ì„ spaceBarë¡œ êµ¬ë¶„í•´ì„œ 5ê°œ ì´ìƒ ì…ë ¥í•˜ì„¸ìš”"); // 3 Enter, 34 5 6 234 345 54 45 Enter 
 		n = scan.nextInt(); n = scan.nextInt(); n = scan.nextInt();
   
-		//ScannerÀÇ ¸¶Áö¸· Enter¸¦ ¹ŞÀ¸¸é hasNext() ÇÔ¼ö´Â False¸¦ ¹İÈ¯ÇÏ¸ç ·çÇÁ°¡ Á¾·áµÈ´Ù.
+		//Scannerì˜ ë§ˆì§€ë§‰ Enterë¥¼ ë°›ìœ¼ë©´ hasNext() í•¨ìˆ˜ëŠ” Falseë¥¼ ë°˜í™˜í•˜ë©° ë£¨í”„ê°€ ì¢…ë£Œëœë‹¤.
 		while(scan.hasNext()) { 
 			n = scan.nextInt();
   

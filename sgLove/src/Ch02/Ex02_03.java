@@ -1,13 +1,13 @@
-package Ch02;
+ï»¿package Ch02;
 
 import java.util.Scanner;
 public class Ex02_03 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("¸î ¹øÂ° ÇÁ·Î±×·¥ÀÎÁö ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ëª‡ ë²ˆì§¸ í”„ë¡œê·¸ë¨ì¸ì§€ ì…ë ¥í•˜ì„¸ìš” : ");
 		int num = scan.nextInt();
-		System.out.println(num + " ¹øÂ°·Î ÀÛ¼ºÇØ º¸´Â ÀÚ¹Ù ÇÁ·Î±×·¥ ÀÔ´Ï´Ù.");
+		System.out.println(num + " ë²ˆì§¸ë¡œ ì‘ì„±í•´ ë³´ëŠ” ìë°” í”„ë¡œê·¸ë¨ ì…ë‹ˆë‹¤.");
 	}
 
 }

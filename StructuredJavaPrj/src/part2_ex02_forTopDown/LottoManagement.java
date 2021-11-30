@@ -1,4 +1,4 @@
-package part2_ex02_forTopDown;
+ï»¿package part2_ex02_forTopDown;
 
 public class LottoManagement {
 
@@ -14,8 +14,8 @@ public class LottoManagement {
 			
 			switch(menu) {
 			case 1:
-				//create : °ø°£±îÁö ¸¸µå´Â ÀÛ¾÷
-				//gen : ¹øÈ£¸¸ »ı¼ºÇÏ´Â ÀÛ¾÷
+				//create : ê³µê°„ê¹Œì§€ ë§Œë“œëŠ” ì‘ì—…
+				//gen : ë²ˆí˜¸ë§Œ ìƒì„±í•˜ëŠ” ì‘ì—…
 				lottos = createLottosAuto();
 				break;
 			case 2:

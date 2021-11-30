@@ -1,4 +1,4 @@
-package ch05;
+ï»¿package ch05;
 
 public class Ex05_14 {
 
@@ -8,15 +8,15 @@ public class Ex05_14 {
 		First: {
 			Second: {
 				Third: {
-					System.out.println("Third ºí·Ï 'break' ¹®Àå Àü");
+					System.out.println("Third ë¸”ë¡ 'break' ë¬¸ì¥ ì „");
 					if(t) break Second;
-					System.out.println("Third ºí·Ï 'break' ¹®Àå ÈÄ");
+					System.out.println("Third ë¸”ë¡ 'break' ë¬¸ì¥ í›„");
 				}
-				System.out.println("Second ºí·Ï ¹®Àå");
+				System.out.println("Second ë¸”ë¡ ë¬¸ì¥");
 			}
-			System.out.println("Second ºí·Ï ¹®Àå");
+			System.out.println("Second ë¸”ë¡ ë¬¸ì¥");
 		}
-		System.out.println("main ºí·Ï ¹®Àå");
+		System.out.println("main ë¸”ë¡ ë¬¸ì¥");
 	}
 
 }

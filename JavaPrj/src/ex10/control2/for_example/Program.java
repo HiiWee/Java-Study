@@ -1,4 +1,4 @@
-package ex10.control2.for_example;
+ï»¿package ex10.control2.for_example;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ public class Program {
 	public static void main(String[] args) {
 		int total = 0;
 		
-		/* ¼öÇĞÀ» ¸øÇÒ °æ¿ï ¹ß»ıÇÒ ¼ö ÀÖ´Â »óÈ²
+		/* ìˆ˜í•™ì„ ëª»í•  ê²½ìš¸ ë°œìƒí•  ìˆ˜ ìˆëŠ” ìƒí™©
 		 * for(int i=0; i<5; i++) { total += i+3; }
 		 */
 		// n*(a+1)/2

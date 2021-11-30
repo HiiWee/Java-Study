@@ -1,5 +1,5 @@
-import part3_ex04_seperateUIcode.Exam;
-//is a »ó¼Ó
+ï»¿import part3_ex04_seperateUIcode.Exam;
+//is a ìƒì†
 public class NewlecExam extends Exam{
 	private int com;
 	
@@ -7,7 +7,7 @@ public class NewlecExam extends Exam{
 		this(0, 0, 0, 0);
 	}
 	public NewlecExam(int kor, int eng, int math, int com) {
-		super(kor, eng, math);	//ºÎ¸ğÀÇ »ı¼ºÀÚ È£Ãâ
+		super(kor, eng, math);	//ë¶€ëª¨ì˜ ìƒì„±ì í˜¸ì¶œ
 		this.com = com;
 	}
 	
@@ -22,7 +22,7 @@ public class NewlecExam extends Exam{
 	 
 	@Override
 	public int getTotal() {
-		//ºÎ¸ğ°´Ã¼ getTotal + com
+		//ë¶€ëª¨ê°ì²´ getTotal + com
 		return super.getTotal() + com;
 	}
 	

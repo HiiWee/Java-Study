@@ -1,4 +1,4 @@
-package part3_ex01_encapsulation;
+﻿package part3_ex01_encapsulation;
 
 public class Exam {
 	int kor;

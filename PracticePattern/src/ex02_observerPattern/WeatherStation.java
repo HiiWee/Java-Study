@@ -1,4 +1,4 @@
-package ex02_observerPattern;
+﻿package ex02_observerPattern;
 
 import ex02_observerPattern.InterfaceObj.*;
 

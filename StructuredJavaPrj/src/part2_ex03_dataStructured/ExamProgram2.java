@@ -1,4 +1,4 @@
-package part2_ex03_dataStructured;
+ï»¿package part2_ex03_dataStructured;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class ExamProgram2 {
 
 		int menu;
 		boolean keepLoop = true;
-		// ½ºÄ³³Ê´Â ±»ÀÌ Àü¿ªº¯¼ö·Î °øÀ¯ÇÒÇÊ¿ä¾ø´Ù.
+		// ìŠ¤ìºë„ˆëŠ” êµ³ì´ ì „ì—­ë³€ìˆ˜ë¡œ ê³µìœ í• í•„ìš”ì—†ë‹¤.
 		Scanner scan = new Scanner(System.in);
 
 		while (keepLoop) {
@@ -31,7 +31,7 @@ public class ExamProgram2 {
 				break;
 
 			default:
-				System.out.println("Àß¸øµÈ °ªÀ» ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¸Ş´º´Â 1~3±îÁöÀÔ´Ï´Ù.");
+				System.out.println("ì˜ëª»ëœ ê°’ì„ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ë‰´ëŠ” 1~3ê¹Œì§€ì…ë‹ˆë‹¤.");
 
 			}
 
@@ -39,67 +39,67 @@ public class ExamProgram2 {
 	}
 
 	private static void printList(Exam[] exams, int size) {
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢           ¼ºÀû  Ãâ·Â      ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚           ì„±ì   ì¶œë ¥      â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 		for (int i = 0; i < size; i++) {
 			Exam exam = exams[i];
-			// for¹® ³»¿¡ ÀÖ¾îµµ 1¹ø¸¸ ¼±¾ğµÇ°í ¸¾, Áï ¹İº¹µÇ¾î
-			// ¼±¾ğµÇÁö ¾Ê´Â´Ù.
+			// forë¬¸ ë‚´ì— ìˆì–´ë„ 1ë²ˆë§Œ ì„ ì–¸ë˜ê³  ë§˜, ì¦‰ ë°˜ë³µë˜ì–´
+			// ì„ ì–¸ë˜ì§€ ì•ŠëŠ”ë‹¤.
 			int kor = exam.kor;
 			int eng = exam.eng;
 			int math = exam.math;
 
 			int total = kor + eng + math;
-			// ¿¬»êÀÚ ´Ù·®»ç¿ë ¹× °¡µ¶¼º ¶³¾îÁü
-			// µû¶ó¼­ ÀÓ½Ãº¯¼ö »ç¿ë
+			// ì—°ì‚°ì ë‹¤ëŸ‰ì‚¬ìš© ë° ê°€ë…ì„± ë–¨ì–´ì§
+			// ë”°ë¼ì„œ ì„ì‹œë³€ìˆ˜ ì‚¬ìš©
 			float avg = total / 3.0f;
 
-			System.out.printf("±¹¾î %d\n", kor);
-			System.out.printf("¿µ¾î %d\n", eng);
-			System.out.printf("¼öÇĞ %d\n", math);
+			System.out.printf("êµ­ì–´ %d\n", kor);
+			System.out.printf("ì˜ì–´ %d\n", eng);
+			System.out.printf("ìˆ˜í•™ %d\n", math);
 
-			System.out.printf("ÃÑÁ¡ : %3d\n", total);
-			System.out.printf("Æò±Õ : %6.2f\n", avg);
-			System.out.println("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡");
+			System.out.printf("ì´ì  : %3d\n", total);
+			System.out.printf("í‰ê·  : %6.2f\n", avg);
+			System.out.println("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
 		}
 	}
 
 	private static void inputList(Exam[] exams, int current) {
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢           ¼ºÀû  ÀÔ·Â      ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚           ì„±ì   ì…ë ¥      â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 
 		int kor, eng, math;
 
 		do {
-			System.out.printf("±¹¾î : ");
+			System.out.printf("êµ­ì–´ : ");
 			kor = scan.nextInt();
 
 			if (kor < 0 || 100 < kor)
-				System.out.println("±¹¾î¼ºÀûÀº 0~100±îÁöÀÇ ¹üÀ§¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+				System.out.println("êµ­ì–´ì„±ì ì€ 0~100ê¹Œì§€ì˜ ë²”ìœ„ë§Œ ì…ë ¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 
 		} while (kor < 0 || 100 < kor);
 
 		do {
-			System.out.printf("¿µ¾î : ");
+			System.out.printf("ì˜ì–´ : ");
 			eng = scan.nextInt();
 
 			if (eng < 0 || 100 < eng)
-				System.out.println("¿µ¾î¼ºÀûÀº 0~100±îÁöÀÇ ¹üÀ§¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+				System.out.println("ì˜ì–´ì„±ì ì€ 0~100ê¹Œì§€ì˜ ë²”ìœ„ë§Œ ì…ë ¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 
 		} while (eng < 0 || 100 < eng);
 
 		do {
-			System.out.printf("¼öÇĞ : ");
+			System.out.printf("ìˆ˜í•™ : ");
 			math = scan.nextInt();
 
 			if (math < 0 || 100 < math)
-				System.out.println("¼öÇĞ¼ºÀûÀº 0~100±îÁöÀÇ ¹üÀ§¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+				System.out.println("ìˆ˜í•™ì„±ì ì€ 0~100ê¹Œì§€ì˜ ë²”ìœ„ë§Œ ì…ë ¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 
 		} while (math < 0 || 100 < math);
 		Exam exam = new Exam();
@@ -117,13 +117,13 @@ public class ExamProgram2 {
 		int menu;
 
 		Scanner scan = new Scanner(System.in);
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢           ¸ŞÀÎ ¸Ş´º       ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
-		System.out.println("\t1. ¼ºÀûÀÔ·Â ");
-		System.out.println("\t2. ¼ºÀûÃâ·Â ");
-		System.out.println("\t3. Á¾·á ");
-		System.out.println("\t¼±ÅÃ> ");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚           ë©”ì¸ ë©”ë‰´       â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
+		System.out.println("\t1. ì„±ì ì…ë ¥ ");
+		System.out.println("\t2. ì„±ì ì¶œë ¥ ");
+		System.out.println("\t3. ì¢…ë£Œ ");
+		System.out.println("\tì„ íƒ> ");
 		menu = scan.nextInt();
 
 		return menu;

@@ -1,5 +1,5 @@
-/*
- * VO value Object : µ¥ÀÌÅÍº£ÀÌ½º Å×ÀÌºí NOTICEÀÇ °¢ ÄÃ·´°ª ÀúÀå¿ë °´Ã¼ : ÇÑ Çà¾¿ ÀúÀå
+ï»¿/*
+ * VO value Object : ë°ì´í„°ë² ì´ìŠ¤ í…Œì´ë¸” NOTICEì˜ ê° ì»¬ëŸ½ê°’ ì €ìž¥ìš© ê°ì²´ : í•œ í–‰ì”© ì €ìž¥
  * DTO : Data Transfer Object
  * DO : Domain Object
  * */

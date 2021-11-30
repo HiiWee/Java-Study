@@ -1,4 +1,4 @@
-package Ch03;
+ï»¿package Ch03;
 
 import java.util.Scanner;
 
@@ -7,17 +7,17 @@ public class Ex03_14 {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.print("Ã¹ ¹øÂ° Á¤¼ö¸¦ ÀÔ·Â : ");
+		System.out.print("ì²« ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥ : ");
 		int firstNum = scan.nextInt();
 		
-		System.out.print("µÎ ¹øÂ° Á¤¼ö¸¦ ÀÔ·Â : ");
+		System.out.print("ë‘ ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥ : ");
 		int secondNum = scan.nextInt();
 		
 		int sum = firstNum + secondNum;
 		double avg = sum/2;
 		double avg2 = sum/2.0;
 		
-		System.out.printf("Á¤¼ö¿¬»ê: Æò±ÕÀº(%d+%d)/2=%.1f\n", firstNum, secondNum, avg);
-		System.out.printf("Á¤¼ö¿¬»ê: Æò±ÕÀº(%d+%d)/2=%.1f\n", firstNum, secondNum, avg2);
+		System.out.printf("ì •ìˆ˜ì—°ì‚°: í‰ê· ì€(%d+%d)/2=%.1f\n", firstNum, secondNum, avg);
+		System.out.printf("ì •ìˆ˜ì—°ì‚°: í‰ê· ì€(%d+%d)/2=%.1f\n", firstNum, secondNum, avg2);
 	}
 }

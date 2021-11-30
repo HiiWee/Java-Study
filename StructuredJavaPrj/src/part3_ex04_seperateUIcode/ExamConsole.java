@@ -1,10 +1,10 @@
-package part3_ex04_seperateUIcode;
+ï»¿package part3_ex04_seperateUIcode;
 
 import java.util.Scanner;
 
 public class ExamConsole {
-	//UI¸¦ ³ªÅ¸³»´Â ºÎºĞ
-	//Composition Has A ÀÏÃ¼Çü has a »ó¼Ó°ü°è
+	//UIë¥¼ ë‚˜íƒ€ë‚´ëŠ” ë¶€ë¶„
+	//Composition Has A ì¼ì²´í˜• has a ìƒì†ê´€ê³„
 	private ExamList list;
 	
 	public ExamConsole() {
@@ -16,32 +16,32 @@ public class ExamConsole {
 	}
 	
 	public void printList(int size) {
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢           ¼ºÀû  Ãâ·Â      ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚           ì„±ì   ì¶œë ¥      â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 		// int size = list.current;
 
 		for (int i = 0; i < size; i++) {
 			Exam exam = list.get(i);// this.exams[i];
-			// for¹® ³»¿¡ ÀÖ¾îµµ 1¹ø¸¸ ¼±¾ğµÇ°í ¸¾, Áï ¹İº¹µÇ¾î
-			// ¼±¾ğµÇÁö ¾Ê´Â´Ù.
+			// forë¬¸ ë‚´ì— ìˆì–´ë„ 1ë²ˆë§Œ ì„ ì–¸ë˜ê³  ë§˜, ì¦‰ ë°˜ë³µë˜ì–´
+			// ì„ ì–¸ë˜ì§€ ì•ŠëŠ”ë‹¤.
 			int kor = exam.getKor();// exam.kor;
 			int eng = exam.getEng();
 			int math = exam.getMath();
 
 			int total = exam.getTotal();// kor + eng + math;
-			// ¿¬»êÀÚ ´Ù·®»ç¿ë ¹× °¡µ¶¼º ¶³¾îÁü
-			// µû¶ó¼­ ÀÓ½Ãº¯¼ö »ç¿ë
+			// ì—°ì‚°ì ë‹¤ëŸ‰ì‚¬ìš© ë° ê°€ë…ì„± ë–¨ì–´ì§
+			// ë”°ë¼ì„œ ì„ì‹œë³€ìˆ˜ ì‚¬ìš©
 			float avg = exam.getAvg();// total / 3.0f;
 
-			System.out.printf("±¹¾î %d\n", kor);
-			System.out.printf("¿µ¾î %d\n", eng);
-			System.out.printf("¼öÇĞ %d\n", math);
+			System.out.printf("êµ­ì–´ %d\n", kor);
+			System.out.printf("ì˜ì–´ %d\n", eng);
+			System.out.printf("ìˆ˜í•™ %d\n", math);
 
-			System.out.printf("ÃÑÁ¡ : %3d\n", total);
-			System.out.printf("Æò±Õ : %6.2f\n", avg);
-			System.out.println("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡");
+			System.out.printf("ì´ì  : %3d\n", total);
+			System.out.printf("í‰ê·  : %6.2f\n", avg);
+			System.out.println("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
 		}
 	}
 
@@ -49,37 +49,37 @@ public class ExamConsole {
 
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢           ¼ºÀû  ÀÔ·Â      ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚           ì„±ì   ì…ë ¥      â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 		System.out.println();
 
 		int kor, eng, math;
 
 		do {
-			System.out.printf("±¹¾î : ");
+			System.out.printf("êµ­ì–´ : ");
 			kor = scan.nextInt();
 
 			if (kor < 0 || 100 < kor)
-				System.out.println("±¹¾î¼ºÀûÀº 0~100±îÁöÀÇ ¹üÀ§¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+				System.out.println("êµ­ì–´ì„±ì ì€ 0~100ê¹Œì§€ì˜ ë²”ìœ„ë§Œ ì…ë ¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 
 		} while (kor < 0 || 100 < kor);
 
 		do {
-			System.out.printf("¿µ¾î : ");
+			System.out.printf("ì˜ì–´ : ");
 			eng = scan.nextInt();
 
 			if (eng < 0 || 100 < eng)
-				System.out.println("¿µ¾î¼ºÀûÀº 0~100±îÁöÀÇ ¹üÀ§¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+				System.out.println("ì˜ì–´ì„±ì ì€ 0~100ê¹Œì§€ì˜ ë²”ìœ„ë§Œ ì…ë ¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 
 		} while (eng < 0 || 100 < eng);
 
 		do {
-			System.out.printf("¼öÇĞ : ");
+			System.out.printf("ìˆ˜í•™ : ");
 			math = scan.nextInt();
 
 			if (math < 0 || 100 < math)
-				System.out.println("¼öÇĞ¼ºÀûÀº 0~100±îÁöÀÇ ¹üÀ§¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+				System.out.println("ìˆ˜í•™ì„±ì ì€ 0~100ê¹Œì§€ì˜ ë²”ìœ„ë§Œ ì…ë ¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 
 		} while (math < 0 || 100 < math);
 		/*
@@ -87,7 +87,7 @@ public class ExamConsole {
 		 * exam.setEng(eng);//exam.eng = eng; exam.setMath(math);//exam.math = math;
 		 */
 		
-		//ÀÓ½Ãº¯¼ö
+		//ì„ì‹œë³€ìˆ˜
 		Exam exam = new Exam(kor, eng, math);
 
 		/*----------------ADD-------------------------*/

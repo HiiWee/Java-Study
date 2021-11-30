@@ -1,11 +1,11 @@
-package ch05;
+ï»¿package ch05;
 
 import java.util.Scanner;
 
 public class Ex05_12 {
 
 	public static void main(String[] args) {
-		System.out.println("ÇÕ°è¿øÇÏ´Â Á¤¼ö ÀÔ·Â : ");
+		System.out.println("í•©ê³„ì›í•˜ëŠ” ì •ìˆ˜ ì…ë ¥ : ");
 		Scanner scan = new Scanner(System.in);
 		
 		int num = scan.nextInt();

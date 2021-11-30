@@ -1,12 +1,12 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_04 {
 	public static void main(String[] args) {
 		byte a = (byte)128;
-		System.out.println("128À» ÀúÀåÇÑ byte°ªÀº: " + a);
+		System.out.println("128ì„ ì €ì¥í•œ byteê°’ì€: " + a);
 
 		byte b = (byte)256;
-		System.out.println("256À» ÀúÀåÇÑ byte°ªÀº: " + b);
+		System.out.println("256ì„ ì €ì¥í•œ byteê°’ì€: " + b);
 	}
 
 }

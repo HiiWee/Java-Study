@@ -1,11 +1,11 @@
-package ch10;
+ï»¿package ch10;
 
 class A {
 	public int aa = 1;
 	protected int aa2 = 4;
 
 	public A() {
-		System.out.println("A»ı¼ºÀÚ ½ÇÇà");
+		System.out.println("Aìƒì„±ì ì‹¤í–‰");
 	}
 }
 
@@ -17,7 +17,7 @@ class B extends A {
 	}
 	
 	public B() {
-		System.out.println("B»ı¼ºÀÚ ½ÇÇà");
+		System.out.println("Bìƒì„±ì ì‹¤í–‰");
 	}
 }
 
@@ -25,7 +25,7 @@ class C extends B {
 	int cc = 3;
 	
 	public C() {
-		System.out.println("C»ı¼ºÀÚ ½ÇÇà");
+		System.out.println("Cìƒì„±ì ì‹¤í–‰");
 	}
 }
 
@@ -33,7 +33,7 @@ class D extends C {
 	int dd = 4;
 
 	public D() {
-		System.out.println("D»ı¼ºÀÚ ½ÇÇà");
+		System.out.println("Dìƒì„±ì ì‹¤í–‰");
 	}
 }
 

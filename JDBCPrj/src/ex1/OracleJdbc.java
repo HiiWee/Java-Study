@@ -1,6 +1,6 @@
-package ex1;
+ï»¿package ex1;
 
-// JDBC¸¦ »ç¿ëÇÏ±â À§ÇØ Á¦°øÇØÁÖ´Â JDBC¶óÀÌºê·¯¸®
+// JDBCë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ ì œê³µí•´ì£¼ëŠ” JDBCë¼ì´ë¸ŒëŸ¬ë¦¬
 // Connection, Statement, ResultSet
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,35 +10,35 @@ import java.sql.Statement;
 import java.util.Date;
 
 public class OracleJdbc {
-// ¼ø¼­
-	// 1. µå¶óÀÌ¹ö ·ÎµåÇÏ±â (¸Ş¸ğ¸®»ó¿¡ µå¶óÀÌ¹ö°¡ ¿Ã·ÁÁü)
-	// 2. ¿¬°áÀÌ È®¸³ÀÌ µÊ (¿¬°áÀÌ¶ó´Â°ÍÀÌ ÀÌ·ç¾îÁü)
-	// 3. ½ÇÇàµµ±¸ »ı¼º
-	// 4. ¹®Àå(Äõ¸®) ½ÇÇàÇÏ±â (»ç¿ëÀÚ·ÎºÎÅÍ ¿ä±¸¹ŞÀº Äõ¸® ½ÇÇà)
-	// 5. °á°úÁıÇÕ »ç¿ëÇÏ±â (Äõ¸®°¡ ½ÇÇàµÈ °á°úÁıÇÕ(·¹ÄÚµå ÁıÇÕ ÀüÃ¼°¡ ¾Æ´Ñ ·¹ÄÚµå ´ÜÀ§·Î ÇÏ³ª¾¿ ¹ŞÀ½)·¹ÄÚµå ÇÏ³ª¸¦ °¡¸®Å°´Â Ä¿¼­(Æ÷ÀÎÅÍ)°¡ ÇÊ¿ä)
+// ìˆœì„œ
+	// 1. ë“œë¼ì´ë²„ ë¡œë“œí•˜ê¸° (ë©”ëª¨ë¦¬ìƒì— ë“œë¼ì´ë²„ê°€ ì˜¬ë ¤ì§)
+	// 2. ì—°ê²°ì´ í™•ë¦½ì´ ë¨ (ì—°ê²°ì´ë¼ëŠ”ê²ƒì´ ì´ë£¨ì–´ì§)
+	// 3. ì‹¤í–‰ë„êµ¬ ìƒì„±
+	// 4. ë¬¸ì¥(ì¿¼ë¦¬) ì‹¤í–‰í•˜ê¸° (ì‚¬ìš©ìë¡œë¶€í„° ìš”êµ¬ë°›ì€ ì¿¼ë¦¬ ì‹¤í–‰)
+	// 5. ê²°ê³¼ì§‘í•© ì‚¬ìš©í•˜ê¸° (ì¿¼ë¦¬ê°€ ì‹¤í–‰ëœ ê²°ê³¼ì§‘í•©(ë ˆì½”ë“œ ì§‘í•© ì „ì²´ê°€ ì•„ë‹Œ ë ˆì½”ë“œ ë‹¨ìœ„ë¡œ í•˜ë‚˜ì”© ë°›ìŒ)ë ˆì½”ë“œ í•˜ë‚˜ë¥¼ ê°€ë¦¬í‚¤ëŠ” ì»¤ì„œ(í¬ì¸í„°)ê°€ í•„ìš”)
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		// ¼­¹ö Á¢¼Ó
+		// ì„œë²„ ì ‘ì†
 		String url = "jdbc:oracle:thin:@192.168.31.127:51521/xepdb1";
-		// »ç¿ëÀÚ Äõ¸®¹®
+		// ì‚¬ìš©ì ì¿¼ë¦¬ë¬¸
 		String sql = "select * from NOTICE where HIT >= 10 order by ID";
 		
-		// µå¶óÀÌ¹ö ·Îµå
+		// ë“œë¼ì´ë²„ ë¡œë“œ
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		// JDBC°¡ °¡Áö°í ÀÖ´Â ¶óÀÌºê·¯¸® »ç¿ë
-		// ÇÏÁö¸¸ JDBC°¡ »ç¿ëÇÏ´Â µå¶óÀÌ¹ö ÇÊ¿ä
+		// JDBCê°€ ê°€ì§€ê³  ìˆëŠ” ë¼ì´ë¸ŒëŸ¬ë¦¬ ì‚¬ìš©
+		// í•˜ì§€ë§Œ JDBCê°€ ì‚¬ìš©í•˜ëŠ” ë“œë¼ì´ë²„ í•„ìš”
 		Connection con = DriverManager.getConnection(url, "HOSEOK", "1234");
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(sql);
 		
 		
-		// ´ÙÀ½ÁÙÀ» °¡¸®Å´(°¡Á®¿È) (°¡Á®¿Â°Ô ¾øÀ¸¸é false ¹İÈ¯, ÀÖÀ¸¸é true¹İÈ¯)
+		// ë‹¤ìŒì¤„ì„ ê°€ë¦¬í‚´(ê°€ì ¸ì˜´) (ê°€ì ¸ì˜¨ê²Œ ì—†ìœ¼ë©´ false ë°˜í™˜, ìˆìœ¼ë©´ trueë°˜í™˜)
 		while (rs.next()) {
 			int id = rs.getInt("ID");
 			String title = rs.getString("TITLE");
 			String writerId = rs.getString("WRITER_ID");
 			String content = rs.getString("CONTENT");
-			// java.sql ¾Æ´Ñ java.utilÀÇ Date Å¬·¡½º Ãß°¡
+			// java.sql ì•„ë‹Œ java.utilì˜ Date í´ë˜ìŠ¤ ì¶”ê°€
 			Date regDate = rs.getDate("REGDATE");
 			int hit = rs.getInt("HIT");
 			

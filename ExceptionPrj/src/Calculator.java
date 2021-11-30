@@ -1,15 +1,15 @@
-
+ï»¿
 public class Calculator {
 	public Calculator() {
 	}
 
-										// throw¸¦ ³»°¡ Ã³¸®ÇÏÁö ¾Ê°í
-										// ³ª¸¦»ç¿ëÇÏ´Â Ã¥ÀÓÀÚ°¡ Ã³¸®ÇÏ°Ô ´øÁü
+										// throwë¥¼ ë‚´ê°€ ì²˜ë¦¬í•˜ì§€ ì•Šê³ 
+										// ë‚˜ë¥¼ì‚¬ìš©í•˜ëŠ” ì±…ì„ìê°€ ì²˜ë¦¬í•˜ê²Œ ë˜ì§
 	public static int add(int x, int y) throws ExceptionOver1000, ExceptionBecomeNegative {
-										// º¹¼öÇüÀÎÀÌÀ¯ : ¿¹¿Ü°¡ ÇÑ °³°¡ ¾Æ´Ï¶ó ¿©·¯°³ ÀÏ ¼ö µµ ÀÖÀ¸¹Ç·Î
-										//				 ÇÑ¹ø¿¡ ´øÁö±â À§ÇØ¼­ º¹¼öÇü
+										// ë³µìˆ˜í˜•ì¸ì´ìœ  : ì˜ˆì™¸ê°€ í•œ ê°œê°€ ì•„ë‹ˆë¼ ì—¬ëŸ¬ê°œ ì¼ ìˆ˜ ë„ ìˆìœ¼ë¯€ë¡œ
+										//				 í•œë²ˆì— ë˜ì§€ê¸° ìœ„í•´ì„œ ë³µìˆ˜í˜•
 		int result = x + y;
-		// ¿ì¸®°¡ ¸¸µå´Â ¾÷¹«ÀûÀÎ ¿¹¿Ü
+		// ìš°ë¦¬ê°€ ë§Œë“œëŠ” ì—…ë¬´ì ì¸ ì˜ˆì™¸
 		if (result > 1000) {
 			throw new ExceptionOver1000();
 		}
@@ -22,7 +22,7 @@ public class Calculator {
 
 	public static int sub(int x, int y) throws ExceptionBecomeNegative {
 		int result = x + y;
-		// ¿ì¸®°¡ ¸¸µå´Â ¾÷¹«ÀûÀÎ ¿¹¿Ü
+		// ìš°ë¦¬ê°€ ë§Œë“œëŠ” ì—…ë¬´ì ì¸ ì˜ˆì™¸
 		if (result < 0) {
 			throw new ExceptionBecomeNegative();
 		}

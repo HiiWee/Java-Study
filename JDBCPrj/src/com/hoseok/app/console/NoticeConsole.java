@@ -1,4 +1,4 @@
-// view(controller ¿ªÇÒµµ °°ÀÌÇÏ°í ÀÖÀ½)
+ï»¿// view(controller ì—­í• ë„ ê°™ì´í•˜ê³  ìˆìŒ)
 package com.hoseok.app.console;
 
 import java.sql.SQLException;
@@ -11,36 +11,36 @@ import com.hoseok.app.service.NoticeService;
 public class NoticeConsole {
 	
 	private NoticeService service;
-	// ÆäÀÌÁö¸¦ ±â¾ïÇÏ±â À§ÇÑ »óÅÂº¯¼ö
-	// ConsoleÀÌ page¿¡ ´ëÇÑ »óÅÂ°ªÀ» °®´Â°ÍÀÌ ¹Ù¶÷Á÷ÇÔ
+	// í˜ì´ì§€ë¥¼ ê¸°ì–µí•˜ê¸° ìœ„í•œ ìƒíƒœë³€ìˆ˜
+	// Consoleì´ pageì— ëŒ€í•œ ìƒíƒœê°’ì„ ê°–ëŠ”ê²ƒì´ ë°”ëŒì§í•¨
 	private int page;
 	
-	// Å°¿öµå¸¦ °Ë»öÇÏ±â À§ÇÑ º¯¼ö(serarchWord,Field) inputSearchWord()¿¡¼­ »ç¿ëµÇ´Â °Í »Ó¸¸¾Æ´Ï¶ó
-	// printNoticeList()¿¡¼­ ¸ñ·ÏÀ» Á¶È¸ÇÒ¶§µµ »ç¿ëµÇ¹Ç·Î ¸â¹öº¯¼ö·Î °øÀ¯
+	// í‚¤ì›Œë“œë¥¼ ê²€ìƒ‰í•˜ê¸° ìœ„í•œ ë³€ìˆ˜(serarchWord,Field) inputSearchWord()ì—ì„œ ì‚¬ìš©ë˜ëŠ” ê²ƒ ë¿ë§Œì•„ë‹ˆë¼
+	// printNoticeList()ì—ì„œ ëª©ë¡ì„ ì¡°íšŒí• ë•Œë„ ì‚¬ìš©ë˜ë¯€ë¡œ ë©¤ë²„ë³€ìˆ˜ë¡œ ê³µìœ 
 	private String searchField;
 	private String searchWord;
 
 	public NoticeConsole() {
 		service = new NoticeService();
 		page = 1;
-		// ¾Æ¹«°ªµµ ¾øÀ¸¸é NoticeService.getList()ÀÇ Äõ¸®¹®ÀÌ ¿À·ù³²
-		// [ÇÊµå°ª´©¶ô] like '%word%'
+		// ì•„ë¬´ê°’ë„ ì—†ìœ¼ë©´ NoticeService.getList()ì˜ ì¿¼ë¦¬ë¬¸ì´ ì˜¤ë¥˜ë‚¨
+		// [í•„ë“œê°’ëˆ„ë½] like '%word%'
 		searchField="title";
 		searchWord="";
 	}
 	
 	public void printNoticeList() throws ClassNotFoundException, SQLException {
 		List<Notice> list = service.getList(page, searchField, searchWord);
-		// °Ô½Ã¹°ÀÇ °³¼ö¸¦ Ä«¿îÆ®ÇÏ´Â º¯¼ö
+		// ê²Œì‹œë¬¼ì˜ ê°œìˆ˜ë¥¼ ì¹´ìš´íŠ¸í•˜ëŠ” ë³€ìˆ˜
 		int count = service.getCount(searchField, searchWord);
-		// ¸¶Áö¸· ÆäÀÌÁö¸¦ ´ã´Â º¯¼ö
+		// ë§ˆì§€ë§‰ í˜ì´ì§€ë¥¼ ë‹´ëŠ” ë³€ìˆ˜
 		int lastPage = count/10;
 		lastPage = count%10>0 ? lastPage + 1 : lastPage;
 		
-		System.out.printf("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡\n");
-		System.out.printf("<°øÁö»çÇ×> ÃÑ %d °Ô½Ã±Û\n", count);
-		System.out.printf("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡\n");
-		// ¹İº¹¹® »ç¿ë¿¹Á¤
+		System.out.printf("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
+		System.out.printf("<ê³µì§€ì‚¬í•­> ì´ %d ê²Œì‹œê¸€\n", count);
+		System.out.printf("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
+		// ë°˜ë³µë¬¸ ì‚¬ìš©ì˜ˆì •
 		for(Notice n : list) {
 			System.out.printf("%d / %s / %s / %s / %s\n", n.getId(), 
 													n.getTitle(), 
@@ -48,23 +48,23 @@ public class NoticeConsole {
 													n.getContent(),
 													n.getRegdate());
 		}
-		System.out.printf("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡\n");
+		System.out.printf("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
 		System.out.printf("           %d/%d pages         \n", page, lastPage);
 		
 	}
 
 	public int inputNoticeMenu() {
 		Scanner scan = new Scanner(System.in);
-		// »ç¿ëÀÚ ÀÔ·ÂÀ» ¹Ş±âÀ§ÇÑ ¸Ş´º Ãâ·Â
-		System.out.print("1.»ó¼¼Á¶È¸/ 2.ÀÌÀü/ 3.´ÙÀ½/ 4.±Û¾²±â/ 5.°Ë»ö/ 6.µÚ·Î°¡±â/ 7.±Û »èÁ¦/ 8.Á¾·á>");
+		// ì‚¬ìš©ì ì…ë ¥ì„ ë°›ê¸°ìœ„í•œ ë©”ë‰´ ì¶œë ¥
+		System.out.print("1.ìƒì„¸ì¡°íšŒ/ 2.ì´ì „/ 3.ë‹¤ìŒ/ 4.ê¸€ì“°ê¸°/ 5.ê²€ìƒ‰/ 6.ë’¤ë¡œê°€ê¸°/ 7.ê¸€ ì‚­ì œ/ 8.ì¢…ë£Œ>");
 		
-		// nextInt()´Â µÎ°¡Áö ¹®Á¦¸¦ ¾ß±â, 
-		//(1. Á¤¼ö°ªÀÌ ¾Æ´Ñ °ªÀ» ÀÔ·Â,))
-		//2. ¹öÆÛ¿¡ ³²¾ÆÀÖ´Â ¿£ÅÍÅ°ÀÇ Å°°ªÀÌ ´ÙÀ½ ÀÔ·Â¿¡ ¿µÇâÀ» ÁÜ)
-		// µû¶ó¼­ ¹®ÀÚ¿­·Î ¹Ş¾Æ º¯È¯À»ÇØ ÀÔ·Â¿¡ ÀÌ¿ë
+		// nextInt()ëŠ” ë‘ê°€ì§€ ë¬¸ì œë¥¼ ì•¼ê¸°, 
+		//(1. ì •ìˆ˜ê°’ì´ ì•„ë‹Œ ê°’ì„ ì…ë ¥,))
+		//2. ë²„í¼ì— ë‚¨ì•„ìˆëŠ” ì—”í„°í‚¤ì˜ í‚¤ê°’ì´ ë‹¤ìŒ ì…ë ¥ì— ì˜í–¥ì„ ì¤Œ)
+		// ë”°ë¼ì„œ ë¬¸ìì—´ë¡œ ë°›ì•„ ë³€í™˜ì„í•´ ì…ë ¥ì— ì´ìš©
 		String menu_ = scan.nextLine();
 
-		// ¿ø·¡´Â º¯È¯µÉ ¼ö ÀÖ´Â °ÍÀÎÁö Ã¼Å©ÇÏ´Â °úÁ¤(¼ıÀÚ¸Â´ÂÁö, Àß¸øµÈ°ª ¾Æ´ÑÁö)ÇÊ¿äÇÏÁö¸¸ »ı·«
+		// ì›ë˜ëŠ” ë³€í™˜ë  ìˆ˜ ìˆëŠ” ê²ƒì¸ì§€ ì²´í¬í•˜ëŠ” ê³¼ì •(ìˆ«ìë§ëŠ”ì§€, ì˜ëª»ëœê°’ ì•„ë‹Œì§€)í•„ìš”í•˜ì§€ë§Œ ìƒëµ
 		int menu = Integer.parseInt(menu_);
 		
 		return menu;
@@ -73,7 +73,7 @@ public class NoticeConsole {
 	public void movePrevList() {
 		if (page == 1) {
 			System.out.println("\n\n=========================================");
-			System.out.println("[ ÀÌÀü ÆäÀÌÁö°¡ ¾ø½À´Ï´Ù. ]");
+			System.out.println("[ ì´ì „ í˜ì´ì§€ê°€ ì—†ìŠµë‹ˆë‹¤. ]");
 			System.out.println("=========================================");
 			return;
 		}
@@ -83,16 +83,16 @@ public class NoticeConsole {
 	}
 
 	public void moveNextList() throws ClassNotFoundException, SQLException {
-		// main¿¡¼­ ÇÔ¼ö°¡ È£ÃâµÇ±âÀü »çÀÌ¿¡ ´Ù¸¥ °ªÀÌ µé¾î¿Ã ¼ö ÀÖÀ¸¹Ç·Î
-		// »õ·Î Áö¿ªº¯¼ö·Î ¼±¾ğÇØ¼­ ´Ù½Ã count¿Í lastPage°ªÀ» ±¸ÇÑ´Ù.
-		// °Ô½Ã¹°ÀÇ °³¼ö¸¦ Ä«¿îÆ®ÇÏ´Â º¯¼ö
+		// mainì—ì„œ í•¨ìˆ˜ê°€ í˜¸ì¶œë˜ê¸°ì „ ì‚¬ì´ì— ë‹¤ë¥¸ ê°’ì´ ë“¤ì–´ì˜¬ ìˆ˜ ìˆìœ¼ë¯€ë¡œ
+		// ìƒˆë¡œ ì§€ì—­ë³€ìˆ˜ë¡œ ì„ ì–¸í•´ì„œ ë‹¤ì‹œ countì™€ lastPageê°’ì„ êµ¬í•œë‹¤.
+		// ê²Œì‹œë¬¼ì˜ ê°œìˆ˜ë¥¼ ì¹´ìš´íŠ¸í•˜ëŠ” ë³€ìˆ˜
 		int count = service.getCount(searchField, searchWord);
-		// ¸¶Áö¸· ÆäÀÌÁö¸¦ ´ã´Â º¯¼ö
+		// ë§ˆì§€ë§‰ í˜ì´ì§€ë¥¼ ë‹´ëŠ” ë³€ìˆ˜
 		int lastPage = count / 10;
 		lastPage = count % 10 > 0 ? lastPage + 1 : lastPage;
 		if (page == lastPage) {
 			System.out.println("\n\n=========================================");
-			System.out.println("[ ´ÙÀ½ ÆäÀÌÁö°¡ ¾ø½À´Ï´Ù. ]");
+			System.out.println("[ ë‹¤ìŒ í˜ì´ì§€ê°€ ì—†ìŠµë‹ˆë‹¤. ]");
 			System.out.println("=========================================");
 			return;
 		}
@@ -103,11 +103,11 @@ public class NoticeConsole {
 	public void inputSearchWord() throws ClassNotFoundException, SQLException {
 		page = 1;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("\n\n°Ë»ö ¹üÁÖ(title/ content/ memberId)Áß¿¡ ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("\n\nê²€ìƒ‰ ë²”ì£¼(title/ content/ memberId)ì¤‘ì— í•˜ë‚˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 		System.out.print(">");
 		searchField = scan.nextLine();
 
-		System.out.print("°Ë»ö¾î >");
+		System.out.print("ê²€ìƒ‰ì–´ >");
 		searchWord = scan.nextLine();
 		System.out.print("\n\n");
 		
@@ -115,16 +115,16 @@ public class NoticeConsole {
 
 	public void movePrevSearch() {
 		if (searchWord != "" && searchField != "title") {
-			System.out.println("\n\nÃ³À½ ¸ñ·ÏÀ¸·Î µ¹¾Æ°©´Ï´Ù.");
+			System.out.println("\n\nì²˜ìŒ ëª©ë¡ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 			searchField = "title";
 			searchWord = "";
 			return;
 		}
-		System.out.println("\n\nÀÌ¹Ì Ã³À½ ¸ñ·ÏÀÔ´Ï´Ù.");
+		System.out.println("\n\nì´ë¯¸ ì²˜ìŒ ëª©ë¡ì…ë‹ˆë‹¤.");
 	}
 
 	public void writeNotice() throws ClassNotFoundException, SQLException {
-		// °´Ã¼ Àü´ŞÀ» À§ÇÑ ÀÓ½Ã°´Ã¼ »ı¼º
+		// ê°ì²´ ì „ë‹¬ì„ ìœ„í•œ ì„ì‹œê°ì²´ ìƒì„±
 		Notice notice = new Notice();
 
 		String title = "";
@@ -134,27 +134,27 @@ public class NoticeConsole {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("\n\n±ÛÀ» ÀÛ¼º ÇÕ´Ï´Ù. (±ÛÁ¦¸ñ, ÀÛ¼ºÀÚ, ±Û³»¿ë, ÆÄÀÏÀ» ¼ø¼­´ë·Î ÀÔ·ÂÇÏ¼¼¿ä)");
+		System.out.println("\n\nê¸€ì„ ì‘ì„± í•©ë‹ˆë‹¤. (ê¸€ì œëª©, ì‘ì„±ì, ê¸€ë‚´ìš©, íŒŒì¼ì„ ìˆœì„œëŒ€ë¡œ ì…ë ¥í•˜ì„¸ìš”)");
 		
 		// title not null
-		System.out.print("±Û Á¦¸ñ >");
+		System.out.print("ê¸€ ì œëª© >");
 		title = scan.nextLine();
 		
 		// memberId not null
-		System.out.print("ÀÛ¼ºÀÚ >");
+		System.out.print("ì‘ì„±ì >");
 		memberId = scan.nextLine();
 		
 		// content null
-		System.out.print("±Û³»¿ë >");
+		System.out.print("ê¸€ë‚´ìš© >");
 		content = scan.nextLine();
 		
 		// files null
-		System.out.print("ÆÄÀÏ >");
+		System.out.print("íŒŒì¼ >");
 		files = scan.nextLine();
 		
-		// Á¦¸ñ ¶Ç´Â ÀÛ¼ºÀÚ ¹ÌÀÔ·Â½Ã ÇÁ·Î±×·¥ Á¾·á
+		// ì œëª© ë˜ëŠ” ì‘ì„±ì ë¯¸ì…ë ¥ì‹œ í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 		if (title == "" && memberId == "") {
-			System.out.println("Á¦¸ñ ¶Ç´Â ÀÛ¼ºÀÚ¸¦ ÀÔ·ÂÇÏÁö ¾Ê¾Ò½À´Ï´Ù.");
+			System.out.println("ì œëª© ë˜ëŠ” ì‘ì„±ìë¥¼ ì…ë ¥í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
@@ -163,31 +163,31 @@ public class NoticeConsole {
 		notice.setContent(content);
 		notice.setFiles(files);
 		
-		// ¿¹¿Ü Ã³¸® ÇØ¾ßÇÏ´Âµ¥.. ¤Ğ
+		// ì˜ˆì™¸ ì²˜ë¦¬ í•´ì•¼í•˜ëŠ”ë°.. ã… 
 		int result = service.insert(notice);
 		if (result > 0) {
-			System.out.printf("°Ô½Ã¹° %d°³°¡ ÀÛ¼ºµÆ½À´Ï´Ù.\n\n", result);
+			System.out.printf("ê²Œì‹œë¬¼ %dê°œê°€ ì‘ì„±ëìŠµë‹ˆë‹¤.\n\n", result);
 			return;
 		}
-		System.out.println("°Ô½Ã¹° ÀÛ¼ºÀ» ½ÇÆĞÇß½À´Ï´Ù.\n\n");
+		System.out.println("ê²Œì‹œë¬¼ ì‘ì„±ì„ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n\n");
 		
 	}
 	public void deleteNotice() throws ClassNotFoundException, SQLException {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("\n\n »èÁ¦¸¦ ¿øÇÏ´Â °Ô½Ã¹°ÀÇ ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("\n\n ì‚­ì œë¥¼ ì›í•˜ëŠ” ê²Œì‹œë¬¼ì˜ IDë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		String id_ = scan.nextLine();
 		
-		// TODO : Á¤¼ö·Î º¯È¯ÇÒ¶§ ¾ÈµÇ´Â °æ¿ì ¿¹¿ÜÃ³¸® ÇØÁÖ±â
+		// TODO : ì •ìˆ˜ë¡œ ë³€í™˜í• ë•Œ ì•ˆë˜ëŠ” ê²½ìš° ì˜ˆì™¸ì²˜ë¦¬ í•´ì£¼ê¸°
 		int id = Integer.parseInt(id_);
 		
-		// TODO : ¿¹¿ÜÃ³¸®ÇÏ±â
+		// TODO : ì˜ˆì™¸ì²˜ë¦¬í•˜ê¸°
 		int result = service.delete(id);
 		
 		if (result > 0) {
-			System.out.printf("°Ô½Ã¹° %d°³°¡ »èÁ¦µÆ½À´Ï´Ù.\n\n", result);
+			System.out.printf("ê²Œì‹œë¬¼ %dê°œê°€ ì‚­ì œëìŠµë‹ˆë‹¤.\n\n", result);
 			return;
 		}
-		System.out.println("°Ô½Ã¹° »èÁ¦¸¦ ½ÇÆĞÇß½À´Ï´Ù.\n\n");
+		System.out.println("ê²Œì‹œë¬¼ ì‚­ì œë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.\n\n");
 	}
 
 }

@@ -1,4 +1,4 @@
-package ch04;
+ï»¿package ch04;
 
 import java.util.Scanner;
 
@@ -9,17 +9,17 @@ public class Ex04_08 {
 		int num;
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("¼ıÀÚ ÀÔ·Â : ");
+		System.out.print("ìˆ«ì ì…ë ¥ : ");
 		num = scan.nextInt();
 
 		if (num > 0) {
-			System.out.println("ÀÔ·ÂµÈ ¼ö " + num + "Àº ¾ç¼öÀÔ´Ï´Ù.");
+			System.out.println("ì…ë ¥ëœ ìˆ˜ " + num + "ì€ ì–‘ìˆ˜ì…ë‹ˆë‹¤.");
 		}
 		else if (num == 0) {
-			System.out.println("ÀÔ·ÂµÈ ¼ö´Â " + num + "ÀÔ´Ï´Ù.");
+			System.out.println("ì…ë ¥ëœ ìˆ˜ëŠ” " + num + "ì…ë‹ˆë‹¤.");
 		}
 		else {
-			System.out.println("ÀÔ·ÂµÈ ¼ö " + num + "Àº À½¼öÀÔ´Ï´Ù.");
+			System.out.println("ì…ë ¥ëœ ìˆ˜ " + num + "ì€ ìŒìˆ˜ì…ë‹ˆë‹¤.");
 
 		}
 	}

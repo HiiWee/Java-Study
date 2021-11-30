@@ -1,4 +1,4 @@
-package ex1;
+ï»¿package ex1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,14 +20,14 @@ public class MysqlJdbc {
 			ResultSet rs = st.executeQuery(sql);
 
 			while(rs.next()) {
-				// ¹Ş¾Æ¿Â Æ©ÇÃµéÀÇ ÄÃ·³°ªµéÀ» ¸®ÅÏ¹Ş¾Æ °¢ º¯¼ö¿¡ ÀúÀå
+				// ë°›ì•„ì˜¨ íŠœí”Œë“¤ì˜ ì»¬ëŸ¼ê°’ë“¤ì„ ë¦¬í„´ë°›ì•„ ê° ë³€ìˆ˜ì— ì €ì¥
 				int id = rs.getInt("id");
 				String title = rs.getString("title");
 				String content = rs.getString("content");
 				Date regdate = rs.getDate("regdate");
 				int hit = rs.getInt("hit");
 				String memberId = rs.getString("memberId");
-				// °¢ ·¹ÄÚµåµéÀÇ Á¶°ÇÀÌ ÀÖÀ»°æ¿ì ÀÚ¹Ù¿¡¼­ Ã³¸®ÇÏ±â º¸´Ü sql¿¡¼­ Ã³¸®
+				// ê° ë ˆì½”ë“œë“¤ì˜ ì¡°ê±´ì´ ìˆì„ê²½ìš° ìë°”ì—ì„œ ì²˜ë¦¬í•˜ê¸° ë³´ë‹¨ sqlì—ì„œ ì²˜ë¦¬
 				System.out.printf("id : %d\t title : %s\t content : %s\t regdate : %s\t hit : %d\t memberId : %s\n", id, title, content, regdate, hit, memberId);
 		
 			}

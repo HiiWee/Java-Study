@@ -1,4 +1,4 @@
-package forTask.week1;
+ï»¿package forTask.week1;
 
 import java.util.Scanner;
 
@@ -7,30 +7,30 @@ public class IdenClass {
 	public static void main(String[] args) {
 
 		Scanner scan = new Scanner(System.in);
-		System.out.print("ÇĞ±³¸¦ ÀÔ·ÂÇÏ½Ã¿À. ");
+		System.out.print("í•™êµë¥¼ ì…ë ¥í•˜ì‹œì˜¤. ");
 		String univ = scan.next();
 		System.out.println("");
 		
-		System.out.print("ÇĞ°ú¸¦ ÀÔ·ÂÇÏ½Ã¿À. ");
+		System.out.print("í•™ê³¼ë¥¼ ì…ë ¥í•˜ì‹œì˜¤. ");
 		String major = scan.next();
 		System.out.println("");
 		
-		System.out.print("ÇĞ¹øÀ» ÀÔ·ÂÇÏ½Ã¿À. ");
+		System.out.print("í•™ë²ˆì„ ì…ë ¥í•˜ì‹œì˜¤. ");
 		int studentID = scan.nextInt();
 		System.out.println("");
 		
-		System.out.print("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À. ");
+		System.out.print("ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤. ");
 		String name = scan.next();
 		System.out.println("");
 		
-		System.out.print("³ªÀÌ¸¦ ÀÔ·ÂÇÏ½Ã¿À. ");
+		System.out.print("ë‚˜ì´ë¥¼ ì…ë ¥í•˜ì‹œì˜¤. ");
 		int age = scan.nextInt();
 		System.out.println("");
 		
-		System.out.println("ÀÌ¸§: " + univ);
-		System.out.println("ÇĞ°ú: " + major);
-		System.out.println("ÇĞ¹ø: " + studentID);
-		System.out.println("ÀÌ¸§: "  + name);
-		System.out.println("³ªÀÌ: " + age);
+		System.out.println("ì´ë¦„: " + univ);
+		System.out.println("í•™ê³¼: " + major);
+		System.out.println("í•™ë²ˆ: " + studentID);
+		System.out.println("ì´ë¦„: "  + name);
+		System.out.println("ë‚˜ì´: " + age);
 	}
 }

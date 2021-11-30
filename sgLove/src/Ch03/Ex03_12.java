@@ -1,16 +1,16 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_12 {
 	public static void main(String[] args) {
 		double r = 5.0;
 		double pi = 3.14159;
 		
-		System.out.printf("¹İÁö¸§ÀÌ %fÀÎ ¿øÀÇ ³ĞÀÌ´Â %fÀÔ´Ï´Ù.\n", 5.0, 5.0*5.0*3.14159);
-		System.out.printf("¹İÁö¸§ÀÌ %fÀÎ ¿øÀÇ ³ĞÀÌ´Â %fÀÔ´Ï´Ù.\n", r, r*r*pi);
-		System.out.printf("¹İÁö¸§ÀÌ %EÀÎ ¿øÀÇ ³ĞÀÌ´Â %EÀÔ´Ï´Ù.\n", r, r*r*pi);
+		System.out.printf("ë°˜ì§€ë¦„ì´ %fì¸ ì›ì˜ ë„“ì´ëŠ” %fì…ë‹ˆë‹¤.\n", 5.0, 5.0*5.0*3.14159);
+		System.out.printf("ë°˜ì§€ë¦„ì´ %fì¸ ì›ì˜ ë„“ì´ëŠ” %fì…ë‹ˆë‹¤.\n", r, r*r*pi);
+		System.out.printf("ë°˜ì§€ë¦„ì´ %Eì¸ ì›ì˜ ë„“ì´ëŠ” %Eì…ë‹ˆë‹¤.\n", r, r*r*pi);
 
-		System.out.printf("123.456À» %%f·Î : %f\n", 123.456);
-		System.out.printf("123.456À» %%e·Î : %e\n", 123.456);
-		System.out.printf("-123.456À» %%E·Î : %E\n", -123.456);
+		System.out.printf("123.456ì„ %%fë¡œ : %f\n", 123.456);
+		System.out.printf("123.456ì„ %%eë¡œ : %e\n", 123.456);
+		System.out.printf("-123.456ì„ %%Eë¡œ : %E\n", -123.456);
 	}
 }

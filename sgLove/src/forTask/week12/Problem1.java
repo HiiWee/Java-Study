@@ -1,17 +1,17 @@
-package forTask.week12;
+ï»¿package forTask.week12;
 
 class Shape {
 
 	public void getArea(int radius) {
-		System.out.println("Á¤¼öÇü ¹İÁö¸§ÀÇ ¿øÀÇ ³ĞÀÌ : " + 3.14 * radius * radius);
+		System.out.println("ì •ìˆ˜í˜• ë°˜ì§€ë¦„ì˜ ì›ì˜ ë„“ì´ : " + 3.14 * radius * radius);
 	}
 
 	public void getArea(double radius) {
-		System.out.println("½Ç¼öÇü ¹İÁö¸§ÀÇ ¿øÀÇ ³ĞÀÌ : " + 3.14 * radius * radius);
+		System.out.println("ì‹¤ìˆ˜í˜• ë°˜ì§€ë¦„ì˜ ì›ì˜ ë„“ì´ : " + 3.14 * radius * radius);
 	}
 
 	public void getArea(int base, int altitude) {
-		System.out.println("»ï°¢ÇüÀÇ ³ĞÀÌ : " + base * altitude / 2);
+		System.out.println("ì‚¼ê°í˜•ì˜ ë„“ì´ : " + base * altitude / 2);
 	}
 }
 

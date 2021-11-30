@@ -1,16 +1,16 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_17 {
 	public static void main(String[] args) {
 		long l = 1234567890123456789L;
 		float f = l;
 		double d = l;
-		System.out.println("¿ø·¡ÀÇ long°ª : " + l);
-		System.out.println("long >> float·Î º¯È¯ : " + (float)l);
-		System.out.println("long >> double·Î º¯È¯ : " + (double)l);
+		System.out.println("ì›ëž˜ì˜ longê°’ : " + l);
+		System.out.println("long >> floatë¡œ ë³€í™˜ : " + (float)l);
+		System.out.println("long >> doubleë¡œ ë³€í™˜ : " + (double)l);
 		long fl = (long)f;
 		long dl = (long)d;
-		System.out.println("long >> float >> long·Î º¯È¯ : " + fl);
-		System.out.println("long >> double >> long·Î º¯È¯ : " + dl);
+		System.out.println("long >> float >> longë¡œ ë³€í™˜ : " + fl);
+		System.out.println("long >> double >> longë¡œ ë³€í™˜ : " + dl);
 	}
 }

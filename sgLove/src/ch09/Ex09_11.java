@@ -1,20 +1,20 @@
-package ch09;
+ï»¿package ch09;
 
 class Overload {
 	public void calc() {
-		System.out.println("¸Å°³º¯¼ö°¡ ¾ø½À´Ï´Ù.");
+		System.out.println("ë§¤ê°œë³€ìˆ˜ê°€ ì—†ìŠµë‹ˆë‹¤.");
 	}
 
 	public void calc(int width) {
-		System.out.println("Á¤»ç°¢ÇüÀÇ ³ĞÀÌ : " + width * width);
+		System.out.println("ì •ì‚¬ê°í˜•ì˜ ë„“ì´ : " + width * width);
 	}
 
 	public void calc(int width, int height) {
-		System.out.println("Á÷»ç°¢ÇüÀÇ ³ĞÀÌ : " + width * height);
+		System.out.println("ì§ì‚¬ê°í˜•ì˜ ë„“ì´ : " + width * height);
 	}
 
 	public void calc(int width, int height, int depth) {
-		System.out.println("Á÷À°¸éÃ¼ÀÇ ºÎÇÇ : " + width * height * depth);
+		System.out.println("ì§ìœ¡ë©´ì²´ì˜ ë¶€í”¼ : " + width * height * depth);
 	}
 }
 
@@ -42,7 +42,7 @@ public class Ex09_11 {
 			ob.calc(input[0], input[1], input[2]);
 			break;
 		default:
-			System.out.println("ÀÎ¼öÀÇ °³¼ö°¡ ¸¹½À´Ï´Ù.");
+			System.out.println("ì¸ìˆ˜ì˜ ê°œìˆ˜ê°€ ë§ìŠµë‹ˆë‹¤.");
 		}
 	}
 }

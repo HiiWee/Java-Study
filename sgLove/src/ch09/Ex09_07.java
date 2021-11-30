@@ -1,4 +1,4 @@
-package ch09;
+ï»¿package ch09;
 
 class Box10 {
 	private int width;
@@ -37,6 +37,6 @@ public class Ex09_07 {
 			System.out.println(ob.getVolume());
 		}
 
-		System.out.println("¸¶Áö¸·À¸·Î »ı¼ºµÈ ¹Ú½ºÀÇ ID = " + Box10.getCurrentID());
+		System.out.println("ë§ˆì§€ë§‰ìœ¼ë¡œ ìƒì„±ëœ ë°•ìŠ¤ì˜ ID = " + Box10.getCurrentID());
 	}
 }

@@ -1,8 +1,8 @@
-package com.anjinman.app.entity;
+ï»¿package com.anjinman.app.entity;
 
 
 /* 
- * ExamEntity °´Ã¼ÀÇ Ãß»ó ¸Ş¼Òµå¸¦ ±¸Çö ¹× »õ·Î¿î °ú¸ñ computer Ãß°¡, getter setter ±¸Çö
+ * ExamEntity ê°ì²´ì˜ ì¶”ìƒ ë©”ì†Œë“œë¥¼ êµ¬í˜„ ë° ìƒˆë¡œìš´ ê³¼ëª© computer ì¶”ê°€, getter setter êµ¬í˜„
  * */
 public class HoseokExamEntity extends ExamEntity {
 	private int computer;
@@ -26,7 +26,7 @@ public class HoseokExamEntity extends ExamEntity {
 		
 	}
 
-	// onTotal()·Î ±âÁ¸ ±¹¿µ¼öÀÇ °ªÀ» ½±°Ô °¡Á®¿Â´Ù.
+	// onTotal()ë¡œ ê¸°ì¡´ êµ­ì˜ìˆ˜ì˜ ê°’ì„ ì‰½ê²Œ ê°€ì ¸ì˜¨ë‹¤.
 	@Override
 	public int getTotal() {
 		return onTotal() + this.computer;

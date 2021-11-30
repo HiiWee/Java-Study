@@ -1,4 +1,4 @@
-package com.anjinman.app.console;
+ï»¿package com.anjinman.app.console;
 
 import java.util.Scanner;
 
@@ -8,14 +8,14 @@ import com.anjinman.app.entity.HoseokExamEntity;
 public class HoseokExamConsole extends ExamConsole {
 
 	
-	// ÆÑÅä¸® ¸Ş¼Òµå ±¸Çö »õ·Î À§ÀÓ¹Ş¾Æ ¸¸µé¾îÁø HoseokExamEntity °´Ã¼¸¦ »ı¼ºÇÏ°í ¹İÈ¯ÇÔ
+	// íŒ©í† ë¦¬ ë©”ì†Œë“œ êµ¬í˜„ ìƒˆë¡œ ìœ„ì„ë°›ì•„ ë§Œë“¤ì–´ì§„ HoseokExamEntity ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ë°˜í™˜í•¨
 	@Override
 	protected ExamEntity makeExam() {
 		return new HoseokExamEntity();
 	}
 
 	
-	// ÀÌº¥Æ® ¸Ş¼Òµå : HoseokExamEntityÀÇ »õ·Î¿î °ú¸ñÀÎ ÄÄÇ»ÅÍ °ú¸ñÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇÔ
+	// ì´ë²¤íŠ¸ ë©”ì†Œë“œ : HoseokExamEntityì˜ ìƒˆë¡œìš´ ê³¼ëª©ì¸ ì»´í“¨í„° ê³¼ëª©ì˜ ì ìˆ˜ë¥¼ ì…ë ¥í•¨
 	@Override
 	protected void onInputList(ExamEntity exam) {
 		int computer;
@@ -29,26 +29,26 @@ public class HoseokExamConsole extends ExamConsole {
 		
 	}
 
-	// ÀÌº¥Æ® ¸Ş¼Òµå : HoseokExamEntityÀÇ »õ·Î¿î °ú¸ñÀÎ ÄÄÇ»ÅÍ °ú¸ñÀÇ Á¡¼ö¸¦ Ãâ·ÂÇÔ
+	// ì´ë²¤íŠ¸ ë©”ì†Œë“œ : HoseokExamEntityì˜ ìƒˆë¡œìš´ ê³¼ëª©ì¸ ì»´í“¨í„° ê³¼ëª©ì˜ ì ìˆ˜ë¥¼ ì¶œë ¥í•¨
 	@Override
 	protected void onPrintList(ExamEntity exam) {
 		HoseokExamEntity hoseokExam = (HoseokExamEntity)exam;
 		int computer = hoseokExam.getComputer();
-		System.out.printf("ÄÄÇ»ÅÍ:  %d\n", computer);
+		System.out.printf("ì»´í“¨í„°:  %d\n", computer);
 	}
 	
 	
-	// ÀÚ½Ä¿¡°Ô À§ÀÓµÈ ¸Ş´º Ãâ·ÂÀ» ±¸Çö
+	// ìì‹ì—ê²Œ ìœ„ì„ëœ ë©”ë‰´ ì¶œë ¥ì„ êµ¬í˜„
 	@Override
 	public void inputMenu() {
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢           ¸ŞÀÎ ¸Ş´º     	¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
-		System.out.println("\t ¼ºÀûÀ» ¼ø¼­´ë·Î ÀÔ·ÂÇÏ¼¼¿ä. ");
-		System.out.println("\t±¹¾î ");
-		System.out.println("\t¿µ¾î ");
-		System.out.println("\t¼öÇĞ ");
-		System.out.println("\tÄÄÇ»ÅÍ ");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚           ë©”ì¸ ë©”ë‰´     	â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
+		System.out.println("\t ì„±ì ì„ ìˆœì„œëŒ€ë¡œ ì…ë ¥í•˜ì„¸ìš”. ");
+		System.out.println("\têµ­ì–´ ");
+		System.out.println("\tì˜ì–´ ");
+		System.out.println("\tìˆ˜í•™ ");
+		System.out.println("\tì»´í“¨í„° ");
 	}
 
 }

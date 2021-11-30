@@ -1,4 +1,4 @@
-package forTask.week9;
+ï»¿package forTask.week9;
 
 class Calculator {
 	private int op1;
@@ -53,20 +53,20 @@ class Calculator {
 public class Problem1 {
 	public static void main(String[] args) {
 		Calculator calc = new Calculator();
-		// op1ÀÇ °ª ÃÊ±âÈ­
+		// op1ì˜ ê°’ ì´ˆê¸°í™”
 		calc.setOp1(10);
-		// op2ÀÇ °ª ÃÊ±âÈ­
+		// op2ì˜ ê°’ ì´ˆê¸°í™”
 		calc.setOp2(5);
 
-		// op1 == 10, op2 == 5 (op1, op2´Â CalculatorÅ¬·¡½ºÀÇ ¸â¹öº¯¼ö)
+		// op1 == 10, op2 == 5 (op1, op2ëŠ” Calculatorí´ë˜ìŠ¤ì˜ ë©¤ë²„ë³€ìˆ˜)
 
-		// µ¡¼ÀÃâ·Â
+		// ë§ì…ˆì¶œë ¥
 		System.out.println(calc.sumNum());
-		// »¬¼ÀÃâ·Â
+		// ëº„ì…ˆì¶œë ¥
 		System.out.println(calc.subNum());
-		// °ö¼ÀÃâ·Â
+		// ê³±ì…ˆì¶œë ¥
 		System.out.println(calc.mulNum());
-		// ³ª´°¼ÀÃâ·Â
+		// ë‚˜ëˆ—ì…ˆì¶œë ¥
 		System.out.println(calc.divNum());
 	}
 }

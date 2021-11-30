@@ -1,4 +1,4 @@
-package part2_ex01_SplitGradeInput;
+ï»¿package part2_ex01_SplitGradeInput;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class StructuredGradeInput01 {
     	int[] korList = new int[3];
         int menu;
         boolean keepLoop = true;			
-		//½ºÄ³³Ê´Â ±»ÀÌ Àü¿ªº¯¼ö·Î °øÀ¯ÇÒÇÊ¿ä¾ø´Ù.
+		//ìŠ¤ìºë„ˆëŠ” êµ³ì´ ì „ì—­ë³€ìˆ˜ë¡œ ê³µìœ í• í•„ìš”ì—†ë‹¤.
 		Scanner scan = new Scanner(System.in);
 				
 		while(keepLoop)
@@ -30,7 +30,7 @@ public class StructuredGradeInput01 {
 				break;
 	        
 	        default:
-	        	System.out.println("Àß¸øµÈ °ªÀ» ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¸Ş´º´Â 1~3±îÁöÀÔ´Ï´Ù.");
+	        	System.out.println("ì˜ëª»ëœ ê°’ì„ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ë‰´ëŠ” 1~3ê¹Œì§€ì…ë‹ˆë‹¤.");
 	       
 	        }
 	        
@@ -42,13 +42,13 @@ public class StructuredGradeInput01 {
     	int menu;
     	
     	Scanner scan = new Scanner(System.in);
-    	System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-        System.out.println("¦¢           ¸ŞÀÎ ¸Ş´º       ¦¢");
-        System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
-        System.out.println("\t1. ¼ºÀûÀÔ·Â ");
-        System.out.println("\t2. ¼ºÀûÃâ·Â ");
-        System.out.println("\t3. Á¾·á ");
-        System.out.println("\t¼±ÅÃ> ");
+    	System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+        System.out.println("â”‚           ë©”ì¸ ë©”ë‰´       â”‚");
+        System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
+        System.out.println("\t1. ì„±ì ì…ë ¥ ");
+        System.out.println("\t2. ì„±ì ì¶œë ¥ ");
+        System.out.println("\t3. ì¢…ë£Œ ");
+        System.out.println("\tì„ íƒ> ");
         menu = scan.nextInt();
         
         return menu;
@@ -64,17 +64,17 @@ public class StructuredGradeInput01 {
 	        
         avg = total / 3.0f;
 	        
-        System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-        System.out.println("¦¢           ¼ºÀû  Ãâ·Â      ¦¢");
-        System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+        System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+        System.out.println("â”‚           ì„±ì   ì¶œë ¥      â”‚");
+        System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
         System.out.println();		        
 	       
         for(int i=0;i<3;i++)
-        	System.out.printf("±¹¾î %d : %3d\n", 3-i, kors[i]);	        	
+        	System.out.printf("êµ­ì–´ %d : %3d\n", 3-i, kors[i]);	        	
 	        	        
-        System.out.printf("ÃÑÁ¡ : %3d\n", total);
-        System.out.printf("Æò±Õ : %6.2f\n", avg);
-        System.out.println("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡");
+        System.out.printf("ì´ì  : %3d\n", total);
+        System.out.printf("í‰ê·  : %6.2f\n", avg);
+        System.out.println("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
     }
     
     static void inputKors(int[] kors) {
@@ -82,23 +82,23 @@ public class StructuredGradeInput01 {
     	int kor;
     	Scanner scan = new Scanner(System.in);
     	
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-        System.out.println("¦¢           ¼ºÀû  ÀÔ·Â      ¦¢");
-        System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+        System.out.println("â”‚           ì„±ì   ì…ë ¥      â”‚");
+        System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
         System.out.println();
        		        
         for(int i=0; i<3; i++) {
 	        do {
-		        System.out.printf("±¹¾î%d : ", i+1);
+		        System.out.printf("êµ­ì–´%d : ", i+1);
 		        kor = scan.nextInt();
 	        
 		        if(kor < 0 || 100 < kor)
-		        	System.out.println("±¹¾î¼ºÀûÀº 0~100±îÁöÀÇ ¹üÀ§¸¸ ÀÔ·ÂÀÌ °¡´ÉÇÕ´Ï´Ù.");
+		        	System.out.println("êµ­ì–´ì„±ì ì€ 0~100ê¹Œì§€ì˜ ë²”ìœ„ë§Œ ì…ë ¥ì´ ê°€ëŠ¥í•©ë‹ˆë‹¤.");
 		        
 	        }while(kor < 0 || 100 < kor);
 	        kors[i] = kor;
         }
-        System.out.println("¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡");
+        System.out.println("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€");
 
 	}
 }

@@ -1,4 +1,4 @@
-package Ch03;
+ï»¿package Ch03;
 
 import java.util.Scanner;
 
@@ -8,9 +8,9 @@ public class Ex03_26 {
 		boolean flag;
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("ÇÑ °³ÀÇ ¼ıÀÚ¸¦ ÀÔ·Â: ");
+		System.out.print("í•œ ê°œì˜ ìˆ«ìë¥¼ ì…ë ¥: ");
 		num = scan.nextInt();
 		flag = num % 2 == 0 ? true : false;
-		System.out.println(num + "ÀÌ(°¡) Â¦¼öÀÔ´Ï±î? : " + flag);
+		System.out.println(num + "ì´(ê°€) ì§ìˆ˜ì…ë‹ˆê¹Œ? : " + flag);
 	}
 }

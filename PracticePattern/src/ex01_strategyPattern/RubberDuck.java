@@ -1,4 +1,4 @@
-package ex01_strategyPattern;
+﻿package ex01_strategyPattern;
 
 import ex01_strategyPattern.interfaceObj.*;
 public class RubberDuck extends Duck{

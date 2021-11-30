@@ -1,4 +1,4 @@
-package ex02_observerPattern.InterfaceObj;
+﻿package ex02_observerPattern.InterfaceObj;
 
 import java.util.ArrayList;
 import ex02_observerPattern.Interface.*;

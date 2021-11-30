@@ -1,4 +1,4 @@
-package ex03.io.escape;
+﻿package ex03.io.escape;
 
 public class Program {
 	public static void main(String[] args) {
@@ -14,17 +14,17 @@ public class Program {
 		total = kor1 + kor2 + kor3;
 		avg = total / 3;  
 		
-		//----------------------���� ��� �κ�----------------------
-		System.out.println("���ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѦ�");
-		System.out.println("��         �������         ��");
-		System.out.println("���ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѦ�");
+		//----------------------성적 출력 부분----------------------
+		System.out.println("┌ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┐");
+		System.out.println("│         성적출력         │");
+		System.out.println("└ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ┘");
 
-		System.out.println("����1 : 0");
-		System.out.println("����2 : 0");
-		System.out.println("����3 : 0");
-		System.out.println("���� : 0");
-		System.out.println("��� : 0.00");
-		System.out.println("�ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ�");
+		System.out.println("국어1 : 0");
+		System.out.println("국어2 : 0");
+		System.out.println("국어3 : 0");
+		System.out.println("총점 : 0");
+		System.out.println("평균 : 0.00");
+		System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 	}
 }
 

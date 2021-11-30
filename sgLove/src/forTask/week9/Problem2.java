@@ -1,4 +1,4 @@
-package forTask.week9;
+﻿package forTask.week9;
 
 class Box {
 	int width;

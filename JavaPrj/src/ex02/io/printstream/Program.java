@@ -1,4 +1,4 @@
-package ex02.io.printstream;
+Ôªøpackage ex02.io.printstream;
 
 public class Program {
 	public static void main(String[] args) {
@@ -14,16 +14,16 @@ public class Program {
 		total = kor1 + kor2 + kor3;
 		avg = total / 3;
 		
-		//----------------------º∫¿˚ √‚∑¬ ∫Œ∫–----------------------
-		System.out.print("¶£§—§—§—§—§—§—§—§—§—§—§—§—§—§—¶§");
-		System.out.print("¶¢         º∫¿˚√‚∑¬      ¶¢");
-		System.out.print("¶¶§—§—§—§—§—§—§—§—§—§—§—§—§—§—¶•");
+		//----------------------ÏÑ±Ï†Å Ï∂úÎ†• Î∂ÄÎ∂Ñ----------------------
+		System.out.print("‚îå„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°‚îê");
+		System.out.print("‚îÇ         ÏÑ±Ï†ÅÏ∂úÎ†•      ‚îÇ");
+		System.out.print("‚îî„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°„Ö°‚îò");
 		
-		System.out.print("±πæÓ1 : 0");
-		System.out.print("±πæÓ2 : 0");
-		System.out.print("±πæÓ3 : 0");
-		System.out.print("√—¡° : 0");
-		System.out.print("∆Ú±’ : 0.00");
+		System.out.print("Íµ≠Ïñ¥1 : 0");
+		System.out.print("Íµ≠Ïñ¥2 : 0");
+		System.out.print("Íµ≠Ïñ¥3 : 0");
+		System.out.print("Ï¥ùÏ†ê : 0");
+		System.out.print("ÌèâÍ∑† : 0.00");
 	}
 }
 

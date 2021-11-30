@@ -1,10 +1,10 @@
-package com.anjinman.app.main;
+ï»¿package com.anjinman.app.main;
 
 import java.util.Scanner;
 
 import com.anjinman.app.console.ExamConsole;
 
-// ¼ºÀû ÀÔ·Â ÇÁ·Î±×·¥
+// ì„±ì  ì…ë ¥ í”„ë¡œê·¸ë¨
 public class MainProgram {
 
 	public static void main(String[] args) {
@@ -18,10 +18,10 @@ public class MainProgram {
 			
 			Scanner scan = new Scanner(System.in);
 			
-			System.out.println("¿øÇÏ´Â µ¿ÀÛÀ» ¼³Á¤ÇÏ¼¼¿ä"); 
-			System.out.println("1. ¼ºÀû ÀÔ·Â"); 
-			System.out.println("2. ¼ºÀû Ãâ·Â"); 
-			System.out.println("3. ÇÁ·Î±×·¥ Á¾·á");
+			System.out.println("ì›í•˜ëŠ” ë™ì‘ì„ ì„¤ì •í•˜ì„¸ìš”"); 
+			System.out.println("1. ì„±ì  ì…ë ¥"); 
+			System.out.println("2. ì„±ì  ì¶œë ¥"); 
+			System.out.println("3. í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 			
 			menu = scan.nextInt();
 
@@ -33,7 +33,7 @@ public class MainProgram {
 				console.printList();
 				break;
 			case 3:
-				System.out.println("½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("ì‹œìŠ¤í…œì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				return;
 			
 			}

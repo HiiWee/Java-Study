@@ -1,4 +1,4 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_05 {
 	public static void main(String[] args) {
@@ -7,13 +7,13 @@ public class Ex03_05 {
 		int c = 0144;
 		int d = 0x64;
 		
-		System.out.println("10Áø¼ö 100 = " + a);
-		System.out.println("2Áø¼ö 0b1100100 = " + b);
-		System.out.println("8Áø¼ö 0144 = " + c);
-		System.out.println("16Áø¼ö 0x64 = " + d);
-		System.out.println("2Áø¼ö 0b111 = " + 0b111);
-		System.out.println("8Áø¼ö 0777 = " + 0777);
-		System.out.println("16Áø¼ö 0xfff = " + 0xfff);
+		System.out.println("10ì§„ìˆ˜ 100 = " + a);
+		System.out.println("2ì§„ìˆ˜ 0b1100100 = " + b);
+		System.out.println("8ì§„ìˆ˜ 0144 = " + c);
+		System.out.println("16ì§„ìˆ˜ 0x64 = " + d);
+		System.out.println("2ì§„ìˆ˜ 0b111 = " + 0b111);
+		System.out.println("8ì§„ìˆ˜ 0777 = " + 0777);
+		System.out.println("16ì§„ìˆ˜ 0xfff = " + 0xfff);
 	}
 
 }

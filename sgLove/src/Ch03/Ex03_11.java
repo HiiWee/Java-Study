@@ -1,14 +1,14 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_11 {
 	public static void main(String[] args) {
 		int price = -3000;
 		int count = 9;
 		
-		System.out.printf("%d¿ø %d°³¸¦ »ç¸é %d¿øÀÔ´Ï´Ù\n", 300, 9, 300*9);
-		System.out.printf("%10d¿ø %10d°³¸¦ »ç¸é %10d¿øÀÔ´Ï´Ù\n", price, count, price*count);
-		System.out.printf("10Áø¼ö 15¸¦ 16Áø¼ö·Î Ãâ·ÂÇÏ¸é : %x, 8Áø¼ö·Î Ãâ·ÂÇÏ¸é : %o\n", 15, 15);
-		System.out.printf("À½¼ö°« -10À» %%d·Î Ãâ·ÂÇÏ¸é %d\n", -10);
+		System.out.printf("%dì› %dê°œë¥¼ ì‚¬ë©´ %dì›ì…ë‹ˆë‹¤\n", 300, 9, 300*9);
+		System.out.printf("%10dì› %10dê°œë¥¼ ì‚¬ë©´ %10dì›ì…ë‹ˆë‹¤\n", price, count, price*count);
+		System.out.printf("10ì§„ìˆ˜ 15ë¥¼ 16ì§„ìˆ˜ë¡œ ì¶œë ¥í•˜ë©´ : %x, 8ì§„ìˆ˜ë¡œ ì¶œë ¥í•˜ë©´ : %o\n", 15, 15);
+		System.out.printf("ìŒìˆ˜ê°“ -10ì„ %%dë¡œ ì¶œë ¥í•˜ë©´ %d\n", -10);
 		
 	}
 }

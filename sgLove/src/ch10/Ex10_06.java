@@ -1,10 +1,10 @@
-package ch10;
+ï»¿package ch10;
 
 class DB1 {
 	public double d1;
 
 	public DB1() {
-		System.out.println("Å¬·¡½º DB1ÀÇ ¹¬½ÃÀû »ı¼ºÀÚ ¼öÇà");
+		System.out.println("í´ë˜ìŠ¤ DB1ì˜ ë¬µì‹œì  ìƒì„±ì ìˆ˜í–‰");
 		d1 = 10 * 10;
 	}
 }
@@ -13,11 +13,11 @@ class DB2 extends DB1 {
 	public double d2;
 
 	public DB2() {
-		System.out.println("Å¬·¡½º DB2ÀÇ ¹¬½ÃÀû »ı¼ºÀÚ ¼öÇà");
+		System.out.println("í´ë˜ìŠ¤ DB2ì˜ ë¬µì‹œì  ìƒì„±ì ìˆ˜í–‰");
 		d2 = 10 * 10 * 10;
 	}
 	public DB2(double d) {
-		System.out.println("Å¬·¡½º DB2ÀÇ ¸í½ÃÀû »ı¼ºÀÚ ¼öÇà");
+		System.out.println("í´ë˜ìŠ¤ DB2ì˜ ëª…ì‹œì  ìƒì„±ì ìˆ˜í–‰");
 		d2 = d * d * d;
 	}
 }
@@ -26,11 +26,11 @@ class DB3 extends DB2 {
 	public double d3;
 
 	public DB3() {
-		System.out.println("Å¬·¡½º DB3ÀÇ ¹¬½ÃÀû »ı¼ºÀÚ ¼öÇà");
+		System.out.println("í´ë˜ìŠ¤ DB3ì˜ ë¬µì‹œì  ìƒì„±ì ìˆ˜í–‰");
 		d3 = 10 * 10 * 10 * 10;
 	}
 	public DB3(double d) {
-		System.out.println("Å¬·¡½º DB3ÀÇ ¸í½ÃÀû »ı¼ºÀÚ ¼öÇà");
+		System.out.println("í´ë˜ìŠ¤ DB3ì˜ ëª…ì‹œì  ìƒì„±ì ìˆ˜í–‰");
 		d3 = d * d * d * d;
 	}
 }

@@ -1,4 +1,4 @@
-// model (DAO)
+ï»¿// model (DAO)
 
 package com.hoseok.app.service;
 
@@ -7,30 +7,29 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import com.hoseok.app.entity.Notice;
 
-// CRUD¸¦ ´ã´çÇÏ´Â ¼­ºñ½º Å¬·¡½º
+// CRUDë¥¼ ë‹´ë‹¹í•˜ëŠ” ì„œë¹„ìŠ¤ í´ë˜ìŠ¤
 public class NoticeService {
-	// °øÅëÀûÀ¸·Î »ç¿ëÇÏ´Â º¯¼öµéÀº µû·Î ¼±¾ğÇÏ¿© »ç¿ë
-	// sql °´Ã¼µéÀº ¸Å¹ø ½ÇÇà¶§¸¶´Ù µû·Î °¡Áö°í ÀÖ¾î¾ßÇÑ´Ù.
+	// ê³µí†µì ìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜ë“¤ì€ ë”°ë¡œ ì„ ì–¸í•˜ì—¬ ì‚¬ìš©
+	// sql ê°ì²´ë“¤ì€ ë§¤ë²ˆ ì‹¤í–‰ë•Œë§ˆë‹¤ ë”°ë¡œ ê°€ì§€ê³  ìˆì–´ì•¼í•œë‹¤.
 	private String url = "jdbc:mysql://127.0.0.1:3306/hoseok";
 	private String uid = "hoseok";
 	private String pwd = "!dlghtjr4948";
 	private String driver = "com.mysql.cj.jdbc.Driver";	//SET MYSQL DRIVER
 	
-	// ±âº»ÀûÀ¸·Î ¿¹¿Ü´Â UI¿¡¼­ Ã³¸®ÇÏ±â ¶§¹®¿¡ ¼­ºñ½º¿¡¼± ´øÁø´Ù.
+	// ê¸°ë³¸ì ìœ¼ë¡œ ì˜ˆì™¸ëŠ” UIì—ì„œ ì²˜ë¦¬í•˜ê¸° ë•Œë¬¸ì— ì„œë¹„ìŠ¤ì—ì„  ë˜ì§„ë‹¤.
 	public List<Notice> getList(int page, String field, String query) throws ClassNotFoundException, SQLException {
 
 		int start = 1 + (page - 1) * 10;	// 1, 11, 21, 31, ..
 		int end = 10 * page;				// 10, 20, 30, 40...
 		String sql = "select * from NOTICE_VIEW where "+ field +" like ? and rownum between ? and ?";
-		// field¸¦ °ªÀ» ¼¼ÆÃÇÏµí ?¿Í st.setString()À» ÀÌ¿ëÇØ °ªÀ» ³ÖÀ¸¸é ¾çÂÊ¿¡ È¬µû¿ÈÇ¥ ÀÔ·ÂµÊ 'TITLE'
-		// ÇÏÁö¸¸ TITLEÀº °ªÀÌ ¾Æ´Ï¹Ç·Î ¹®ÀÚ¿­ ´õÇÏ±â¸¦ ÀÌ¿ëÇÑ´Ù.
+		// fieldë¥¼ ê°’ì„ ì„¸íŒ…í•˜ë“¯ ?ì™€ st.setString()ì„ ì´ìš©í•´ ê°’ì„ ë„£ìœ¼ë©´ ì–‘ìª½ì— í™‘ë”°ì˜´í‘œ ì…ë ¥ë¨ 'TITLE'
+		// í•˜ì§€ë§Œ TITLEì€ ê°’ì´ ì•„ë‹ˆë¯€ë¡œ ë¬¸ìì—´ ë”í•˜ê¸°ë¥¼ ì´ìš©í•œë‹¤.
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url, uid, pwd);
 		PreparedStatement st = con.prepareStatement(sql);
@@ -39,7 +38,7 @@ public class NoticeService {
 		st.setInt(3, end);
 		ResultSet rs = st.executeQuery();
 
-		// ¹İÈ¯ÇÏ±â À§ÇÑ ÁØºñ
+		// ë°˜í™˜í•˜ê¸° ìœ„í•œ ì¤€ë¹„
 		List<Notice> list = new ArrayList<Notice>();
 		while (rs.next()) {
 			int id = rs.getInt("id");
@@ -51,7 +50,7 @@ public class NoticeService {
 			String files = rs.getString("files");
 
 			Notice notice = new Notice(id, title, memberId, content, regdate, hit, files);
-			// ¸®½ºÆ® Ãß°¡
+			// ë¦¬ìŠ¤íŠ¸ ì¶”ê°€
 			list.add(notice);
 
 		}
@@ -62,7 +61,7 @@ public class NoticeService {
 		return list;
 	}
 	
-	// ´ÜÀÏ °ªÀ» ¾ò´Â ÇÔ¼ö = "½ºÄ®¶ó °ª(Scalar)"
+	// ë‹¨ì¼ ê°’ì„ ì–»ëŠ” í•¨ìˆ˜ = "ìŠ¤ì¹¼ë¼ ê°’(Scalar)"
 	public int getCount(String field, String query) throws ClassNotFoundException, SQLException {
 		int count = 0;
 		
@@ -74,7 +73,7 @@ public class NoticeService {
 		st.setString(1, "%" + query + "%");
 		ResultSet rs = st.executeQuery();
 
-		// ¹İÈ¯ÇÏ±â À§ÇÑ ÁØºñ 
+		// ë°˜í™˜í•˜ê¸° ìœ„í•œ ì¤€ë¹„ 
 		if (rs.next()) {
 			count = rs.getInt("count");
 		}
@@ -93,24 +92,24 @@ public class NoticeService {
 		String files = notice.getFiles();
 
 		String sql = "insert into notice(title, memberId, content, files)" + "values(?, ?, ?, ?)";
-		// 1. ÀÚ¹Ù´Â »ç¿ëÀÚ·ÎºÎÅÍ °ªÀ» ÀÔ·Â¹ŞÀ½ (ÄÜ¼Ö, ¿ÜºÎ, À©µµ¿ì, ÆÄÀÏ µîµî)
-		// 3. À§¿Í°°ÀÌ ¹®ÀåÀ» ²È¾Æ³Ö±â¿¡´Â ½Ç¼ö°¡ ¸¹ÀÌ ¹ß»ıÇÒ ¿ì·Á
-		// 4. Statement¿¡¼­ µ¥ÀÌÅÍ¸¦ ¹®ÀÚ¿­´õÇÏ±â°¡ ¾Æ´Ñ ²È¾Æ³ÖÀ» ¼ö ÀÖ´Â µµ±¸¸¦ ÁØ´Ù.
+		// 1. ìë°”ëŠ” ì‚¬ìš©ìë¡œë¶€í„° ê°’ì„ ì…ë ¥ë°›ìŒ (ì½˜ì†”, ì™¸ë¶€, ìœˆë„ìš°, íŒŒì¼ ë“±ë“±)
+		// 3. ìœ„ì™€ê°™ì´ ë¬¸ì¥ì„ ê½‚ì•„ë„£ê¸°ì—ëŠ” ì‹¤ìˆ˜ê°€ ë§ì´ ë°œìƒí•  ìš°ë ¤
+		// 4. Statementì—ì„œ ë°ì´í„°ë¥¼ ë¬¸ìì—´ë”í•˜ê¸°ê°€ ì•„ë‹Œ ê½‚ì•„ë„£ì„ ìˆ˜ ìˆëŠ” ë„êµ¬ë¥¼ ì¤€ë‹¤.
 		Class.forName(driver);
 		Connection con = DriverManager.getConnection(url, uid, pwd);
 		// Statement st = con.createStatement();
 		// ResultSet rs = st.executeQuery(sql);
-		// 5. ½ÇÇàÇÏ±âÀü¿¡ ? ºÎºĞÀÇ ¹®ÀÚ¿­À» Ã¤¿öÁØ´Ù.
+		// 5. ì‹¤í–‰í•˜ê¸°ì „ì— ? ë¶€ë¶„ì˜ ë¬¸ìì—´ì„ ì±„ì›Œì¤€ë‹¤.
 
 		PreparedStatement st = con.prepareStatement(sql);
-		// ½ÇÇàµµ±¸ ÀÚÃ¼°¡ Äõ¸®¹®À» °¡Áö°í ÀÖ°í Äõ¸®¹®À» ¼¼ÆÃÇÒ ¼ö ÀÖ´Â ´É·ÂÀÌ Æ÷ÇÔµÈ´Ù.
-		// Äõ¸®¹® ÁØºñ (index start with 1, not 0)
+		// ì‹¤í–‰ë„êµ¬ ìì²´ê°€ ì¿¼ë¦¬ë¬¸ì„ ê°€ì§€ê³  ìˆê³  ì¿¼ë¦¬ë¬¸ì„ ì„¸íŒ…í•  ìˆ˜ ìˆëŠ” ëŠ¥ë ¥ì´ í¬í•¨ëœë‹¤.
+		// ì¿¼ë¦¬ë¬¸ ì¤€ë¹„ (index start with 1, not 0)
 		st.setString(1, title);
 		st.setString(2, memberId);
 		st.setString(3, content);
 		st.setString(4, files);
 
-		// ½ÇÇà´Ü°è PreparedStatement¸¦ »ç¿ëÇÏ¸é ½ÇÇà½Ã sqlÀ» ¶Ç Àü´ŞÇÏÁö ¾Ê´Â´Ù.
+		// ì‹¤í–‰ë‹¨ê³„ PreparedStatementë¥¼ ì‚¬ìš©í•˜ë©´ ì‹¤í–‰ì‹œ sqlì„ ë˜ ì „ë‹¬í•˜ì§€ ì•ŠëŠ”ë‹¤.
 		int result = st.executeUpdate();
 		
 		st.close();
@@ -119,7 +118,7 @@ public class NoticeService {
 	}
 
 	public int update(Notice notice) throws ClassNotFoundException, SQLException {
-		// 2. °ªÀ» ÀÔ·Â¹Ş±â À§ÇÑ º¯¼ö ÁØºñ
+		// 2. ê°’ì„ ì…ë ¥ë°›ê¸° ìœ„í•œ ë³€ìˆ˜ ì¤€ë¹„
 		String title = notice.getTitle();
 		String content = notice.getContent();
 		String files = notice.getFiles();

@@ -1,4 +1,4 @@
-package ch09;
+ï»¿package ch09;
 
 class Box11 {
 	private int iVol;
@@ -31,10 +31,10 @@ class Box11 {
 public class Ex09_09 {
 	public static void main(String[] args) {
 		Box11 ob = new Box11(10, 20, 30);
-		System.out.println("Á¤¼ö ¸Å°³º¯¼ö ¹Ú½ºÀÇ ºÎÇÇ : " + ob.getIVolume());
+		System.out.println("ì •ìˆ˜ ë§¤ê°œë³€ìˆ˜ ë°•ìŠ¤ì˜ ë¶€í”¼ : " + ob.getIVolume());
 		
 		Box11 ob1 = new Box11(10.5, 20.5, 30.5);
-		System.out.println("½Ç¼ö ¸Å°³º¯¼ö ¹Ú½ºÀÇ ºÎÇÇ : " + ob1.getDVolume());
+		System.out.println("ì‹¤ìˆ˜ ë§¤ê°œë³€ìˆ˜ ë°•ìŠ¤ì˜ ë¶€í”¼ : " + ob1.getDVolume());
 		
 		
 	}

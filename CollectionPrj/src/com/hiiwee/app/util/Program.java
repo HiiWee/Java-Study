@@ -1,13 +1,13 @@
-package com.hiiwee.app.util;
+ï»¿package com.hiiwee.app.util;
 
 public class Program {
 
 	public static void main(String[] args) {
-		// ÀÚ·áÇü¿¡ Çü½ÄÀ» ³Ñ±æ ¼ö ÀÖÀ½
-		// ¿ÀºêÁ§Æ®·Î½áÀÇ Çü½Ä º¯È¯ÀÌ °¡´ÉÇÑ WrapperÇü½Ä¸¸ °¡´É ex(Integer, Char ...)
+		// ìë£Œí˜•ì— í˜•ì‹ì„ ë„˜ê¸¸ ìˆ˜ ìˆìŒ
+		// ì˜¤ë¸Œì íŠ¸ë¡œì¨ì˜ í˜•ì‹ ë³€í™˜ì´ ê°€ëŠ¥í•œ Wrapperí˜•ì‹ë§Œ ê°€ëŠ¥ ex(Integer, Char ...)
 		GList<Integer> list = new GList</* String */>();
-		// ¹¬½ÃÀûÀ¸·Î ¾Õ¿¡¼­ Çü½Ä¸íÄªÀ» µå·¯³¿À¸·Î µÚ¿¡ String »ı·«°¡´É
-		// <Interger>·Î ¹¬½ÃÀûÀ¸·Î ¼³Á¤ÇßÀ¸¹Ç·Î Á¤¼ö¸¸ °¡´É(¹®ÀÚ¿­, ½Ç¼ö µîµî Á¤¼ö¾Æ´Ï¸é ¾ÈµÊ)
+		// ë¬µì‹œì ìœ¼ë¡œ ì•ì—ì„œ í˜•ì‹ëª…ì¹­ì„ ë“œëŸ¬ëƒ„ìœ¼ë¡œ ë’¤ì— String ìƒëµê°€ëŠ¥
+		// <Interger>ë¡œ ë¬µì‹œì ìœ¼ë¡œ ì„¤ì •í–ˆìœ¼ë¯€ë¡œ ì •ìˆ˜ë§Œ ê°€ëŠ¥(ë¬¸ìì—´, ì‹¤ìˆ˜ ë“±ë“± ì •ìˆ˜ì•„ë‹ˆë©´ ì•ˆë¨)
 		list.add(3);
 		list.add(5);
 
@@ -19,7 +19,7 @@ public class Program {
 		System.out.println("size : " + size);
 
 		list.add(7);
-		// Integer·Î Çüº¯È¯ÇÏÁö ¾Ê¾ÆµµµÊ ÀÌ¹Ì T·Î º¯È¯½ÃÅ°°í ³Ñ±â¹Ç·Î
+		// Integerë¡œ í˜•ë³€í™˜í•˜ì§€ ì•Šì•„ë„ë¨ ì´ë¯¸ Të¡œ ë³€í™˜ì‹œí‚¤ê³  ë„˜ê¸°ë¯€ë¡œ
 		int num = /*(Integer)*/list.get(0);
 		System.out.println("num : " + num);
 

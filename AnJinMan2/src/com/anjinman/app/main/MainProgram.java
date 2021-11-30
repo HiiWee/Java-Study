@@ -1,4 +1,4 @@
-package com.anjinman.app.main;
+ï»¿package com.anjinman.app.main;
 
 import java.util.Scanner;
 
@@ -6,8 +6,8 @@ import com.anjinman.app.console.ExamConsole;
 import com.anjinman.app.console.HoseokExamConsole;
 
 /*
- * ±âÁ¸ ExamConsoleÀÇ ¼­ºñ½º¸¦ ¹°·Á¹ŞÀº HoseokExamConsole °´Ã¼ÀÇ ½ÇÇà
- * [ °¢ ÄÚµå¿¡ ¸Ş¼Òµå ¼³¸í µÇ¾îÀÖÀ½
+ * ê¸°ì¡´ ExamConsoleì˜ ì„œë¹„ìŠ¤ë¥¼ ë¬¼ë ¤ë°›ì€ HoseokExamConsole ê°ì²´ì˜ ì‹¤í–‰
+ * [ ê° ì½”ë“œì— ë©”ì†Œë“œ ì„¤ëª… ë˜ì–´ìˆìŒ
  * */
 public class MainProgram {
 

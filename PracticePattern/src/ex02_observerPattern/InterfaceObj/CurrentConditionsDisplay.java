@@ -1,11 +1,11 @@
-package ex02_observerPattern.InterfaceObj;
+ï»¿package ex02_observerPattern.InterfaceObj;
 import ex02_observerPattern.Interface.*;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 	private float temperature;
 	private float humidity;
 	private Subject weatherData;
-	//»ç¿ëµÇÁö ¾Ê´Â ÂüÁ¶º¯¼ö ¿Ö ÀÖÀ»±î??
+	//ì‚¬ìš©ë˜ì§€ ì•ŠëŠ” ì°¸ì¡°ë³€ìˆ˜ ì™œ ìˆì„ê¹Œ??
 	public CurrentConditionsDisplay(Subject weatherData) {
 		this.weatherData = weatherData;
 		weatherData.registerObserver(this);

@@ -1,4 +1,4 @@
-package com.hiiwee.app.util;
+ï»¿package com.hiiwee.app.util;
 
 public class ObjectList {
 	private Object[] nums;
@@ -22,7 +22,7 @@ public class ObjectList {
 		// TODO Auto-generated method stub
 		return current;
 	}
-	// ÂüÁ¶Çü ¹ÝÈ¯
+	// ì°¸ì¡°í˜• ë°˜í™˜
 	public Object get(int index) {
 		if (current <= index)
 			throw new IndexOutOfBoundsException();

@@ -1,14 +1,14 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_13 {
 	public static void main(String[] args) {
 		char ch1 = 'A';
-		String name = "È«±æµ¿";
+		String name = "í™ê¸¸ë™";
 		
 		System.out.printf("%c\n", 'A');
 		System.out.printf("%s\n", "AB");
 		System.out.printf("%s\n", "AB");
 		System.out.printf("%s\n", "AB CCCCC");
-		System.out.printf("%s¾¾ Àç¹ÌÀÖ´Â ÀÚ¹Ù¾ğ¾î\n¿­½ÉÈ÷ ÇÏ¼¼¿ä", name);
+		System.out.printf("%sì”¨ ì¬ë¯¸ìˆëŠ” ìë°”ì–¸ì–´\nì—´ì‹¬íˆ í•˜ì„¸ìš”", name);
 	}
 }

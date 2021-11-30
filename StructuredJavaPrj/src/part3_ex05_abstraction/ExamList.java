@@ -1,12 +1,12 @@
-package part3_ex05_abstraction;
+ï»¿package part3_ex05_abstraction;
 
 public class ExamList {
-	//¹è¿­À» ´ë½ÅÇÏ´Â ¿ªÇÒ
+	//ë°°ì—´ì„ ëŒ€ì‹ í•˜ëŠ” ì—­í• 
 	private Exam[] exams;
 	private int current;
 	
-	//Aggregation Has a °ü°è
-	//ExamList°´Ã¼°¡ »ı¼ºµÉ¶§
+	//Aggregation Has a ê´€ê³„
+	//ExamListê°ì²´ê°€ ìƒì„±ë ë•Œ
 	public ExamList() {
 		exams = new Exam[3];
 		current = 0;
@@ -26,17 +26,17 @@ public class ExamList {
 	
 	
 	public void add(Exam exam) {
-		// °´Ã¼ÀÇ Á÷Á¢ÀûÀÎ ¿¬»êÀ» ÇÇÇÏ°í ÀÓ½Ã º¯¼ö¸¦ »ç¿ëÇÏ¿© ¿¬»êÁøÇà
+		// ê°ì²´ì˜ ì§ì ‘ì ì¸ ì—°ì‚°ì„ í”¼í•˜ê³  ì„ì‹œ ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ì—°ì‚°ì§„í–‰
 		Exam[] exams = this.exams;
 		int size = this.current;
 
 		if (exams.length == size) {
-			// 1. Å©±â°¡ 5°¡ ´õ Å« »õ·Î¿î ¹è¿­ »ı¼º
+			// 1. í¬ê¸°ê°€ 5ê°€ ë” í° ìƒˆë¡œìš´ ë°°ì—´ ìƒì„±
 			Exam[] temp = new Exam[size + 5];
-			// 2. °ªÀ» ÀÌÁÖ½ÃÅ°±â
+			// 2. ê°’ì„ ì´ì£¼ì‹œí‚¤ê¸°
 			for (int i = 0; i < size; i++) {
 				temp[i] = exams[i];
-				// 3. list.exams °¡ »õ·Î¸¸µç temp ¹è¿­À» ÂüÁ¶ÇÑ´Ù.
+				// 3. list.exams ê°€ ìƒˆë¡œë§Œë“  temp ë°°ì—´ì„ ì°¸ì¡°í•œë‹¤.
 				this.exams = temp;
 			}
 		}

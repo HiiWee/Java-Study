@@ -1,4 +1,4 @@
-package com.hiiwee.app.util;
+﻿package com.hiiwee.app.util;
 
 public class IntList {
 	private int[] nums;

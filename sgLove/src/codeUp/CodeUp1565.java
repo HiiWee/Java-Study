@@ -1,4 +1,4 @@
-package codeUp;
+ï»¿package codeUp;
 
 import java.util.Scanner;
 
@@ -26,7 +26,7 @@ class LCM {
 			x = b;
 			y = a;
 		}
-		//À¯Å¬¸®µåÈ£Á¦¹ý
+		//ìœ í´ë¦¬ë“œí˜¸ì œë²•
 		while (y > 0) {
 			int temp = x;
 			x = y;

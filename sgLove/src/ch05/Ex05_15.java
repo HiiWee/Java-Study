@@ -1,4 +1,4 @@
-package ch05;
+ï»¿package ch05;
 
 public class Ex05_15 {
 
@@ -9,7 +9,7 @@ public class Ex05_15 {
 			
 			int j = 1;
 			if(i < 10)
-				System.out.println(i + "´Ü");
+				System.out.println(i + "ë‹¨");
 			innerLoop: while (true) {
 				
 				if (i > 9) break Loop;

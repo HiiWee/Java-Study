@@ -1,4 +1,4 @@
-package forTask.week11;
+ï»¿package forTask.week11;
 
 class Date {
 	private int year;
@@ -6,7 +6,7 @@ class Date {
 	private int day;
 
 	public Date() {
-		System.out.println("°´Ã¼»ı¼º");
+		System.out.println("ê°ì²´ìƒì„±");
 	}
 
 	public Date(int y) {
@@ -20,7 +20,7 @@ class Date {
 	}
 
 	public void printDate() {
-		System.out.println(year + "³â" + " " + month + " " + day + "ÀÏ");
+		System.out.println(year + "ë…„" + " " + month + " " + day + "ì¼");
 	}
 }
 
@@ -29,7 +29,7 @@ public class ProblemForClass1 {
 	public static void main(String[] args) {
 		Date date1 = new Date();
 		Date date2 = new Date(2021);
-		Date date3 = new Date(2021, "7¿ù", 2);
+		Date date3 = new Date(2021, "7ì›”", 2);
 		
 		date1.printDate();
 		date2.printDate();

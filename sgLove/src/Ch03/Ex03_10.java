@@ -1,12 +1,12 @@
-package Ch03;
+ï»¿package Ch03;
 
 public class Ex03_10 {
 	public static void main(String[] args) {
 		boolean a = true;
-		System.out.println("boolean º¯¼ö aÀÇ °ªÀº :" + a);
+		System.out.println("boolean ë³€ìˆ˜ aì˜ ê°’ì€ :" + a);
 		boolean b = 10 > 20;
-		System.out.println("boolean º¯¼ö bÀÇ °ªÀº :" + b);
+		System.out.println("boolean ë³€ìˆ˜ bì˜ ê°’ì€ :" + b);
 		boolean c = a;
-		System.out.println("boolean º¯¼ö cÀÇ °ªÀº :" + c);
+		System.out.println("boolean ë³€ìˆ˜ cì˜ ê°’ì€ :" + c);
 	}
 }

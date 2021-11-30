@@ -1,4 +1,4 @@
-package ex1;
+ï»¿package ex1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,27 +9,27 @@ import java.sql.SQLException;
 public class MysqlJdbc4 {
 
 	public static void main(String[] args) {
-		// 2. °ªÀ» ÀÔ·Â¹Ş±â À§ÇÑ º¯¼ö ÁØºñ
+		// 2. ê°’ì„ ì…ë ¥ë°›ê¸° ìœ„í•œ ë³€ìˆ˜ ì¤€ë¹„
 		int id = 18;
 		
 		String url = "jdbc:mysql://127.0.0.1:3306/hoseok";
 		String sql = "delete from notice where id = ?";
-		// 1. ÀÚ¹Ù´Â »ç¿ëÀÚ·ÎºÎÅÍ °ªÀ» ÀÔ·Â¹ŞÀ½ (ÄÜ¼Ö, ¿ÜºÎ, À©µµ¿ì, ÆÄÀÏ µîµî)
-		// 3. À§¿Í°°ÀÌ ¹®ÀåÀ» ²È¾Æ³Ö±â¿¡´Â ½Ç¼ö°¡ ¸¹ÀÌ ¹ß»ıÇÒ ¿ì·Á
-		// 4. Statement¿¡¼­ µ¥ÀÌÅÍ¸¦ ¹®ÀÚ¿­´õÇÏ±â°¡ ¾Æ´Ñ ²È¾Æ³ÖÀ» ¼ö ÀÖ´Â µµ±¸¸¦ ÁØ´Ù.
+		// 1. ìë°”ëŠ” ì‚¬ìš©ìë¡œë¶€í„° ê°’ì„ ì…ë ¥ë°›ìŒ (ì½˜ì†”, ì™¸ë¶€, ìœˆë„ìš°, íŒŒì¼ ë“±ë“±)
+		// 3. ìœ„ì™€ê°™ì´ ë¬¸ì¥ì„ ê½‚ì•„ë„£ê¸°ì—ëŠ” ì‹¤ìˆ˜ê°€ ë§ì´ ë°œìƒí•  ìš°ë ¤
+		// 4. Statementì—ì„œ ë°ì´í„°ë¥¼ ë¬¸ìì—´ë”í•˜ê¸°ê°€ ì•„ë‹Œ ê½‚ì•„ë„£ì„ ìˆ˜ ìˆëŠ” ë„êµ¬ë¥¼ ì¤€ë‹¤.
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection(url, "hoseok", "!dlghtjr4948");
 			// Statement st = con.createStatement();
 			// ResultSet rs = st.executeQuery(sql);
-			// 5. ½ÇÇàÇÏ±âÀü¿¡ ? ºÎºĞÀÇ ¹®ÀÚ¿­À» Ã¤¿öÁØ´Ù.
+			// 5. ì‹¤í–‰í•˜ê¸°ì „ì— ? ë¶€ë¶„ì˜ ë¬¸ìì—´ì„ ì±„ì›Œì¤€ë‹¤.
 			
 			PreparedStatement st = con.prepareStatement(sql);
-			// ½ÇÇàµµ±¸ ÀÚÃ¼°¡ Äõ¸®¹®À» °¡Áö°í ÀÖ°í Äõ¸®¹®À» ¼¼ÆÃÇÒ ¼ö ÀÖ´Â ´É·ÂÀÌ Æ÷ÇÔµÈ´Ù.
-			// Äõ¸®¹® ÁØºñ 	(index start with 1, not 0)
+			// ì‹¤í–‰ë„êµ¬ ìì²´ê°€ ì¿¼ë¦¬ë¬¸ì„ ê°€ì§€ê³  ìˆê³  ì¿¼ë¦¬ë¬¸ì„ ì„¸íŒ…í•  ìˆ˜ ìˆëŠ” ëŠ¥ë ¥ì´ í¬í•¨ëœë‹¤.
+			// ì¿¼ë¦¬ë¬¸ ì¤€ë¹„ 	(index start with 1, not 0)
 			st.setInt(1, id);
 			
-			// ½ÇÇà´Ü°è PreparedStatement¸¦ »ç¿ëÇÏ¸é ½ÇÇà½Ã sqlÀ» ¶Ç Àü´ŞÇÏÁö ¾Ê´Â´Ù.
+			// ì‹¤í–‰ë‹¨ê³„ PreparedStatementë¥¼ ì‚¬ìš©í•˜ë©´ ì‹¤í–‰ì‹œ sqlì„ ë˜ ì „ë‹¬í•˜ì§€ ì•ŠëŠ”ë‹¤.
 			int result = st.executeUpdate();
 			System.out.println(result);
 			

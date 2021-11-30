@@ -1,4 +1,4 @@
-package part3_ex01_encapsulation;
+ï»¿package part3_ex01_encapsulation;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class Program {
 		ExamList.init(list);
 		int menu;
 		boolean keepLoop = true;
-		// ½ºÄ³³Ê´Â ±»ÀÌ Àü¿ªº¯¼ö·Î °øÀ¯ÇÒÇÊ¿ä¾ø´Ù.
+		// ìŠ¤ìºë„ˆëŠ” êµ³ì´ ì „ì—­ë³€ìˆ˜ë¡œ ê³µìœ í• í•„ìš”ì—†ë‹¤.
 		Scanner scan = new Scanner(System.in);
 
 		while (keepLoop) {
@@ -30,7 +30,7 @@ public class Program {
 				break;
 
 			default:
-				System.out.println("Àß¸øµÈ °ªÀ» ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¸Þ´º´Â 1~3±îÁöÀÔ´Ï´Ù.");
+				System.out.println("ìž˜ëª»ëœ ê°’ì„ ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ë‰´ëŠ” 1~3ê¹Œì§€ìž…ë‹ˆë‹¤.");
 
 			}
 
@@ -43,13 +43,13 @@ public class Program {
 		int menu;
 
 		Scanner scan = new Scanner(System.in);
-		System.out.println("¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤");
-		System.out.println("¦¢           ¸ÞÀÎ ¸Þ´º       ¦¢");
-		System.out.println("¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥");
-		System.out.println("\t1. ¼ºÀûÀÔ·Â ");
-		System.out.println("\t2. ¼ºÀûÃâ·Â ");
-		System.out.println("\t3. Á¾·á ");
-		System.out.println("\t¼±ÅÃ> ");
+		System.out.println("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”");
+		System.out.println("â”‚           ë©”ì¸ ë©”ë‰´       â”‚");
+		System.out.println("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
+		System.out.println("\t1. ì„±ì ìž…ë ¥ ");
+		System.out.println("\t2. ì„±ì ì¶œë ¥ ");
+		System.out.println("\t3. ì¢…ë£Œ ");
+		System.out.println("\tì„ íƒ> ");
 		menu = scan.nextInt();
 
 		return menu;

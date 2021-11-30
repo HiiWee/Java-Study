@@ -1,8 +1,8 @@
-
+ï»¿
 public class ExceptionOver1000 extends Exception {
 	
 	@Override
 	public String getMessage() {
-		return "ÀÔ·Â °ªÀÇ ÇÕÀÌ 1000À» ³Ñ´Â ¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù.";
+		return "ì…ë ¥ ê°’ì˜ í•©ì´ 1000ì„ ë„˜ëŠ” ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.";
 	}
 }

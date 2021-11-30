@@ -1,10 +1,10 @@
-package ch05;
+ï»¿package ch05;
 
 public class Ex05_17 {
 	public static void main(String[] args) {
 
 		Outer: for (int i = 2; i <= 9; i++) {
-			System.out.println(i + "´Ü");
+			System.out.println(i + "ë‹¨");
 			
 			for (int j = 1; j <= 9; j++) {
 				if (j == 3)

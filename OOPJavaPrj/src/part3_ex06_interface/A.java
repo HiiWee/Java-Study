@@ -1,4 +1,4 @@
-package part3_ex06_interface;
+﻿package part3_ex06_interface;
 
 public class A {
 	private X x;

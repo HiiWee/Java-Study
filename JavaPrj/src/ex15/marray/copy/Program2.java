@@ -1,4 +1,4 @@
-package ex15.marray.copy;
+ï»¿package ex15.marray.copy;
 
 //import Class "Scanner"
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class Program2 {
 		/*
 		 * int kor1, kor2, kor3;
 		 */	
-		//1Â÷¿ø ¹è¿­ 
+		//1ì°¨ì› ë°°ì—´ 
 		//int[] kors = new int[3*3];
 		int[][] kors = new int[3][3];
 		int total;
@@ -23,70 +23,70 @@ public class Program2 {
 		for(int j=0; j<3; j++)
 			for(int i=0; i<3; i++)
 				kors[j][i] = 0;
-				//´ÜÀ§ ÀÌµ¿ -> 3*j, +i ´Â Ä­ÀÌµ¿
+				//ë‹¨ìœ„ ì´ë™ -> 3*j, +i ëŠ” ì¹¸ì´ë™
 		
-		//break·Î 1°³ÀÇ ·çÇÁ°¡ ¾Æ´Ï¶ó while·çÇÁ¸¦ ¹ş¾î³ª´Â break¶óº§ ¹æ¹ı		
+		//breakë¡œ 1ê°œì˜ ë£¨í”„ê°€ ì•„ë‹ˆë¼ whileë£¨í”„ë¥¼ ë²—ì–´ë‚˜ëŠ” breakë¼ë²¨ ë°©ë²•		
 		exit:
 		while(true) {
 			
-			//----------------------¸ŞÀÎ ¸Ş´º ºÎºĞ---------------------------
-			System.out.println("¦£¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¤");
-			System.out.println("¦¢         ¸ŞÀÎ¸Ş´º       ¦¢");
-			System.out.println("¦¦¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¥");
-			System.out.println("\t1.¼ºÀûÀÔ·Â");
-			System.out.println("\t2.¼ºÀûÃâ·Â");
-			System.out.println("\t3.Á¾·á");
+			//----------------------ë©”ì¸ ë©”ë‰´ ë¶€ë¶„---------------------------
+			System.out.println("â”Œã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”");
+			System.out.println("â”‚         ë©”ì¸ë©”ë‰´       â”‚");
+			System.out.println("â””ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”˜");
+			System.out.println("\t1.ì„±ì ì…ë ¥");
+			System.out.println("\t2.ì„±ì ì¶œë ¥");
+			System.out.println("\t3.ì¢…ë£Œ");
 			System.out.print("\t>");
 			menu = scan.nextInt();
 			
 			switch(menu) {
 			
 			case 1: 
-					//----------------------¼ºÀû ÀÔ·Â ºÎºĞ---------------------------
+					//----------------------ì„±ì  ì…ë ¥ ë¶€ë¶„---------------------------
 					
 					
-					  System.out.println("¦£¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¤");
-					  System.out.println("¦¢         ¼ºÀûÀÔ·Â       ¦¢");
-					  System.out.println("¦¦¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¥");
+					  System.out.println("â”Œã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”");
+					  System.out.println("â”‚         ì„±ì ì…ë ¥       â”‚");
+					  System.out.println("â””ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”˜");
 					 
 					
 						/*
-						 * //±¹¾î1 ¼ºÀû ÀÔ·ÂºÎºĞ do { System.out.print("±¹¾î1:"); kor1 = scan.nextInt(); if(kor1<0
-						 * || kor1>100) { System.out.println("¼ºÀû¹üÀ§(0~100)¸¦ ¹ş¾î³µ½À´Ï´Ù."); } } while(kor1<0
+						 * //êµ­ì–´1 ì„±ì  ì…ë ¥ë¶€ë¶„ do { System.out.print("êµ­ì–´1:"); kor1 = scan.nextInt(); if(kor1<0
+						 * || kor1>100) { System.out.println("ì„±ì ë²”ìœ„(0~100)ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤."); } } while(kor1<0
 						 * || kor1>100);
 						 * 
-						 * //±¹¾î2 ¼ºÀû ÀÔ·ÂºÎºĞ do { System.out.print("±¹¾î2:"); kor2 = scan.nextInt(); if(kor2<0
-						 * || kor2>100) { System.out.println("¼ºÀû¹üÀ§(0~100)¸¦ ¹ş¾î³µ½À´Ï´Ù."); } } while(kor2<0
+						 * //êµ­ì–´2 ì„±ì  ì…ë ¥ë¶€ë¶„ do { System.out.print("êµ­ì–´2:"); kor2 = scan.nextInt(); if(kor2<0
+						 * || kor2>100) { System.out.println("ì„±ì ë²”ìœ„(0~100)ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤."); } } while(kor2<0
 						 * || kor2>100);
 						 * 
-						 * //±¹¾î3 ¼ºÀû ÀÔ·ÂºÎºĞ do { System.out.print("±¹¾î3:"); kor3 = scan.nextInt();
+						 * //êµ­ì–´3 ì„±ì  ì…ë ¥ë¶€ë¶„ do { System.out.print("êµ­ì–´3:"); kor3 = scan.nextInt();
 						 * 
-						 * if(kor3<0 || kor3>100) { System.out.println("¼ºÀû¹üÀ§(0~10)À» ¹ş¾î³µ½À´Ï´Ù."); } }
+						 * if(kor3<0 || kor3>100) { System.out.println("ì„±ì ë²”ìœ„(0~10)ì„ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤."); } }
 						 * while(kor3<0 || kor3>100);
 						 */
 					for(int j=0; j<3; j++)
 						for(int i=0; i<3; i++)
 							do {
-								System.out.printf("%dÇĞ³â ±¹¾î%d:",j+1, i+1);
+								System.out.printf("%dí•™ë…„ êµ­ì–´%d:",j+1, i+1);
 								kors[j][i] = scan.nextInt();
 								
 								if(kors[j][i]<0 || kors[j][i]>100) {
-									System.out.println("¼ºÀû¹üÀ§(0~10)À» ¹ş¾î³µ½À´Ï´Ù.");
+									System.out.println("ì„±ì ë²”ìœ„(0~10)ì„ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤.");
 								}
 							} while(kors[j][i]<0 || kors[j][i]>100);
 						
 				
-				// À¯È¿°Ë»ç (0~100 »çÀÌ°ª¸¸)
+				// ìœ íš¨ê²€ì‚¬ (0~100 ì‚¬ì´ê°’ë§Œ)
 				//int validate = (0<=kor1 && 100>=kor1)?1:0;
 				//System.out.println(validate);
 					break;
 				
 				
-				//----------------------¼ºÀû Ãâ·Â ºÎºĞ----------------------
+				//----------------------ì„±ì  ì¶œë ¥ ë¶€ë¶„----------------------
 			case 2:
-					System.out.println("¦£¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¤");
-					System.out.println("¦¢         ¼ºÀûÃâ·Â       ¦¢");
-					System.out.println("¦¦¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¦¥");
+					System.out.println("â”Œã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”");
+					System.out.println("â”‚         ì„±ì ì¶œë ¥       â”‚");
+					System.out.println("â””ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡â”˜");
 			
 					//argument index
 					//System.out.printf("%2$d %1$d %3$d\n", 1, 2, 3);
@@ -94,26 +94,26 @@ public class Program2 {
 					for(int j=0; j<3; j++) {
 						total = kors[j][0] + kors[j][1] + kors[j][2];
 						avg = (float)(total / 3.0);  //or use "avg = total / 3.0f"
-						System.out.printf("<%dÇĞ³â ±¹¾î¼ºÀû>----------\n", j+1);
+						System.out.printf("<%dí•™ë…„ êµ­ì–´ì„±ì >----------\n", j+1);
 						for(int i=0; i<3; i++) {
-							System.out.printf("\t±¹¾î%d : %3d\n", 3-i, kors[j][i]);
-															//for¹®ÀÇ ÆĞÅÏÀ» ¸Á°¡Æ®¸®Áö ¾Ê´Â ¹æÇâÀ¸·Î.
-															//ÁÖ·Î for¹®Àº 0ºÎÅÍ ¹İº¹ÀÌ ½ÃÀÛµÊ
+							System.out.printf("\têµ­ì–´%d : %3d\n", 3-i, kors[j][i]);
+															//forë¬¸ì˜ íŒ¨í„´ì„ ë§ê°€íŠ¸ë¦¬ì§€ ì•ŠëŠ” ë°©í–¥ìœ¼ë¡œ.
+															//ì£¼ë¡œ forë¬¸ì€ 0ë¶€í„° ë°˜ë³µì´ ì‹œì‘ë¨
 						}
-						//¼Ò¼öÁ¡ »ì¸®±â(¹¬½ÃÀû Çüº¯È¯)
-						System.out.printf("ÃÑÁ¡ : %3d\n", total);
-						System.out.printf("Æò±Õ : %6.2f\n", avg);
-						System.out.println("¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ¤Ñ");
+						//ì†Œìˆ˜ì  ì‚´ë¦¬ê¸°(ë¬µì‹œì  í˜•ë³€í™˜)
+						System.out.printf("ì´ì  : %3d\n", total);
+						System.out.printf("í‰ê·  : %6.2f\n", avg);
+						System.out.println("ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡ã…¡");
 					}
 					break;
 
 			case 3: 
 					break exit;
-					//while ³»ÀÇ switch ±¸¹®¸¸ ¹ş¾î³² Áï whileÀº ¹ş¾î³ªÁö¸øÇÔ
+					//while ë‚´ì˜ switch êµ¬ë¬¸ë§Œ ë²—ì–´ë‚¨ ì¦‰ whileì€ ë²—ì–´ë‚˜ì§€ëª»í•¨
 			default:	
-					System.out.println("ÀÔ·Â¿À·ù 1~3±îÁö¸¸ ÀÔ·ÂÇÒ ¼ö ÀÖ½À´Ï´Ù.");
+					System.out.println("ì…ë ¥ì˜¤ë¥˜ 1~3ê¹Œì§€ë§Œ ì…ë ¥í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.");
 			}
 		}
-		System.out.println("Á¾·áµÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 }

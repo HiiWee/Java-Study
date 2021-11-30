@@ -1,4 +1,4 @@
-package codeUp;
+﻿package codeUp;
 
 import java.util.Scanner;
 

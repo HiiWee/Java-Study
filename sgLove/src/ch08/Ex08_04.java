@@ -1,4 +1,4 @@
-package ch08;
+﻿package ch08;
 
 class Box3 {
 	int w;
